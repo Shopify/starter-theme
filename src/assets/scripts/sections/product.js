@@ -9,7 +9,7 @@
 import $ from 'jquery';
 import Variants from '../slate/variants';
 import images from '../slate/images';
-import currancy from '../slate/currency';
+import currency from '../slate/currency';
 
 const selectors = {
   addToCart: '[data-add-to-cart]',
@@ -78,7 +78,6 @@ export default function Product(container) {
 }
 
 Product.prototype = $.extend({}, Product.prototype, {
-
   /**
    * Updates the DOM state of the add to cart button
    *
