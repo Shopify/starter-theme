@@ -14,7 +14,9 @@ window.theme = window.theme || {};
 
 $(document).ready(() => {
   // Common a11y fixes
-  pageLinkFocus($(window.location.hash));
+  if (window.location.hash !== '#') {
+    pageLinkFocus($(window.location.hash));
+  }
 
   $('.in-page-link').on('click', evt => {
     pageLinkFocus($(evt.currentTarget.hash));
