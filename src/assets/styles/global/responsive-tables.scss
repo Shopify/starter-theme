@@ -16,9 +16,9 @@
     // IE9 table layout fixes
     tr,
     td {
-      width: 100%;
       float: left;
       clear: both;
+      width: 100%;
     }
 
     th,
@@ -31,9 +31,9 @@
 
     td::before {
       content: attr(data-label);
+      float: left;
       padding-right: 10px;
       text-align: center;
-      float: left;
     }
   }
 

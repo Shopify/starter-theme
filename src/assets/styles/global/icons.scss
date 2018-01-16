@@ -1,9 +1,9 @@
 /* ================ Icons ================ */
 .icon {
   display: inline-block;
-  height: 20px;
-  width: 20px;
   vertical-align: middle;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 
   .no-svg & {
@@ -52,6 +52,6 @@ symbol {
 
 /* ================ Shopify icon on password page ================ */
 .icon-shopify-logo {
-  height: 1.5 * $font-size-base;
   width: 1.5 * $font-size-base * 120 / 35;
+  height: 1.5 * $font-size-base;
 }

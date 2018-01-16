@@ -28,17 +28,17 @@
 .rte__video-wrapper {
   position: relative;
   overflow: hidden;
+  max-width: 100%;
   height: 0;
   height: auto;
   padding-bottom: 56.25%;
-  max-width: 100%;
 
   iframe {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 }
 

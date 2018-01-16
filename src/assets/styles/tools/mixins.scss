@@ -100,8 +100,8 @@
   // sass-lint:disable no-important
   position: absolute !important;
   overflow: hidden;
-  height: 1px;
   width: 1px;
+  height: 1px;
   margin: -1px;
   padding: 0;
   border: 0;
@@ -112,8 +112,8 @@
   // sass-lint:disable no-important
   position: $position !important;
   overflow: auto;
-  height: auto;
   width: auto;
+  height: auto;
   margin: 0;
   clip: auto;
 }

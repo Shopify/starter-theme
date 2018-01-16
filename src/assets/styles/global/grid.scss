@@ -12,9 +12,9 @@
 }
 
 .grid__item {
+  float: left;
   width: 100%;
   padding-left: $grid-gutter;
-  float: left;
 
   &[class*='--push'] {
     position: relative;
@@ -30,9 +30,9 @@
   direction: rtl;
 
   > .grid__item {
+    float: right;
     text-align: left;
     direction: ltr;
-    float: right;
   }
 }
 

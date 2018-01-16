@@ -6,21 +6,21 @@
 input,
 textarea,
 select {
+  max-width: 100%;
   border: 1px solid $color-border;
   border-radius: 0;
-  max-width: 100%;
 
   &[disabled] {
+    border-color: $color-disabled-border;
     background-color: $color-disabled;
     cursor: default;
-    border-color: $color-disabled-border;
   }
 }
 
 .input-error {
+  border-color: $color-error;
   background-color: $color-error-bg;
   color: $color-error;
-  border-color: $color-error;
 }
 
 textarea {

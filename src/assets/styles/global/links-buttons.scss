@@ -3,10 +3,10 @@
   @include prefix('user-select', 'none', moz ms webkit spec);
   @include prefix(appearance, none, webkit moz spec);
   display: inline-block;
+  vertical-align: middle;
   width: auto;
   border: 0;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   text-decoration: none;
 }
