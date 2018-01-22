@@ -1,7 +1,6 @@
 {
   "extends": [
-    "plugin:shopify/prettier",
-    "plugin:shopify/node",
+    "plugin:shopify/esnext",
     "plugin:shopify/jquery"
   ],
   "env": {
