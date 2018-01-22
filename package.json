@@ -15,7 +15,7 @@
   "devDependencies": {
     "@shopify/slate-tools": ">1.0.0-alpha.6",
     "babel-preset-shopify": "^16.2.0",
-    "eslint-plugin-shopify": "^18.0.0",
+    "eslint-plugin-shopify": "18.0.0",
     "stylelint-config-shopify": "^4.0.0"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
   "scripts": {
     "start": "slate-tools start",
     "build": "slate-tools build",
-    "deploy": "slate-tools build --deploy"
+    "deploy": "slate-tools build --deploy",
+    "zip": "slate-tools build && slate-tools zip"
   }
 }
