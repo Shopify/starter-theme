@@ -18,7 +18,7 @@ $(document).ready(() => {
     pageLinkFocus($(window.location.hash));
   }
 
-  $('.in-page-link').on('click', evt => {
+  $('.in-page-link').on('click', (evt) => {
     pageLinkFocus($(evt.currentTarget.hash));
   });
 
@@ -44,7 +44,7 @@ $(document).ready(() => {
   if (cookiesEnabled()) {
     document.documentElement.className = document.documentElement.className.replace(
       'supports-no-cookies',
-      'supports-cookies'
+      'supports-cookies',
     );
   }
 });

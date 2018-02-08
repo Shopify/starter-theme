@@ -13,6 +13,8 @@ upload
 deploy.log
 config/shopify.yml
 npm-debug.log
+.env
+.env.*
 
 
 # Compiled source #
@@ -58,6 +60,7 @@ Thumbs.db
 *.sass-cache*
 _site
 /.idea
+/.vscode
 secrets.json
 .jekyll-metadata
 .ruby-version

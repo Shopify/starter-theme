@@ -27,12 +27,13 @@
     "@shopify/theme-sections": ">1.0.0-alpha.0",
     "jquery": "^3.2.1",
     "lodash-es": "^4.17.4",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "ora": "^1.3.0"
   },
   "scripts": {
     "start": "slate-tools start",
     "build": "slate-tools build",
-    "deploy": "slate-tools build --deploy",
+    "deploy": "slate-tools build && slate-tools deploy",
     "zip": "slate-tools build && slate-tools zip"
   }
 }
