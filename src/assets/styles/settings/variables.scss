@@ -1,13 +1,13 @@
 /* stylelint-disable color-no-hex */
 
 /* ================ Color Variables ================ */
-$color-primary: peachpuff;
+$color-primary: var(--color-primary);
 
 // Text colors
 $color-body-text: #444444;
 
 // Backgrounds
-$color-body: #ffffff;
+$color-body: var(--color-main-background);
 
 // Border colors
 $color-border: #f6f6f6;
