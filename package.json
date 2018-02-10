@@ -3,9 +3,11 @@
   "version": "1.0.0-alpha.1",
   "private": true,
   "author": "Shopify Inc.",
-  "description":
-    "An opinionated, Slate compatible, starting point for developing Shopify themes.",
-  "keywords": ["shopify", "theme"],
+  "description": "An opinionated, Slate compatible, starting point for developing Shopify themes.",
+  "keywords": [
+    "shopify",
+    "theme"
+  ],
   "bugs": "https://github.com/Shopify/starter-theme/issues",
   "license": "MIT",
   "repository": {
@@ -13,7 +15,7 @@
     "url": "https://github.com/Shopify/starter-theme.git"
   },
   "devDependencies": {
-    "@shopify/slate-tools": "^1.0.0-alpha.21",
+    "@shopify/slate-tools": "^1.0.0-alpha.23",
     "babel-preset-shopify": "^16.2.0",
     "eslint-plugin-shopify": "^19.0.0",
     "stylelint-config-shopify": "^4.0.0"
