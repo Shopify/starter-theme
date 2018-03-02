@@ -15,7 +15,7 @@
     "url": "https://github.com/Shopify/starter-theme.git"
   },
   "devDependencies": {
-    "@shopify/slate-tools": "^1.0.0-alpha.23",
+    "@shopify/slate-tools": "@alpha",
     "babel-preset-shopify": "^16.2.0",
     "eslint-plugin-shopify": "^19.0.0",
     "stylelint-config-shopify": "^4.0.0"
@@ -34,6 +34,7 @@
     "start": "slate-tools start",
     "build": "slate-tools build",
     "deploy": "slate-tools build && slate-tools deploy",
-    "zip": "slate-tools build && slate-tools zip"
+    "zip": "slate-tools build && slate-tools zip",
+    "lint": "slate-tools lint"
   }
 }
