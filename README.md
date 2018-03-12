@@ -93,7 +93,7 @@ The Shopify Themes Team uses [Yarn](https://yarnpkg.com/en/) while developing th
 
 `src/assets/scripts`
 
-This folder will contain all your JS modules. An `index.js` must be present, as it will act as the entry point for your JS application.
+This folder will contain all your JS modules. An `theme.js` must be present, as it will act as the entry point for your JS application.
 
 You can use ES6/ES2015's standard, which incidently allows you to require your modules with the `import` syntax:
 
@@ -109,7 +109,7 @@ import Foo from './modules/foo'
 
 Slate fully supports `.css`, `.scss` and `.sass` files and their syntax, including `@import`.
 
-You **must** include your style index file at the top of your `index.js` file for Webpack to be able to load your styles into its build process, as such:
+You **must** include your style index file at the top of your `theme.js` file for Webpack to be able to load your styles into its build process, as such:
 
 ```
 import '../sass/index.scss';
