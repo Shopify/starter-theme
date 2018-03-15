@@ -1,5 +1,8 @@
 {
-  "extends": "stylelint-config-shopify/prettier",
+  "extends": [
+    "stylelint-config-shopify",
+    "stylelint-config-prettier"
+  ],
   "rules": {
     "selector-class-pattern": null,
     "selector-no-qualifying-type": null,
