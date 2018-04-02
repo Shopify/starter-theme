@@ -14,8 +14,16 @@
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
   {% if featured_image.src != blank %}
-    {% include 'responsive-image' with image: featured_image, img_class: "my-img-class another-img-class", wrapper_class: "my-wrapper-class another-one-class", width: 700, height: 800, mobile_height: 400, include_wrapper: true, html_attributes: 'data-product-featured-image' %}
-    {% comment %} <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image> {% endcomment %}
+    {% include 'responsive-image' with
+      image: featured_image,
+      img_class: "my-img-class another-img-class",
+      wrapper_class: "my-wrapper-class another-one-class",
+      width: 700,
+      height: 800,
+      mobile_height: 400,
+      include_wrapper: true,
+      html_attributes: 'data-product-featured-image'
+    %}
   {% endif %}
 
   {% if product.images.size > 1 %}

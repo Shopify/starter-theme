@@ -14,6 +14,11 @@
     </div>
 
     - It must include parent DIV with "responsive-bg-image-wrapper" class and "responsive-bg-image lazyload" in the children element
+
+    Questions:
+    1- If you check the implementation in article.liquid, what do you think about the implementations?
+    2- Is it understandable and convenient to use include "responsive-bg-image"?
+    3- Since we need a few CSS classes, do you think I should put the <div> in this file also?
 {% endcomment %}
 {%- if image != blank -%}
   data-bgset="

@@ -29,8 +29,13 @@
       <div>
         {% if product.featured_image != blank %}
           <a href="{{ product.url | within: collection }}">
-            {% comment %} {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }} {% endcomment %}
-            {% include 'responsive-image' with image: product.featured_image, include_wrapper: false, width: 700, height: 800, mobile_height: 400 %}
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              include_wrapper: false,
+              width: 700,
+              height: 800,
+              mobile_height: 400
+            %}
           </a>
         {% endif %}
 
