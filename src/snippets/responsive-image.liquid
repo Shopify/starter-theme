@@ -1,16 +1,21 @@
 {% comment %}
     It creates a style tag and it restricts an image from growing larger than its max resolution.
+
+    Dependencies:
+    - Lazysizes plugin
+
     Accepts:
-    - image: {Object} Image object,
-    - width: {Number} Max width of the image container,
-    - height: {Number} Max height of the image container,
+    - image: {Object} Image object
+    - width: {Number} Max width of the image container
+    - height: {Number} Max height of the image container
     - mobile_height: {Number} Max width of the image container in mobile devices
     - img_class: {String} class name of the <img />
     - wrapper_class: {String} class name of the <div> wrapper
     - include_wrapper: {Boolean} Includes <div> wrapper
+
     Usage:
-    In your liquid file, copy the following line
-    - {% include 'image-style' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", width: 700, height: 800, mobile_height: 400, include_wrapper: true %}
+    In your liquid template file, copy the following line
+    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", width: 700, height: 800, mobile_height: 400, include_wrapper: true %}
 {% endcomment %}
 {% assign mobile_breakpoint = '750px' %}
 <style>
@@ -76,20 +81,23 @@
 {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
 
 {% if include_wrapper %}
-  <div id="ProductImageWrapper-{{ image.id }}" class="featured-product__photo-wrapper">
+  <div id="ProductImageWrapper-{{ image.id }}" class="responsive-image__container">
+    <div data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
 {% endif %}
-  <div data-image-id="{{ image.id }}"
-    class="responsive-image__wrapper {{ wrapper_class }}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
     <img id="ProductImage-{{ image.id }}"
-      class="responsive-image__image lazyload {{ img_class }}"
+      class="{% if include_wrapper %}responsive-image__image{% endif %} lazyload {{ img_class }}"
       src="{{ image | img_url: '300x' }}"
       data-src="{{ img_url }}"
       data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
       data-aspectratio="{{ image.aspect_ratio }}"
       data-sizes="auto"
-      alt="{{ image.alt | escape }}">
-  </div>
+      alt="{{ image.alt | escape }}"
+      {{ html_attributes }}>
 {% if include_wrapper %}
+    </div>
   </div>
 {% endif %}
 
+<noscript>
+  <img class="{{ img_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+</noscript>

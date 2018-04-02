@@ -1,4 +1,11 @@
 /* ================ Responsive images ================ */
+.responsive-image__container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .responsive-image__wrapper {
   position: relative;
   display: block;
@@ -22,5 +29,37 @@
   &:hover,
   a:focus > & {
     // @include transform(scale(1.05));
+  }
+}
+
+/*================ Responsive background images ================*/
+.responsive-bg-image-wrapper {
+  overflow: hidden;
+  height: 278px;
+  background-color: $color-body;
+
+  @include media-query($medium-up) {
+    height: 390px;
+  }
+
+  @include media-query($widescreen) {
+    height: 560px;
+  }
+}
+
+.responsive-bg-image {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.responsive-bg-image--parallax {
+  @include media-query($medium-up) {
+    background-attachment: fixed;
+  }
+
+  .is-mobile-os & {
+    background-attachment: scroll;
   }
 }
