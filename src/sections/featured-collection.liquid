@@ -8,7 +8,11 @@
   <a href="{{ product.url | within: collection }}">
 
     {% if product.featured_image != blank %}
-      {{ product.featured_image.src | img_url: '480x480' | img_tag: product.title }}
+      {% include 'responsive-image' with
+        image: product.featured_image,
+        width: 480,
+        height: 480
+      %}
     {% endif %}
 
     <p>{{ product.title }}</p>

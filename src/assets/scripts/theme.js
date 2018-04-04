@@ -1,16 +1,16 @@
-import '../styles/theme.scss';
-
-import $ from 'jquery';
-import {pageLinkFocus} from '@shopify/theme-a11y';
-import {cookiesEnabled} from '@shopify/theme-cart';
-import {wrapTable, wrapIframe} from '@shopify/theme-rte';
-
 import 'lazysizes/plugins/object-fit/ls.object-fit';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import 'lazysizes/plugins/rias/ls.rias';
 import 'lazysizes/plugins/bgset/ls.bgset';
 import 'lazysizes';
 import 'lazysizes/plugins/respimg/ls.respimg';
+
+import '../styles/theme.scss';
+
+import $ from 'jquery';
+import {pageLinkFocus} from '@shopify/theme-a11y';
+import {cookiesEnabled} from '@shopify/theme-cart';
+import {wrapTable, wrapIframe} from '@shopify/theme-rte';
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};

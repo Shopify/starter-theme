@@ -11,11 +11,11 @@
     Usage:
     In your liquid template file, copy the following line
 
-    <div class="responsive-bg-image-wrapper">
-      <div class="responsive-bg-image lazyload" {% include 'responsive-bg-image', image: article.image %}></div>
+    <div class="responsive-bg__wrapper">
+      <div class="responsive-bg-image lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
     </div>
 
-    - It must include parent DIV with "responsive-bg-image-wrapper" class and "responsive-bg-image lazyload" in the children element
+    - It must include parent DIV with "responsive-bg__wrapper" class and "responsive-bg-image lazyload" in the children element
 
     Questions:
     1- If you check the implementation in article.liquid, what do you think about the implementations?
@@ -23,14 +23,20 @@
     3- Since we need a few CSS classes, do you think I should put the <div> in this file also?
 {% endcomment %}
 {%- if image != blank -%}
-  data-bgset="
-    {% if image.width > 540 %}{{ image | img_url: '540x' }} 540w {{ 540 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {% if image.width > 720 %}{{ image | img_url: '720x' }} 720w {{ 720 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {% if image.width > 900 %}{{ image | img_url: '900x' }} 900w {{ 900 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {% if image.width > 1080 %}{{ image | img_url: '1080x' }} 1080w {{ 1080 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {% if image.width > 1296 %}{{ image | img_url: '1296x' }} 1296w {{ 1296 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {% if image.width > 1512 %}{{ image | img_url: '1512x' }} 1512w {{ 1512 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {% if image.width > 1728 %}{{ image | img_url: '1728x' }} 1728w {{ 1728 | divided_by: image.aspect_ratio | round }}h,{% endif %}
-    {{ image | img_url: 'master' }} {{ image.width }}w {{ image.height }}h
-  "
+  {% if image.width > 180 %}{{ image | img_url: '180x' }} 180w {{ 180 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 360 %}{{ image | img_url: '360x' }} 360w {{ 360 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 540 %}{{ image | img_url: '540x' }} 540w {{ 540 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 720 %}{{ image | img_url: '720x' }} 720w {{ 720 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 900 %}{{ image | img_url: '900x' }} 900w {{ 900 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 1080 %}{{ image | img_url: '1080x' }} 1080w {{ 1080 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 1296 %}{{ image | img_url: '1296x' }} 1296w {{ 1296 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 1512 %}{{ image | img_url: '1512x' }} 1512w {{ 1512 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 1728 %}{{ image | img_url: '1728x' }} 1728w {{ 1728 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 1944 %}{{ image | img_url: '1944x' }} 1944w {{ 1944 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 2160 %}{{ image | img_url: '2160x' }} 2160w {{ 2160 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 2376 %}{{ image | img_url: '2376x' }} 2376w {{ 2376 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 2592 %}{{ image | img_url: '2592x' }} 2592w {{ 2592 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 2808 %}{{ image | img_url: '2808x' }} 2808w {{ 2808 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {% if image.width > 3024 %}{{ image | img_url: '3024x' }} 3024w {{ 3024 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+  {{ image | img_url: 'master' }} {{ image.width }}w {{ image.height }}h
 {%- endif -%}

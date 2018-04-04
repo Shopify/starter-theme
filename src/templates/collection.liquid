@@ -31,10 +31,8 @@
           <a href="{{ product.url | within: collection }}">
             {% include 'responsive-image' with
               image: product.featured_image,
-              include_wrapper: false,
               width: 700,
-              height: 800,
-              mobile_height: 400
+              height: 800
             %}
           </a>
         {% endif %}

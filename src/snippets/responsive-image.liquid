@@ -10,16 +10,13 @@
     - image: {Object} Image object
     - width: {Number} Max width of the image container
     - height: {Number} Max height of the image container
-    - mobile_height: {Number} Max width of the image container in mobile devices
     - img_class: {String} class name of the <img />
     - wrapper_class: {String} class name of the <div> wrapper
-    - include_wrapper: {Boolean} Includes <div> wrapper
 
     Usage:
     In your liquid template file, copy the following line
-    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", width: 700, height: 800, mobile_height: 400, include_wrapper: true %}
+    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", width: 700, height: 800 %}
 {% endcomment %}
-{% assign mobile_breakpoint = '750px' %}
 
 {% comment %} Added incremental number to avoid conflict styling code when the same images are using this snippet {% endcomment %}
 {% capture responsive_image_counter %}{% increment image_counter %}{% endcapture %}
@@ -40,50 +37,21 @@
   #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
     max-width: {{ max_width }}px;
   }
-
-  {% comment %}
-    Calculate max height and widths again for small screens
-  {% endcomment %}
-
-  {% if image.aspect_ratio <= 1 %}
-    {% assign max_height = image.height | at_most: mobile_height %}
-    {% assign max_width = max_height | times: image.aspect_ratio %}
-  {% else %}
-    {% assign max_width = image.width | at_most: width %}
-    {% assign max_height = max_width | divided_by: image.aspect_ratio %}
-  {% endif %}
-
-  @media screen and (max-width: {{ mobile_breakpoint}} ) {
-    #ProductImage-{{ image.id }}-{{ responsive_image_counter }} {
-      max-width: {{ max_width }}px;
-      max-height: {{ max_height }}px;
-    }
-    #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
-      max-width: {{ max_width }}px;
-    }
-  }
 </style>
 
 {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
 
-{% if include_wrapper %}
-  <div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" class="responsive-image__container">
-    <div data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
-{% endif %}
-    <img id="ProductImage-{{ image.id }}-{{ responsive_image_counter }}"
-      class="{% if include_wrapper %}responsive-image__image{% endif %} lazyload {{ img_class }}"
-      src="{{ image | img_url: '300x' }}"
-      data-src="{{ img_url }}"
-      data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048, 4472]"
-      data-aspectratio="{{ image.aspect_ratio }}"
-      data-sizes="auto"
-      alt="{{ image.alt | escape }}"
-      {{ html_attributes }}>
-{% if include_wrapper %}
-    </div>
-  </div>
-{% endif %}
+<div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" class="responsive-image__container">
+  <div data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
 
-<noscript>
-  <img class="{{ img_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
-</noscript>
+  <img id="ProductImage-{{ image.id }}-{{ responsive_image_counter }}"
+    class="responsive-image__image lazyload {{ img_class }}"
+    src="{{ image | img_url: '300x' }}"
+    data-src="{{ img_url }}"
+    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]"
+    data-aspectratio="{{ image.aspect_ratio }}"
+    data-sizes="auto"
+    alt="{{ image.alt | escape }}"
+    >
+  </div>
+</div>
