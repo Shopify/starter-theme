@@ -4,6 +4,10 @@
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
+
+  .no-js & {
+    display: none;
+  }
 }
 
 .responsive-image__wrapper {
@@ -23,17 +27,4 @@
   display: block;
   width: 100%;
   height: 100%;
-}
-
-/*================ Responsive background images ================*/
-.responsive-bg__wrapper {
-  overflow: hidden;
-  height: 278px;
-}
-
-.responsive-bg-image {
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }

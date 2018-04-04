@@ -16,13 +16,11 @@
 <article role="article" itemscope itemtype="http://schema.org/Article">
 
   {% if article.image %}
-    <div class="responsive-bg__wrapper">
-      <div class="responsive-bg-image lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
+    <div class="responsive-bg-image hero-banner hero-banner--article lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
 
-      <noscript>
-        <div class="responsive-bg-image" style="background-image: {{ article.image | img_url: 'master' }}"></div>
-      </noscript>
-    </div>
+    <noscript>
+      <div class="responsive-bg-image" style="background-image: {{ article.image | img_url: 'master' }}"></div>
+    </noscript>
   {% endif %}
 
   <header role="banner">
