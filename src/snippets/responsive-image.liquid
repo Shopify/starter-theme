@@ -22,6 +22,7 @@
 {% capture responsive_image_counter %}{% increment image_counter %}{% endcapture %}
 
 <style>
+  {% comment %} If the image is portrait {% endcomment %}
   {% if image.aspect_ratio <= 1 %}
     {% assign max_height = image.height | at_most: height %}
     {% assign max_width = max_height | times: image.aspect_ratio %}
@@ -37,13 +38,20 @@
   #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
     max-width: {{ max_width }}px;
   }
+
+  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}:before {
+    {% comment %}
+      To find the height in percentage so when you change the window screen width, it calculates proportionally
+      Another way is (height / width) * 100
+      Note regarding padding percentage: The percentage is calculated with respect to the width of the generated box's containing block (source: http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#padding-properties)
+    {% endcomment %}
+    padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;
+  }
 </style>
 
 {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
 
-<div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" class="responsive-image__container">
-  <div data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
-
+<div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" >
   <img id="ProductImage-{{ image.id }}-{{ responsive_image_counter }}"
     class="responsive-image__image lazyload {{ img_class }}"
     src="{{ image | img_url: '300x' }}"
@@ -52,8 +60,7 @@
     data-aspectratio="{{ image.aspect_ratio }}"
     data-sizes="auto"
     alt="{{ image.alt | escape }}"
-    >
-  </div>
+  >
 </div>
 
 <noscript>

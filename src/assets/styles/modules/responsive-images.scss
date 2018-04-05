@@ -1,5 +1,5 @@
 /* ================ Responsive images ================ */
-.responsive-image__container {
+.responsive-image__wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -8,11 +8,12 @@
   .no-js & {
     display: none;
   }
-}
 
-.responsive-image__wrapper {
-  position: relative;
-  display: block;
+  &:before {
+    content: '';
+    position: relative;
+    display: block;
+  }
 
   img {
     display: block;
