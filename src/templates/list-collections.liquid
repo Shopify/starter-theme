@@ -7,15 +7,10 @@
 {% for collection in collections %}
   {% unless collection.handle == 'frontpage' %}
     <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: title }}">
-      {% if collection.image != blank %}
+      {% if collection.image != blank or collection.products.first != blank %}
+        {%- assign image_objet = collection.image | default: collection.products.first.featured_image -%}
         {% include 'responsive-image' with
-          image: collection.image,
-          width: 480,
-          height: 480
-        %}
-      {% elsif collection.products.first != blank %}
-        {% include 'responsive-image' with
-          image: collection.products.first.featured_image,
+          image: image_objet,
           width: 480,
           height: 480
         %}

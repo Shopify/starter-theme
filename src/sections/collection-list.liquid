@@ -7,15 +7,10 @@
     {%- assign collection = collections[block.settings.collection] -%}
 
     <a href="{% if collection == empty %}#{% else %}{{ collection.url }}{% endif %}">
-      {% if collection.image != blank %}
+      {% if collection.image != blank or collection.products.first != blank %}
+        {%- assign image_objet = collection.image | default: collection.products.first.featured_image -%}
         {% include 'responsive-image' with
-          image: collection.image,
-          width: 480,
-          height: 480
-        %}
-      {% elsif collection.products.first != blank %}
-        {% include 'responsive-image' with
-          image: collection.products.first.featured_image,
+          image: image_objet,
           width: 480,
           height: 480
         %}
