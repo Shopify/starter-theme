@@ -41,11 +41,10 @@
 
   #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}:before {
     {% comment %}
-      To find the height in percentage so when you change the window screen width, it calculates proportionally
-      Another way is (height / width) * 100
+      When you change the window screen width, we want to make sure that the container's size is proportionally calculated.
       Note regarding padding percentage: The percentage is calculated with respect to the width of the generated box's containing block (source: http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#padding-properties)
     {% endcomment %}
-    padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;
+    padding-top:{{ max_height | divided_by: max_width | times: 100}}%;
   }
 </style>
 
