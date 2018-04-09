@@ -29,7 +29,11 @@
       <div>
         {% if product.featured_image != blank %}
           <a href="{{ product.url | within: collection }}">
-            {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
+            {% include 'responsive-image' with
+              image: product.featured_image,
+              max_width: 700,
+              max_height: 800
+            %}
           </a>
         {% endif %}
 

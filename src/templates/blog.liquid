@@ -44,7 +44,11 @@
 
     {% if article.image %}
       <a href="{{ article.url }}">
-        {{ article | img_url: '1024x1024' | img_tag: article.title }}
+        {% include 'responsive-image' with
+          image: article.image,
+          max_width: 1024,
+          max_height: 1024
+        %}
       </a>
     {% endif %}
 

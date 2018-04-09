@@ -1,0 +1,72 @@
+{%- comment -%}
+    It creates a style tag and it restricts an image from growing larger than its max resolution.
+
+    Dependencies:
+    - Lazysizes plugin (https://github.com/aFarkas/lazysizes) which enable responsive image with faster load time and better performance.
+    - Lazysizes Responsive Images as a Service (https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/rias) To load the correct image size with our CDN
+    - Lazysizes Bgset (https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/bgset) To use responsive images on background-image (CSS)
+
+    Accepts:
+    - image: {Object} Image object
+    - max_width: {Number} Max width of the image container
+    - max_height: {Number} Max height of the image container
+    - img_class: {String} class name of the <img />
+    - wrapper_class: {String} class name of the <div> wrapper
+
+    Usage:
+    In your liquid template file, copy the following line
+    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
+{%- endcomment -%}
+
+{%- comment -%} Added incremental number to avoid conflict styling code when the same images are using this snippet {%- endcomment -%}
+{%- capture responsive_image_counter %}{% increment image_counter %}{% endcapture -%}
+
+<style>
+  {%- comment -%}
+    The image aspect ratio tells us the orientation of the image:
+    - less than 1.0 is portrait
+    - exactly 1.0 is square
+    - greater than 1.0 is landscape
+  {%- endcomment -%}
+  {%- if image.aspect_ratio <= 1 -%}
+    {%- assign max_height_image = image.height | at_most: max_height -%}
+    {%- assign max_width_image = max_height_image | times: image.aspect_ratio -%}
+  {%- else -%}
+    {%- assign max_width_image = image.width | at_most: max_width -%}
+    {%- assign max_height_image = max_width_image | divided_by: image.aspect_ratio -%}
+  {%- endif -%}
+
+  #ProductImage-{{ image.id }}-{{ responsive_image_counter }} {
+    max-width: {{ max_width_image }}px;
+    max-height: {{ max_height_image }}px;
+  }
+  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
+    max-width: {{ max_width_image }}px;
+  }
+
+  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}:before {
+    {%- comment -%}
+      When you change the window screen width, we want to make sure that the container's size is proportionally calculated.
+      Note regarding padding percentage: The percentage is calculated with respect to the width of the generated box's containing block (source: http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#padding-properties)
+    {%- endcomment -%}
+    padding-top:{{ max_height_image | divided_by: max_width_image | times: 100}}%;
+  }
+</style>
+
+{%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+<div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" >
+  <img id="ProductImage-{{ image.id }}-{{ responsive_image_counter }}"
+    class="responsive-image__image lazyload {{ img_class }}"
+    src="{{ image | img_url: '300x' }}"
+    data-src="{{ img_url }}"
+    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]"
+    data-aspectratio="{{ image.aspect_ratio }}"
+    data-sizes="auto"
+    alt="{{ image.alt | escape }}"
+  >
+</div>
+
+<noscript>
+  <img class="{{ img_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+</noscript>

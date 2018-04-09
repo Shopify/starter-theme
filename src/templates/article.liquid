@@ -1,5 +1,5 @@
 {% comment %}
-  When a comment is submitted, the browser is redirected to a page that includes 
+  When a comment is submitted, the browser is redirected to a page that includes
   the new comment id in its URL.
   #comments is a required ID and is used as an anchor link by Shopify.
 {% endcomment %}
@@ -16,7 +16,12 @@
 <article role="article" itemscope itemtype="http://schema.org/Article">
 
   {% if article.image %}
-    {{ article | img_url: '1024x1024' | img_tag: article.title }}
+    <div class="hero-banner hero-banner--article lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
+
+    <noscript>
+      {%- assign image_size = article.image.width | append: 'x' -%}
+      <div class="hero-banner hero-banner--article" style="background-image: {{ article.image | img_url: image_size }}"></div>
+    </noscript>
   {% endif %}
 
   <header role="banner">
