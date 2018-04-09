@@ -8,14 +8,14 @@
 
     Accepts:
     - image: {Object} Image object
-    - width: {Number} Max width of the image container
-    - height: {Number} Max height of the image container
+    - max_width: {Number} Max width of the image container
+    - max_height: {Number} Max height of the image container
     - img_class: {String} class name of the <img />
     - wrapper_class: {String} class name of the <div> wrapper
 
     Usage:
     In your liquid template file, copy the following line
-    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", width: 700, height: 800 %}
+    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
 {%- endcomment -%}
 
 {%- comment -%} Added incremental number to avoid conflict styling code when the same images are using this snippet {%- endcomment -%}
@@ -29,19 +29,19 @@
     - greater than 1.0 is landscape
   {%- endcomment -%}
   {%- if image.aspect_ratio <= 1 -%}
-    {%- assign max_height = image.height | at_most: height -%}
-    {%- assign max_width = max_height | times: image.aspect_ratio -%}
+    {%- assign max_height_image = image.height | at_most: max_height -%}
+    {%- assign max_width_image = max_height_image | times: image.aspect_ratio -%}
   {%- else -%}
-    {%- assign max_width = image.width | at_most: width -%}
-    {%- assign max_height = max_width | divided_by: image.aspect_ratio -%}
+    {%- assign max_width_image = image.width | at_most: max_width -%}
+    {%- assign max_height_image = max_width_image | divided_by: image.aspect_ratio -%}
   {%- endif -%}
 
   #ProductImage-{{ image.id }}-{{ responsive_image_counter }} {
-    max-width: {{ max_width }}px;
-    max-height: {{ max_height }}px;
+    max-width: {{ max_width_image }}px;
+    max-height: {{ max_height_image }}px;
   }
   #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
-    max-width: {{ max_width }}px;
+    max-width: {{ max_width_image }}px;
   }
 
   #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}:before {
@@ -49,7 +49,7 @@
       When you change the window screen width, we want to make sure that the container's size is proportionally calculated.
       Note regarding padding percentage: The percentage is calculated with respect to the width of the generated box's containing block (source: http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#padding-properties)
     {%- endcomment -%}
-    padding-top:{{ max_height | divided_by: max_width | times: 100}}%;
+    padding-top:{{ max_height_image | divided_by: max_width_image | times: 100}}%;
   }
 </style>
 

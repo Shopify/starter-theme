@@ -12,8 +12,8 @@
   {% if featured_image != blank %}
     {% include 'responsive-image' with
       image: featured_image,
-      width: 700,
-      height: 800
+      max_width: 700,
+      max_height: 800
     %}
   {% endif %}
 
