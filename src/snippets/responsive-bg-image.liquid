@@ -10,14 +10,7 @@
     Usage:
     In your liquid template file, copy the following line
 
-    <div class="responsive-bg-image lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
-
-    - It must include "responsive-bg-image lazyload" wrapper element
-
-    Questions:
-    1- If you check the implementation in article.liquid, what do you think about the implementations?
-    2- Is it understandable and convenient to use include "responsive-bg-image"?
-    3- Since we need a few CSS classes, do you think I should put the <div> in this file also?
+    <div class="lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
 {% endcomment %}
 {%- if image != blank -%}
   {%- if image.width > 180 -%}{{ image | img_url: '180x' }} 180w {{ 180 | divided_by: image.aspect_ratio | round }}h,{%- endif -%}
@@ -35,5 +28,6 @@
   {%- if image.width > 2592 -%}{{ image | img_url: '2592x' }} 2592w {{ 2592 | divided_by: image.aspect_ratio | round }}h,{%- endif -%}
   {%- if image.width > 2808 -%}{{ image | img_url: '2808x' }} 2808w {{ 2808 | divided_by: image.aspect_ratio | round }}h,{%- endif -%}
   {%- if image.width > 3024 -%}{{ image | img_url: '3024x' }} 3024w {{ 3024 | divided_by: image.aspect_ratio | round }}h,{%- endif -%}
-  {{ image | img_url: 'master' }} {{ image.width }}w {{ image.height }}h
+  {%- assign image_size = image.width | append: 'x' -%}
+  {{ image | img_url: image_size }} {{ image.width }}w {{ image.height }}h
 {%- endif -%}
