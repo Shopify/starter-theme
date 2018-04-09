@@ -14,7 +14,11 @@
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
   {% if featured_image.src != blank %}
-    <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+    {% include 'responsive-image' with
+      image: featured_image,
+      max_width: 700,
+      max_height: 800
+    %}
   {% endif %}
 
   {% if product.images.size > 1 %}
