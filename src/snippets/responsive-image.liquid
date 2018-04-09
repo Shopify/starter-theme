@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
     It creates a style tag and it restricts an image from growing larger than its max resolution.
 
     Dependencies:
@@ -16,10 +16,10 @@
     Usage:
     In your liquid template file, copy the following line
     - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", width: 700, height: 800 %}
-{% endcomment %}
+{%- endcomment -%}
 
-{% comment %} Added incremental number to avoid conflict styling code when the same images are using this snippet {% endcomment %}
-{% capture responsive_image_counter %}{% increment image_counter %}{% endcapture %}
+{%- comment -%} Added incremental number to avoid conflict styling code when the same images are using this snippet {%- endcomment -%}
+{%- capture responsive_image_counter %}{% increment image_counter %}{% endcapture -%}
 
 <style>
   {%- comment -%}
@@ -28,13 +28,13 @@
     - exactly 1.0 is square
     - greater than 1.0 is landscape
   {%- endcomment -%}
-  {% if image.aspect_ratio <= 1 %}
-    {% assign max_height = image.height | at_most: height %}
-    {% assign max_width = max_height | times: image.aspect_ratio %}
-  {% else %}
-    {% assign max_width = image.width | at_most: width %}
-    {% assign max_height = max_width | divided_by: image.aspect_ratio %}
-  {% endif %}
+  {%- if image.aspect_ratio <= 1 -%}
+    {%- assign max_height = image.height | at_most: height -%}
+    {%- assign max_width = max_height | times: image.aspect_ratio -%}
+  {%- else -%}
+    {%- assign max_width = image.width | at_most: width -%}
+    {%- assign max_height = max_width | divided_by: image.aspect_ratio -%}
+  {%- endif -%}
 
   #ProductImage-{{ image.id }}-{{ responsive_image_counter }} {
     max-width: {{ max_width }}px;
@@ -53,7 +53,7 @@
   }
 </style>
 
-{% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+{%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
 <div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" >
   <img id="ProductImage-{{ image.id }}-{{ responsive_image_counter }}"
