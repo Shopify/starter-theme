@@ -9,7 +9,7 @@
     display: none;
   }
 
-  &:before {
+  &::before {
     content: '';
     position: relative;
     display: block;
