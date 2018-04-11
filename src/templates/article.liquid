@@ -87,6 +87,7 @@
         <ul>
           {% comment %}
             Display comment from URL parameters if it is waiting moderation
+            We added "comment.id" check to make sure we don't display markup if there are form errors
           {% endcomment %}
           {% if comment and comment.status != 'published' and comment.id != blank %}
             <li id="{{ comment.id }}">
