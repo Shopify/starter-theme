@@ -1,6 +1,6 @@
 {%- comment -%}
-  In order to avoid showing "success" message when we post comments with invalid format (eg. blank fields), we added logic to make sure it doesn't show.
-  When you
+  In order to avoid showing "success" message when we post comments
+  with invalid format (eg. blank fields), we added logic to make sure it doesn't show.
 
   Comment help page:
   http://docs.shopify.com/themes/liquid-variables/comment
@@ -15,7 +15,10 @@
 {%- endif -%}
 
 {%- if new_comment -%}
-  {%- comment -%} When you refresh the page with submitted comment, the comment is duplicated so we added a flag to avoid this situation. {%- endcomment -%}
+  {%- comment -%}
+    When you refresh the page with submitted comment, the comment is duplicated
+    so we added a flag to avoid this situation.
+  {%- endcomment -%}
   {%- assign duplicate_comment = false -%}
   {%- for comment in article.comments -%}
     {%- if comment.id == new_comment_id -%}
@@ -85,7 +88,7 @@
           {% comment %}
             Display comment from URL parameters if it is waiting moderation
           {% endcomment %}
-          {% if comment and comment.status != 'published' %}
+          {% if comment and comment.status != 'published' and comment.id != blank %}
             <li id="{{ comment.id }}">
               <div class="rte">
                 {{ comment.content }}
@@ -151,7 +154,7 @@
         id="CommentBody"
         class="{% if form.errors contains 'body' %}input-error{% endif %}"
         placeholder="{{ 'blogs.comments.message' | t }}">
-        {{ form.body }}
+        {{- form.body -}}
       </textarea>
 
       {% if blog.moderated? %}
