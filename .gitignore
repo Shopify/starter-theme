@@ -58,6 +58,7 @@ Thumbs.db
 # Custom #
 ######################
 *.sass-cache*
+.cache/*
 _site
 /.idea
 /.vscode

@@ -5,7 +5,8 @@ import 'lazysizes/plugins/bgset/ls.bgset';
 import 'lazysizes';
 import 'lazysizes/plugins/respimg/ls.respimg';
 
-import '../styles/theme.scss';
+import '../../styles/theme.scss';
+import '../../styles/theme.scss.liquid';
 
 import $ from 'jquery';
 import {pageLinkFocus} from '@shopify/theme-a11y';
@@ -16,8 +17,6 @@ window.slate = window.slate || {};
 window.theme = window.theme || {};
 
 /* = =============== Templates ================ */
-// import './templates/customers-addresses';
-// import './templates/customers-login.js';
 
 $(document).ready(() => {
   // Common a11y fixes
