@@ -31,20 +31,9 @@
   {% endif %}
 
   {% include 'social-meta-tags' %}
+  {% include 'style-tags' %}
+  {% include 'script-tags', layout: 'theme' %}
 
-
-  <script>
-    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-
-    window.theme = {
-      strings: {
-        addToCart: {{ 'products.product.add_to_cart' | t | json }},
-        soldOut: {{ 'products.product.sold_out' | t | json }},
-        unavailable: {{ 'products.product.unavailable' | t | json }}
-      },
-      moneyFormat: {{ shop.money_format | json }}
-    };
-  </script>
 
   {{ content_for_header }}
 </head>
