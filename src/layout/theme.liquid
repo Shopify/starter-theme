@@ -33,6 +33,11 @@
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags' %}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+  </script>
+
   {% include 'script-tags', layout: 'theme' %}
 
 
