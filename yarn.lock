@@ -182,16 +182,16 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@shopify/html-webpack-liquid-asset-tags-plugin@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/html-webpack-liquid-asset-tags-plugin/-/html-webpack-liquid-asset-tags-plugin-1.0.0-alpha.29.tgz#b6d92e072646a7b294588d4940eaf19a879f4938"
+"@shopify/html-webpack-liquid-asset-tags-plugin@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/html-webpack-liquid-asset-tags-plugin/-/html-webpack-liquid-asset-tags-plugin-1.0.0-alpha.27.tgz#030c1c2f930bc35adb9bc7f5a4a656fb92c93251"
 
-"@shopify/slate-analytics@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-analytics/-/slate-analytics-1.0.0-alpha.29.tgz#dd7813cafd32d85399a14cdfc0262df14d80de3e"
+"@shopify/slate-analytics@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-analytics/-/slate-analytics-1.0.0-alpha.27.tgz#f1492906e2d9fc8e4218f71b1f3a7ef80b873c71"
   dependencies:
-    "@shopify/slate-error" "^1.0.0-alpha.29"
-    "@shopify/slate-rc" "^1.0.0-alpha.29"
+    "@shopify/slate-error" "^1.0.0-alpha.27"
+    "@shopify/slate-rc" "^1.0.0-alpha.27"
     axios "^0.18.0"
     chalk "^2.3.0"
     inquirer "^5.0.1"
@@ -199,53 +199,53 @@
     uuid "^3.2.1"
     word-wrap "^1.2.3"
 
-"@shopify/slate-config@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-config/-/slate-config-1.0.0-alpha.29.tgz#c6772f7c99998966aeeb1462c88cea2a8f11a6e6"
+"@shopify/slate-config@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-config/-/slate-config-1.0.0-alpha.27.tgz#b75d25701e851c314ab64ff47b9736e92bf44165"
 
-"@shopify/slate-cssvar-loader@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-cssvar-loader/-/slate-cssvar-loader-1.0.0-alpha.29.tgz#fdde9b9d856c62807b0514938037e91c24a0aa80"
+"@shopify/slate-cssvar-loader@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-cssvar-loader/-/slate-cssvar-loader-1.0.0-alpha.27.tgz#d0c2d5b7533462cec78b3f457c40a32151675614"
   dependencies:
-    "@shopify/slate-config" "^1.0.0-alpha.29"
+    "@shopify/slate-config" "^1.0.0-alpha.27"
     loader-utils "^1.1.0"
 
-"@shopify/slate-env@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-env/-/slate-env-1.0.0-alpha.29.tgz#2aa09f408537ed210974563955d9702acb9d701f"
+"@shopify/slate-env@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-env/-/slate-env-1.0.0-alpha.27.tgz#854d60bdb661185a4665b82395f5e8c24beceda1"
   dependencies:
-    "@shopify/slate-config" "^1.0.0-alpha.29"
+    "@shopify/slate-config" "^1.0.0-alpha.27"
     dotenv "^4.0.0"
 
-"@shopify/slate-error@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-error/-/slate-error-1.0.0-alpha.29.tgz#1a9aa5061c953465a13c6869a7b25a724075614f"
+"@shopify/slate-error@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-error/-/slate-error-1.0.0-alpha.27.tgz#c07dd918285f0b44e9069ef6f1ec678723865272"
 
-"@shopify/slate-liquid-asset-loader@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-liquid-asset-loader/-/slate-liquid-asset-loader-1.0.0-alpha.29.tgz#7c1fab529cf22d79f3cd603839ab99d5eae5e832"
+"@shopify/slate-liquid-asset-loader@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-liquid-asset-loader/-/slate-liquid-asset-loader-1.0.0-alpha.27.tgz#fc47aa47e93980b90f3ef06fc9ed31b6267df273"
   dependencies:
     escape-string-regexp "^1.0.5"
     loader-utils "^1.1.0"
 
-"@shopify/slate-rc@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-rc/-/slate-rc-1.0.0-alpha.29.tgz#f4529e9efff987f96f370692e15bb69dab7d9f7d"
+"@shopify/slate-rc@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-rc/-/slate-rc-1.0.0-alpha.27.tgz#fb00fdd413083f5f3f2afe118eb0d742f74dfbf0"
   dependencies:
-    "@shopify/slate-config" "^1.0.0-alpha.29"
-    "@shopify/slate-error" "^1.0.0-alpha.29"
+    "@shopify/slate-config" "^1.0.0-alpha.27"
+    "@shopify/slate-error" "^1.0.0-alpha.27"
     fs-extra "^5.0.0"
     mock-fs "^4.4.2"
     semver "^5.5.0"
     uuid "^3.2.1"
 
-"@shopify/slate-sync@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-sync/-/slate-sync-1.0.0-alpha.29.tgz#a3fe8780a794a51f3044137abab1c28cf6397923"
+"@shopify/slate-sync@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-sync/-/slate-sync-1.0.0-alpha.27.tgz#d24087dd32375d4153fe71d5541a61d56cce2335"
   dependencies:
-    "@shopify/slate-analytics" "^1.0.0-alpha.29"
-    "@shopify/slate-config" "^1.0.0-alpha.29"
-    "@shopify/slate-env" "^1.0.0-alpha.29"
+    "@shopify/slate-analytics" "^1.0.0-alpha.27"
+    "@shopify/slate-config" "^1.0.0-alpha.27"
+    "@shopify/slate-env" "^1.0.0-alpha.27"
     "@shopify/themekit" "0.6.12"
     array-flatten "^2.1.1"
     chalk "2.3.2"
@@ -254,22 +254,22 @@
     jest "22.4.2"
     react-dev-utils "0.5.2"
 
-"@shopify/slate-tag-webpack-plugin@^1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-tag-webpack-plugin/-/slate-tag-webpack-plugin-1.0.0-alpha.29.tgz#04d2e31fa5050b89b408d3dd9c7df02f00ec11b9"
+"@shopify/slate-tag-webpack-plugin@^1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-tag-webpack-plugin/-/slate-tag-webpack-plugin-1.0.0-alpha.27.tgz#143b318f4f9b1291ad69616c13c65448db08550e"
 
-"@shopify/slate-tools@>=1.0.0-alpha.29":
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-tools/-/slate-tools-1.0.0-alpha.29.tgz#2298bb6a9ddbacb1e3c4f275215205c71583ab45"
+"@shopify/slate-tools@>=1.0.0-alpha.27":
+  version "1.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-tools/-/slate-tools-1.0.0-alpha.27.tgz#113e3860350e301a20bd5fa29b35ce1474349cd3"
   dependencies:
-    "@shopify/html-webpack-liquid-asset-tags-plugin" "^1.0.0-alpha.29"
-    "@shopify/slate-analytics" "^1.0.0-alpha.29"
-    "@shopify/slate-config" "^1.0.0-alpha.29"
-    "@shopify/slate-cssvar-loader" "^1.0.0-alpha.29"
-    "@shopify/slate-env" "^1.0.0-alpha.29"
-    "@shopify/slate-liquid-asset-loader" "^1.0.0-alpha.29"
-    "@shopify/slate-sync" "^1.0.0-alpha.29"
-    "@shopify/slate-tag-webpack-plugin" "^1.0.0-alpha.29"
+    "@shopify/html-webpack-liquid-asset-tags-plugin" "^1.0.0-alpha.27"
+    "@shopify/slate-analytics" "^1.0.0-alpha.27"
+    "@shopify/slate-config" "^1.0.0-alpha.27"
+    "@shopify/slate-cssvar-loader" "^1.0.0-alpha.27"
+    "@shopify/slate-env" "^1.0.0-alpha.27"
+    "@shopify/slate-liquid-asset-loader" "^1.0.0-alpha.27"
+    "@shopify/slate-sync" "^1.0.0-alpha.27"
+    "@shopify/slate-tag-webpack-plugin" "^1.0.0-alpha.27"
     "@shopify/theme-lint" "^2.0.0"
     "@shopify/themekit" "0.6.12"
     archiver "^2.1.0"
@@ -279,7 +279,6 @@
     babel-loader "7.1.4"
     chalk "2.3.2"
     clean-webpack-plugin "0.1.19"
-    concat-style-loader "^1.0.0-alpha.29"
     console-control-strings "^1.1.0"
     copy-webpack-plugin "^4.2.3"
     cors "^2.8.4"
@@ -354,9 +353,9 @@
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.3.tgz#41090cb675896469298028adf264be6cb6b707f1"
 
-"@shopify/theme-sections@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.4.tgz#b371daccd68b2b8e3ad5ff4d379b92a1900c3c03"
+"@shopify/theme-sections@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.3.tgz#673828b3783acb5d38fca0616a531a86d21923bf"
 
 "@shopify/theme-variants@^1.0.0-alpha.4":
   version "1.0.0-alpha.4"
@@ -2182,6 +2181,10 @@ cli-cursor@^2.1.0:
   dependencies:
     restore-cursor "^2.0.0"
 
+cli-spinners@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-1.1.0.tgz#f1847b168844d917a671eb9d147e3df497c90d06"
+
 cli-spinners@^1.1.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-1.3.1.tgz#002c1990912d0d59580c93bd36c056de99e4259a"
@@ -2377,12 +2380,6 @@ concat-stream@^1.4.6, concat-stream@^1.4.7, concat-stream@^1.5.0, concat-stream@
     inherits "^2.0.3"
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
-
-concat-style-loader@^1.0.0-alpha.29:
-  version "1.0.0-alpha.29"
-  resolved "https://registry.yarnpkg.com/concat-style-loader/-/concat-style-loader-1.0.0-alpha.29.tgz#ec2050b89d4afba4012d4df99271eef2fef355a9"
-  dependencies:
-    loader-utils "^1.1.0"
 
 config-chain@^1.1.11:
   version "1.1.11"
@@ -6412,7 +6409,7 @@ lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.3, l
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
-log-symbols@^2.0.0, log-symbols@^2.2.0:
+log-symbols@^2.0.0, log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-2.2.0.tgz#5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a"
   dependencies:
@@ -7184,6 +7181,15 @@ optipng-bin@^3.0.0:
     bin-build "^2.0.0"
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
+
+ora@^1.3.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-1.4.0.tgz#884458215b3a5d4097592285f93321bb7a79e2e5"
+  dependencies:
+    chalk "^2.1.0"
+    cli-cursor "^2.1.0"
+    cli-spinners "^1.0.1"
+    log-symbols "^2.1.0"
 
 ora@^2.0.0:
   version "2.0.0"
@@ -8848,7 +8854,7 @@ sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
+schema-utils@^0.4.0, schema-utils@^0.4.2, schema-utils@^0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
   dependencies:
@@ -10035,8 +10041,8 @@ uglifyjs-webpack-plugin@^1.0.1:
     worker-farm "^1.5.2"
 
 uglifyjs-webpack-plugin@^1.2.4:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.5.tgz#2ef8387c8f1a903ec5e44fa36f9f3cbdcea67641"
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.4.tgz#5eec941b2e9b8538be0a20fc6eda25b14c7c1043"
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
@@ -10479,8 +10485,8 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-map "~0.6.1"
 
 webpack@^4.1.1:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.6.0.tgz#363eafa733710eb0ed28c512b2b9b9f5fb01e69b"
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.5.0.tgz#1e6f71e148ead02be265ff2879c9cd6bb30b8848"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^3.0.0"
@@ -10496,7 +10502,7 @@ webpack@^4.1.1:
     mkdirp "~0.5.0"
     neo-async "^2.5.0"
     node-libs-browser "^2.0.0"
-    schema-utils "^0.4.4"
+    schema-utils "^0.4.2"
     tapable "^1.0.0"
     uglifyjs-webpack-plugin "^1.2.4"
     watchpack "^1.5.0"

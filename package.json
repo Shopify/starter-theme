@@ -27,6 +27,8 @@
     "@shopify/theme-rte": "^1.0.0-alpha.3",
     "@shopify/theme-sections": "^1.0.0-alpha.4",
     "@shopify/theme-variants": "^1.0.0-alpha.4",
+    "@shopify/theme-currency": "^1.0.0-alpha.3",
+    "@shopify/theme-images": "^1.0.0-alpha.3",
     "jquery": "^3.2.1",
     "lazysizes": "^4.0.2",
     "lodash-es": "^4.17.4",
