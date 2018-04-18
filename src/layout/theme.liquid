@@ -8,30 +8,36 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
   <link rel="canonical" href="{{ canonical_url }}">
 
-  {% if settings.favicon != blank %}
+  {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-  {% endif %}
+  {%- endif -%}
 
-  {% capture seo_title %}
+  {%- capture seo_title -%}
     {{ page_title }}
-    {% if current_tags %}
-      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
-    {% endif %}
-    {% if current_page != 1 %}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
-    {% endif %}
-    {% unless page_title contains shop.name %}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
       &ndash; {{ shop.name }}
-    {% endunless %}
-  {% endcapture %}
-  <title>{{ seo_title }}</title>
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
 
-  {% if page_description %}
+  {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">
-  {% endif %}
+  {%- endif -%}
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags' %}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+  </script>
+
   {% include 'script-tags', layout: 'theme' %}
 
 
