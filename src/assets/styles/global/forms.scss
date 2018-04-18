@@ -20,7 +20,7 @@ select {
 .input-error {
   border-color: $color-error;
   background-color: $color-error-bg;
-  color: $color-error;
+  color: $color-body-text;
 }
 
 textarea {

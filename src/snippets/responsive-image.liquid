@@ -44,7 +44,7 @@
     max-width: {{ max_width_image }}px;
   }
 
-  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}:before {
+  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}::before {
     {%- comment -%}
       When you change the window screen width, we want to make sure that the container's size is proportionally calculated.
       Note regarding padding percentage: The percentage is calculated with respect to the width of the generated box's containing block (source: http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#padding-properties)
