@@ -19,7 +19,7 @@
 {%- endcomment -%}
 
 {%- comment -%} Added incremental number to avoid conflict styling code when the same images are using this snippet {%- endcomment -%}
-{%- capture responsive_image_counter %}{% increment image_counter %}{% endcapture -%}
+{%- capture responsive_image_counter %}{% increment responsive_image_counter %}{% endcapture -%}
 
 <style>
   {%- comment -%}
@@ -36,15 +36,15 @@
     {%- assign max_height_image = max_width_image | divided_by: image.aspect_ratio -%}
   {%- endif -%}
 
-  #ProductImage-{{ image.id }}-{{ responsive_image_counter }} {
+  #Image-{{ image.id }}-{{ responsive_image_counter }} {
     max-width: {{ max_width_image }}px;
     max-height: {{ max_height_image }}px;
   }
-  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
+  #ImageWrapper-{{ image.id }}-{{ responsive_image_counter }} {
     max-width: {{ max_width_image }}px;
   }
 
-  #ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}::before {
+  #ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}::before {
     {%- comment -%}
       When you change the window screen width, we want to make sure that the container's size is proportionally calculated.
       Note regarding padding percentage: The percentage is calculated with respect to the width of the generated box's containing block (source: http://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#padding-properties)
@@ -55,8 +55,8 @@
 
 {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
-<div id="ProductImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" >
-  <img id="ProductImage-{{ image.id }}-{{ responsive_image_counter }}"
+<div id="ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" >
+  <img id="Image-{{ image.id }}-{{ responsive_image_counter }}"
     class="responsive-image__image lazyload {{ img_class }}"
     src="{{ image | img_url: '300x' }}"
     data-src="{{ img_url }}"
