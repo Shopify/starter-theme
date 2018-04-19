@@ -332,6 +332,14 @@
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@shopify/theme-cart/-/theme-cart-1.0.0-alpha.3.tgz#2d64d1372dc6a7f5781a4485f4e69697c2b5ace8"
 
+"@shopify/theme-currency@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-currency/-/theme-currency-1.0.0-alpha.3.tgz#3d42495072529185f82b9ab5d64edfa46c232fc9"
+
+"@shopify/theme-images@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-images/-/theme-images-1.0.0-alpha.3.tgz#66a693b9ff5c75ba645e0ad5c4d4e75070595719"
+
 "@shopify/theme-lint@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@shopify/theme-lint/-/theme-lint-2.0.0.tgz#faf49e09322ea72d8c3615e0e649ecf928f6263b"
@@ -347,8 +355,12 @@
   resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.3.tgz#41090cb675896469298028adf264be6cb6b707f1"
 
 "@shopify/theme-sections@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.3.tgz#673828b3783acb5d38fca0616a531a86d21923bf"
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.4.tgz#b371daccd68b2b8e3ad5ff4d379b92a1900c3c03"
+
+"@shopify/theme-variants@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-variants/-/theme-variants-1.0.0-alpha.4.tgz#e3b097e409d4a689ab583735d960e258bac0a0e9"
 
 "@shopify/themekit@0.6.12":
   version "0.6.12"

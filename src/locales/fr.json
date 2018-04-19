@@ -9,7 +9,8 @@
     },
     "404": {
       "title": "404 - Page non trouvée",
-      "subtext_html": "Cette page n'est pas disponible. <a href=\"/collections/all\">Retourner au magasinage</a>"
+      "subtext_html":
+        "Cette page n'est pas disponible. <a href=\"/collections/all\">Retourner au magasinage</a>"
     },
     "password_page": {
       "opening_soon": "Bientôt ouvert",
@@ -22,10 +23,13 @@
       "signup_form_email_label": "Courriel",
       "signup_form_email_placeholder": "Votre courriel",
       "signup_form_submit": "Soumettre",
-      "signup_form_success": "Nous vous ferons parvenir un courriel juste avant l'ouverture!",
-      "admin_link_html": "Êtes-vous le propriétaire de la boutique? <a href=\"/admin\">Connectez-vous ici</a>.",
+      "signup_form_success":
+        "Nous vous ferons parvenir un courriel juste avant l'ouverture!",
+      "admin_link_html":
+        "Êtes-vous le propriétaire de la boutique? <a href=\"/admin\">Connectez-vous ici</a>.",
       "password_link": "Entrer avec un mot de passe",
-      "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}"
+      "powered_by_shopify_html":
+        "Cette boutique sera propulsée par {{ shopify }}"
     },
     "social": {
       "share_on_facebook": "Partager",
@@ -38,8 +42,10 @@
       }
     },
     "search": {
-      "no_results_html": "Votre recherche pour \"{{ terms }}\" n'a pas généré de résultats.",
-      "results_for_html": "Votre recherche pour \"{{ terms }}\" a généré les résultats suivants:",
+      "no_results_html":
+        "Votre recherche pour \"{{ terms }}\" n'a pas généré de résultats.",
+      "results_for_html":
+        "Votre recherche pour \"{{ terms }}\" a généré les résultats suivants:",
       "title": "Effectuez une recherche",
       "placeholder": "Rechercher dans la boutique",
       "submit": "Recherche"
@@ -57,8 +63,10 @@
       "email": "Courriel",
       "message": "Message",
       "post": "Publier le commentaire",
-      "moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être affichés",
-      "success_moderated": "Votre commentaire a été soumis avec succès. Nous le publierons sous peu, suite à notre processus de modération.",
+      "moderated":
+        "Veuillez noter que les commentaires doivent être approuvés avant d'être affichés",
+      "success_moderated":
+        "Votre commentaire a été soumis avec succès. Nous le publierons sous peu, suite à notre processus de modération.",
       "success": "Votre commentaire a été publié avec succès!",
       "with_count": {
         "one": "{{ count }} commentaire",
@@ -80,7 +88,8 @@
       "checkout": "Procéder au paiement",
       "empty": "Votre panier est vide.",
       "cookies_required": "Activer les cookies pour utiliser le panier",
-      "continue_browsing_html": "<a href=\"/collections/all\">Retourner au magasinage</a>.",
+      "continue_browsing_html":
+        "<a href=\"/collections/all\">Retourner au magasinage</a>.",
       "item_quantity": "Quantité de l'article",
       "savings": "Vous économisez"
     },
@@ -106,7 +115,8 @@
       "phone": "Téléphone",
       "message": "Message",
       "send": "Envoyer",
-      "post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
+      "post_success":
+        "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
     }
   },
   "customer": {
@@ -145,7 +155,8 @@
       "cancel": "Annuler",
       "edit": "Éditer",
       "delete": "Supprimer",
-      "delete_confirm": "Êtes-vous certain(e) de vouloir supprimer cette adresse?"
+      "delete_confirm":
+        "Êtes-vous certain(e) de vouloir supprimer cette adresse?"
     },
     "login": {
       "title": "Connexion",
@@ -195,8 +206,10 @@
       "email": "Courriel",
       "submit": "Soumettre",
       "cancel": "Annuler",
-      "subtext": "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
-      "success": "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
+      "subtext":
+        "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
+      "success":
+        "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
     },
     "reset_password": {
       "title": "Réinitialiser le mot de passe du compte",
@@ -219,7 +232,8 @@
     "onboarding": {
       "product_title": "Titre du produit",
       "collection_title": "Titre de la collection",
-      "no_content": "Cette section ne contient actuellement aucun contenu. Ajoutez-en en utilisant la barre latérale."
+      "no_content":
+        "Cette section ne contient actuellement aucun contenu. Ajoutez-en en utilisant la barre latérale."
     }
   },
   "layout": {
@@ -262,7 +276,8 @@
       "disabled": "Désactivée",
       "expired": "Expirée le {{ expiry }}",
       "active": "Expire le {{ expiry }}",
-      "redeem": "Entrez ce code lors du paiement pour utiliser votre carte-cadeau",
+      "redeem":
+        "Entrez ce code lors du paiement pour utiliser votre carte-cadeau",
       "shop_link": "Boutique",
       "print": "Imprimer",
       "remaining_html": "{{ balance }} restant",
@@ -270,7 +285,7 @@
       "initial_value": "Valeur de la carte-cadeau : {{ value }}"
     }
   },
-  "date_formats":{
+  "date_formats": {
     "month_day_year": "%d %B, %Y"
   }
 }

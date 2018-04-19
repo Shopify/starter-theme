@@ -7,14 +7,18 @@
     "jest": true
   },
   "rules": {
-    "no-console": 0,
-    "node/shebang": 0,
+    "babel/no-invalid-this": 0,
     "import/no-anonymous-default-export": 0,
-    "import/no-unresolved": ["error", {"ignore": ["^jquery"]}]
+    "import/no-unresolved": ["error", {"ignore": ["^jquery"]}],
+    "no-alert": 0,
+    "no-console": 0,
+    "no-new": 0,
+    "node/shebang": 0
   },
   "globals": {
     "document": true,
     "window": true,
-    "Shopify": true
+    "Shopify": true,
+    "theme": true
   }
 }
