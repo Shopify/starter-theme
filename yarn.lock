@@ -355,8 +355,8 @@
   resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.3.tgz#41090cb675896469298028adf264be6cb6b707f1"
 
 "@shopify/theme-sections@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.3.tgz#673828b3783acb5d38fca0616a531a86d21923bf"
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.4.tgz#b371daccd68b2b8e3ad5ff4d379b92a1900c3c03"
 
 "@shopify/theme-variants@^1.0.0-alpha.4":
   version "1.0.0-alpha.4"
