@@ -12,8 +12,6 @@ const config = {
   giftCardCode: '.giftcard__code',
 };
 
-const $qrCode = $(config.qrCode);
-
 // new QRCode($qrCode[0], {
 //   text: $qrCode.attr('data-identifier'),
 //   width: 120,
@@ -43,5 +41,3 @@ function selectText(evt) {
     selection.addRange(range);
   }
 }
-
-console.log('hey');

@@ -19,7 +19,7 @@ if ($newAddressForm.length) {
       'AddressProvinceNew',
       {
         hideElement: 'AddressProvinceContainerNew',
-      }
+      },
     );
   }
 
@@ -50,7 +50,9 @@ if ($newAddressForm.length) {
     const formId = $el.data('form-id');
     const confirmMessage = $el.data('confirm-message');
     if (
-      confirm(confirmMessage || 'Are you sure you wish to delete this address?')
+      window.confirm(
+        confirmMessage || 'Are you sure you wish to delete this address?',
+      )
     ) {
       Shopify.postLink(`/account/addresses/${formId}`, {
         parameters: {_method: 'delete'},

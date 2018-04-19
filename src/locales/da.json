@@ -9,7 +9,8 @@
     },
     "404": {
       "title": "404 Siden findes ikke",
-      "subtext_html": "Siden du leder efter findes ikke. Klik <a href=\"/collections/all\">her</a> for at fortsætte med at handle."
+      "subtext_html":
+        "Siden du leder efter findes ikke. Klik <a href=\"/collections/all\">her</a> for at fortsætte med at handle."
     },
     "password_page": {
       "opening_soon": "Åbner Snart",
@@ -23,7 +24,8 @@
       "signup_form_email_placeholder": "Din email",
       "signup_form_submit": "Send",
       "signup_form_success": "Vi sender dig en email lige inden vi åbner!",
-      "admin_link_html": "Ejer du denne butik? <a href=\"/admin\">Log ind her</a>",
+      "admin_link_html":
+        "Ejer du denne butik? <a href=\"/admin\">Log ind her</a>",
       "password_link": "Åben ved brug af adgangskode",
       "powered_by_shopify_html": "Denne butik vil blive drevet af {{ shopify }}"
     },
@@ -38,7 +40,8 @@
       }
     },
     "search": {
-      "no_results_html": "Din søgning for \"{{ terms }}\" fandt ikke nogle resultater.",
+      "no_results_html":
+        "Din søgning for \"{{ terms }}\" fandt ikke nogle resultater.",
       "results_for_html": "Din søgning for \"{{ terms }}\" fandt følgende:",
       "title": "Søg efter produkter på vores site",
       "placeholder": "Søg på vores butik",
@@ -57,8 +60,10 @@
       "email": "Email",
       "message": "Besked",
       "post": "Skriv kommentar",
-      "moderated": "Bemærk venligst at, kommentarer skal godkendes inden de vises",
-      "success_moderated": "Din kommentar er modtaget. Vi offentliggør den inden længe.",
+      "moderated":
+        "Bemærk venligst at, kommentarer skal godkendes inden de vises",
+      "success_moderated":
+        "Din kommentar er modtaget. Vi offentliggør den inden længe.",
       "success": "Din kommentar er modtaget! Mange tak!",
       "with_count": {
         "one": "{{ count }} kommentar",
@@ -75,12 +80,14 @@
       "remove": "Fjern",
       "note": "Specielle instruktioner for sælger",
       "subtotal": "Sub total",
-      "shipping_at_checkout": "Forsendelse og skatter bliver beregnet ved betaling",
+      "shipping_at_checkout":
+        "Forsendelse og skatter bliver beregnet ved betaling",
       "update": "Opdater Kurv",
       "checkout": "Gå til betaling",
       "empty": "Din kurv er i øjeblikket tom.",
       "cookies_required": "Slå cookies til for at bruge indkøbskurven",
-      "continue_browsing_html": "Fortsæt med at handle <a href=\"/collections/all\">her</a>.",
+      "continue_browsing_html":
+        "Fortsæt med at handle <a href=\"/collections/all\">her</a>.",
       "item_quantity": "Produkt antal",
       "savings": "Du sparer"
     },
@@ -106,7 +113,8 @@
       "phone": "Telefonnummer",
       "message": "Besked",
       "send": "Send",
-      "post_success": "Tak for din henvendelse. Vi vender tilbage hurtigst muligt"
+      "post_success":
+        "Tak for din henvendelse. Vi vender tilbage hurtigst muligt"
     }
   },
   "customer": {
@@ -196,7 +204,8 @@
       "submit": "Send",
       "cancel": "Annuller",
       "subtext": "Vil vil sende dig en email for at nulstille din adgangskode.",
-      "success": "Vi har sendt dig en email med et link hvor du kan opdatere din adgangskode."
+      "success":
+        "Vi har sendt dig en email med et link hvor du kan opdatere din adgangskode."
     },
     "reset_password": {
       "title": "Nulstil din adgangskode",
@@ -219,7 +228,8 @@
     "onboarding": {
       "product_title": "Produkt Titel Eksempel",
       "collection_title": "Samling Titel Eksempel",
-      "no_content": "Denne afdeling indeholder i øjeblikket ikke noget indhold. Tilføj indhold til denne afdeling ved at bruge sidebaren."
+      "no_content":
+        "Denne afdeling indeholder i øjeblikket ikke noget indhold. Tilføj indhold til denne afdeling ved at bruge sidebaren."
     }
   },
   "layout": {
@@ -270,7 +280,7 @@
       "initial_value": "Gavekortets værdi: {{ value }}"
     }
   },
-  "date_formats":{
+  "date_formats": {
     "month_day_year": "%d. %B, %Y"
   }
 }

@@ -9,7 +9,8 @@
     },
     "404": {
       "title": "404 Pagina niet gevonden",
-      "subtext_html": "De pagina die u zocht bestaat niet. Klik <a href=\"/collections/all\">hier</a> om verder te shoppen."
+      "subtext_html":
+        "De pagina die u zocht bestaat niet. Klik <a href=\"/collections/all\">hier</a> om verder te shoppen."
     },
     "password_page": {
       "opening_soon": "Binnenkort open",
@@ -22,10 +23,13 @@
       "signup_form_email_label": "E-mail",
       "signup_form_email_placeholder": "Uw e-mail",
       "signup_form_submit": "Bevestig",
-      "signup_form_success": "We zullen u een e-mail sturen net voor we open gaan!",
-      "admin_link_html": "Ben u de eigenaar van deze shop? <a href=\"/admin\">hier inloggen</a>",
+      "signup_form_success":
+        "We zullen u een e-mail sturen net voor we open gaan!",
+      "admin_link_html":
+        "Ben u de eigenaar van deze shop? <a href=\"/admin\">hier inloggen</a>",
       "password_link": "Login met wachtwoord",
-      "powered_by_shopify_html": "Deze shop zal worden ondersteund door {{ shopify }}"
+      "powered_by_shopify_html":
+        "Deze shop zal worden ondersteund door {{ shopify }}"
     },
     "social": {
       "share_on_facebook": "Deel",
@@ -38,8 +42,10 @@
       }
     },
     "search": {
-      "no_results_html": "Uw zoekopdracht naar \"{{ terms }}\" heeft geen resultaten opgeleverd.",
-      "results_for_html": "Uw zoekopdracht naar \"{{ terms }}\" geeft de volgende resultaten:",
+      "no_results_html":
+        "Uw zoekopdracht naar \"{{ terms }}\" heeft geen resultaten opgeleverd.",
+      "results_for_html":
+        "Uw zoekopdracht naar \"{{ terms }}\" geeft de volgende resultaten:",
       "title": "Zoek naar producten",
       "placeholder": "Zoek in onze winkel",
       "submit": "Zoeken"
@@ -57,8 +63,10 @@
       "email": "E-mail",
       "message": "Bericht",
       "post": "Plaats reactie",
-      "moderated": "Reacties moeten worden goedgekeurd alvorens deze geplaatst worden.",
-      "success_moderated": "Uw reactie is succesvol geplaatst. Deze zal binnenkort worden gepubliceerd na moderatie.",
+      "moderated":
+        "Reacties moeten worden goedgekeurd alvorens deze geplaatst worden.",
+      "success_moderated":
+        "Uw reactie is succesvol geplaatst. Deze zal binnenkort worden gepubliceerd na moderatie.",
       "success": "Uw reactie is succesvol geplaatst! Bedankt!",
       "with_count": {
         "one": "{{ count }} reactie",
@@ -75,12 +83,15 @@
       "remove": "Verwijder",
       "note": "Eventuele opmerkingen",
       "subtotal": "Subtotaal",
-      "shipping_at_checkout": "Leveringskosten worden tijdens de checkout berekend.",
+      "shipping_at_checkout":
+        "Leveringskosten worden tijdens de checkout berekend.",
       "update": "Update Cart",
       "checkout": "Plaats bestelling",
       "empty": "Uw winkelmandje is momenteel leeg.",
-      "cookies_required": "Gelieve cookies te activeren om het winkelmandje te gebruiken",
-      "continue_browsing_html": "Bekijk <a href=\"/collections/all\">alle producten</a>.",
+      "cookies_required":
+        "Gelieve cookies te activeren om het winkelmandje te gebruiken",
+      "continue_browsing_html":
+        "Bekijk <a href=\"/collections/all\">alle producten</a>.",
       "item_quantity": "Hoeveelheid",
       "savings": "U bespaart"
     },
@@ -106,7 +117,8 @@
       "phone": "Telefoonnummer",
       "message": "Waarmee kunnen wij u helpen?",
       "send": "Verstuur",
-      "post_success": "Bedankt om ons te contacteren. Wij nemen zo snel mogelijk contact met u op."
+      "post_success":
+        "Bedankt om ons te contacteren. Wij nemen zo snel mogelijk contact met u op."
     }
   },
   "customer": {
@@ -195,8 +207,10 @@
       "email": "E-mail",
       "submit": "Bevestig",
       "cancel": "Annuleer",
-      "subtext": "We zullen u een e-mail sturen om uw wachtwoord opnieuw in te stellen.",
-      "success": "U ontvangt dadelijk een e-mail om uw wachtwoord opnieuw in te stellen."
+      "subtext":
+        "We zullen u een e-mail sturen om uw wachtwoord opnieuw in te stellen.",
+      "success":
+        "U ontvangt dadelijk een e-mail om uw wachtwoord opnieuw in te stellen."
     },
     "reset_password": {
       "title": "Stel uw wachtwoord opnieuw in",
@@ -219,7 +233,8 @@
     "onboarding": {
       "product_title": "Product Titel Voorbeeld",
       "collection_title": "Collectie Titel Voorbeeld",
-      "no_content": "Dit onderdeel heeft momenteel geen inhoud. Voeg inhoud toe aan dit onderdeel aan de hand van de zijbalk."
+      "no_content":
+        "Dit onderdeel heeft momenteel geen inhoud. Voeg inhoud toe aan dit onderdeel aan de hand van de zijbalk."
     }
   },
   "layout": {
@@ -270,7 +285,7 @@
       "initial_value": "Waarde cadeaukaart: {{ value }}"
     }
   },
-  "date_formats":{
+  "date_formats": {
     "month_day_year": "%d %B %Y"
   }
 }
