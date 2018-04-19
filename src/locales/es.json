@@ -9,7 +9,8 @@
     },
     "404": {
       "title": "404 Página no encontrada",
-      "subtext_html": "La página que ha solicitado no existe. Haga clic <a href=\"/collections/all\">aquí</a> para continuar la compra."
+      "subtext_html":
+        "La página que ha solicitado no existe. Haga clic <a href=\"/collections/all\">aquí</a> para continuar la compra."
     },
     "password_page": {
       "opening_soon": "Apertura Próximamente",
@@ -22,10 +23,13 @@
       "signup_form_email_label": "Correo Electrónico",
       "signup_form_email_placeholder": "Tu dirección de correo electrónico",
       "signup_form_submit": "Enviar",
-      "signup_form_success": "¡Te enviaremos un correo electrónico antes de inaugurar!",
-      "admin_link_html": "¿Eres el dueño de la tienda? <a href=\"/admin\">Regístrate aquí</a>",
+      "signup_form_success":
+        "¡Te enviaremos un correo electrónico antes de inaugurar!",
+      "admin_link_html":
+        "¿Eres el dueño de la tienda? <a href=\"/admin\">Regístrate aquí</a>",
       "password_link": "Entrar usando contraseña",
-      "powered_by_shopify_html": "Esta tienda estará impulsada por {{ shopify }}"
+      "powered_by_shopify_html":
+        "Esta tienda estará impulsada por {{ shopify }}"
     },
     "social": {
       "share_on_facebook": "Compartir",
@@ -39,7 +43,8 @@
     },
     "search": {
       "no_results_html": "Su búsqueda de \"{{ terms }}\" no tuvo resultados.",
-      "results_for_html": "Su búsqueda de \"{{ terms }}\" muestra lo siguiente:",
+      "results_for_html":
+        "Su búsqueda de \"{{ terms }}\" muestra lo siguiente:",
       "title": "Buscar productos en nuestro sitio",
       "placeholder": "buscar en nuestra tienda",
       "submit": "Buscar"
@@ -57,8 +62,10 @@
       "email": "Correo electrónico",
       "message": "Mensaje",
       "post": "Publicar comentario",
-      "moderated": "Por favor tenga en cuenta que los comentarios deben ser aprobados antes de ser publicados",
-      "success_moderated": "Su comentario se ha compartido con éxito. Lo publicaremos en un momento, en tanto nuestro blog sea moderado.",
+      "moderated":
+        "Por favor tenga en cuenta que los comentarios deben ser aprobados antes de ser publicados",
+      "success_moderated":
+        "Su comentario se ha compartido con éxito. Lo publicaremos en un momento, en tanto nuestro blog sea moderado.",
       "success": "¡Su comentario se ha compartido con éxito! ¡Gracias!",
       "with_count": {
         "one": "{{ count }} comentario",
@@ -75,12 +82,15 @@
       "remove": "Quitar",
       "note": "Instrucciones especiales para el vendedor",
       "subtotal": "Subtotal",
-      "shipping_at_checkout": "Gastos de envío y descuentos calculado al momento de pagar",
+      "shipping_at_checkout":
+        "Gastos de envío y descuentos calculado al momento de pagar",
       "update": "Actualizar carrito",
       "checkout": "Finalizar pedido",
       "empty": "Su carrito actualmente está vacío.",
-      "cookies_required": "Habilite las cookies para usar el carrito de compras",
-      "continue_browsing_html": "Continúe explorando <a href=\"/collections/all\">aquí</a>.",
+      "cookies_required":
+        "Habilite las cookies para usar el carrito de compras",
+      "continue_browsing_html":
+        "Continúe explorando <a href=\"/collections/all\">aquí</a>.",
       "item_quantity": "Cantidad de artículo",
       "savings": "Está ahorrando"
     },
@@ -95,7 +105,8 @@
   },
   "collections": {
     "general": {
-      "no_matches": "Lo sentimos, no hay productos que coincidan con su búsqueda.",
+      "no_matches":
+        "Lo sentimos, no hay productos que coincidan con su búsqueda.",
       "link_title": "Navegue por nuestra colección {{ title }}"
     }
   },
@@ -106,7 +117,8 @@
       "phone": "Número de teléfono",
       "message": "Mensaje",
       "send": "Enviar",
-      "post_success": "Gracias por contactarnos. Le responderemos lo antes posible."
+      "post_success":
+        "Gracias por contactarnos. Le responderemos lo antes posible."
     }
   },
   "customer": {
@@ -195,8 +207,10 @@
       "email": "Correo electrónico",
       "submit": "Enviar",
       "cancel": "Cancelar",
-      "subtext": "Le enviaremos un correo electrónico para restablecer su contraseña.",
-      "success": "Hemos enviado un correo electrónico con un enlace para actualizar su contraseña."
+      "subtext":
+        "Le enviaremos un correo electrónico para restablecer su contraseña.",
+      "success":
+        "Hemos enviado un correo electrónico con un enlace para actualizar su contraseña."
     },
     "reset_password": {
       "title": "Restablecer contraseña de cuenta",
@@ -219,7 +233,8 @@
     "onboarding": {
       "product_title": "Ejemplo título de producto",
       "collection_title": "Ejemplo título de colección",
-      "no_content": "Esta secção não inclui de momento qualquer conteúdo. Adicione conteúdo a esta secção através da barra lateral."
+      "no_content":
+        "Esta secção não inclui de momento qualquer conteúdo. Adicione conteúdo a esta secção através da barra lateral."
     }
   },
   "layout": {
@@ -257,12 +272,14 @@
   },
   "gift_cards": {
     "issued": {
-      "title": "¡Aquí está su tarjeta de regalo de {{ value }} para {{ shop }}!",
+      "title":
+        "¡Aquí está su tarjeta de regalo de {{ value }} para {{ shop }}!",
       "subtext": "¡Aquí está su tarjeta de regalo!",
       "disabled": "Inhabilitada",
       "expired": "Expiró en {{ expiry }}",
       "active": "Expira en {{ expiry }}",
-      "redeem": "Use este código al terminar la comprar para canjear su tarjeta de regalo",
+      "redeem":
+        "Use este código al terminar la comprar para canjear su tarjeta de regalo",
       "shop_link": "Empezar a comprar",
       "print": "Imprimir",
       "remaining_html": "{{ balance }} restante",
@@ -270,7 +287,7 @@
       "initial_value": "Valor de la tarjeta de regalo: {{ value }}"
     }
   },
-  "date_formats":{
+  "date_formats": {
     "month_day_year": "%d de %B, %Y"
   }
 }
