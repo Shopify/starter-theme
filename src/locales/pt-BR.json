@@ -55,7 +55,8 @@
     "article": {
       "author_on_date_html": "Postado por {{ author }} em {{ date }}",
       "comment_meta_html": "{{ author }} em {{ date }}",
-      "read_more": "Saiba mais"
+      "read_more": "Saiba mais",
+      "by_author": "por {{ author }}"
     },
     "comments": {
       "title": "Deixe um comentário",
