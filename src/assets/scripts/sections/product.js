@@ -7,9 +7,9 @@
  */
 
 import $ from 'jquery';
-import Variants from '../slate/variants';
-import images from '../slate/images';
-import currency from '../slate/currency';
+import Variants from '@shopify/theme-variants';
+import images from '@shopify/theme-images';
+import currency from '@shopify/theme-currency';
 
 const selectors = {
   addToCart: '[data-add-to-cart]',
@@ -39,9 +39,8 @@ export default function Product(container) {
     return;
   }
 
-  const sectionId = this.$container.attr('data-section-id');
   this.productSingleObject = JSON.parse(
-    $(selectors.productJson, this.$container).html()
+    $(selectors.productJson, this.$container).html(),
   );
 
   const options = {
@@ -59,11 +58,11 @@ export default function Product(container) {
 
   this.$container.on(
     `variantChange${this.namespace}`,
-    this.updateAddToCartState.bind(this)
+    this.updateAddToCartState.bind(this),
   );
   this.$container.on(
     `variantPriceChange${this.namespace}`,
-    this.updateProductPrices.bind(this)
+    this.updateProductPrices.bind(this),
   );
 
   if (this.$featuredImage.length > 0) {
@@ -72,12 +71,13 @@ export default function Product(container) {
 
     this.$container.on(
       `variantImageChange${this.namespace}`,
-      this.updateProductImage.bind(this)
+      this.updateProductImage.bind(this),
     );
   }
 }
 
 Product.prototype = $.extend({}, Product.prototype, {
+
   /**
    * Updates the DOM state of the add to cart button
    *
@@ -92,7 +92,7 @@ Product.prototype = $.extend({}, Product.prototype, {
     } else {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(
-        theme.strings.unavailable
+        theme.strings.unavailable,
       );
       $(selectors.priceWrapper, this.$container).addClass('hide');
       return;
@@ -118,16 +118,16 @@ Product.prototype = $.extend({}, Product.prototype, {
     const $comparePrice = $(selectors.comparePrice, this.$container);
     const $compareEls = $comparePrice.add(
       selectors.comparePriceText,
-      this.$container
+      this.$container,
     );
 
     $(selectors.productPrice, this.$container).html(
-      currency.formatMoney(variant.price, theme.moneyFormat)
+      currency.formatMoney(variant.price, theme.moneyFormat),
     );
 
     if (variant.compare_at_price > variant.price) {
       $comparePrice.html(
-        currency.formatMoney(variant.compare_at_price, theme.moneyFormat)
+        currency.formatMoney(variant.compare_at_price, theme.moneyFormat),
       );
       $compareEls.removeClass('hide');
     } else {
@@ -145,7 +145,7 @@ Product.prototype = $.extend({}, Product.prototype, {
     const variant = evt.variant;
     const sizedImgUrl = images.getSizedImageUrl(
       variant.featured_image.src,
-      this.settings.imageSize
+      this.settings.imageSize,
     );
 
     this.$featuredImage.attr('src', sizedImgUrl);
