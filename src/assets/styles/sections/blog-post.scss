@@ -1,0 +1,15 @@
+/* ================ Blog post ================ */
+.blog-post {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blog-post__date {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.blog-post__excerpt {
+  margin-bottom: 20px;
+}
