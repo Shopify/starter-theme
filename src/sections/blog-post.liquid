@@ -1,20 +1,18 @@
 {%- comment -%}
   This is a required section for the Shopify Theme Store.
-  It is loaded when you add "Blog Posts" section on the Theme Editor.
+  It is available when you add "Blog Posts" section on the Theme Editor.
 
-  We are showing a preview of what the blog post looks like in the preview.
-
-  Required settings
+  Theme Store required settings
   - Blog (which blog category to show in your store)
   - Number of posts to show
 
-  Optional settings
+  Theme Store optional settings
   - Show author
   - Show date
 {%- endcomment -%}
-<section>
+<section class="blog-post">
   {% if section.settings.title != blank %}
-    <h2>{{ section.settings.title | escape }}</h2>
+    <h2 class="blog-post__title">{{ section.settings.title | escape }}</h2>
   {% endif %}
 
   {%- comment -%}
@@ -23,83 +21,77 @@
   {%- assign blog = blogs[section.settings.blog] -%}
 
   {% unless blog.articles_count == 0 %}
-    <div class="blog-post">
-      {% for article in blog.articles limit: section.settings.post_limit %}
-        <div class="blog-post__item">
-          {% if article.image %}
-            <a href="{{ article.url }}">
-              {% include 'responsive-image' with
-                  image: article.image,
-                  max_width: 400,
-                  max_height: 400
-              %}
-            </a>
+    {% for article in blog.articles limit: section.settings.post_limit %}
+      <div class="blog-post__item">
+        {% if article.image %}
+          <a href="{{ article.url }}">
+            {% include 'responsive-image' with
+                image: article.image,
+                max_width: 400,
+                max_height: 400
+            %}
+          </a>
+        {% endif %}
+
+        <div>
+          <h2>
+            <a href="{{ article.url }}">{{ article.title }}</a>
+          </h2>
+
+          {% if section.settings.blog_show_author %}
+            <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+          {% endif %}
+
+          {% if section.settings.blog_show_date %}
+            <p>
+              {{ article.published_at | time_tag: format: 'month_day_year' }}
+            </p>
           {% endif %}
 
           <div>
-            <h2>
-              <a href="{{ article.url }}">{{ article.title }}</a>
-            </h2>
-
-            {% if section.settings.blog_show_author %}
-              <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+            {% if article.excerpt.size > 0 %}
+              {{ article.excerpt }}
+            {% else %}
+              {{ article.content | strip_html | truncate: 150 }}
             {% endif %}
+          </div>
 
-            {% if section.settings.blog_show_date %}
-              <span class="blog-post__date">
-                {{ article.published_at | time_tag: format: 'month_day_year' }}
-              </span>
-            {% endif %}
+          {% if article.tags.size > 0 %}
+            {% for tag in article.tags %}
+              <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+            {% endfor %}
+          {% endif %}
 
-            <div class="blog-post__excerpt">
-              {% if article.excerpt.size > 0 %}
-                {{ article.excerpt }}
-              {% else %}
-                {{ article.content | strip_html | truncate: 150 }}
-              {% endif %}
-            </div>
+          <a href="{{ article.url }}">
+            {{ 'blogs.article.read_more' | t }}
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    {% for i in (1..section.settings.post_limit) %}
+      <div>
+        <h3>
+          <a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a>
+        </h3>
 
-            {% if article.tags.size > 0 %}
-              {% for tag in article.tags %}
-                <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="">{{ tag }}</a>
-              {% endfor %}
-            {% endif %}
+        {% if section.settings.blog_show_author %}
+          <span>{{ 'homepage.onboarding.blog_author' | t }}</span>
+        {% endif %}
 
+        <div>
+          {{ 'homepage.onboarding.blog_excerpt' | t }}
+        </div>
+
+        <ul>
+          <li>
             <a href="{{ article.url }}">
               {{ 'blogs.article.read_more' | t }}
             </a>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  {% else %}
-    <div class="">
-      {% for i in (1..section.settings.post_limit) %}
-        <div class="">
-          <div class="">
-            <h3 class="">
-              <a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a>
-            </h3>
-
-            {% if section.settings.blog_show_author %}
-              <span class="">{{ 'homepage.onboarding.blog_author' | t }}</span>
-            {% endif %}
-
-            <div class="">
-              {{ 'homepage.onboarding.blog_excerpt' | t }}
-            </div>
-
-            <ul class="">
-              <li>
-                <a href="{{ article.url }}" class="">
-                  {{ 'blogs.article.read_more' | t }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+          </li>
+        </ul>
+      </div>
+    {% endfor %}
   {% endunless %}
 </section>
 
