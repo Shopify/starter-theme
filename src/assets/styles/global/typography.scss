@@ -1,0 +1,28 @@
+.heading,
+%heading {
+  font-family: $font-heading;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %heading;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: $font-body-weight;
+  font-style: $font-body-style;
+}
+
+p,
+%p {
+  font-family: $font-body;
+}
+
+ul {
+  @extend %p;
+}

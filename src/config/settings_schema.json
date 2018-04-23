@@ -11,28 +11,16 @@
     "name": "Typography",
     "settings": [
       {
-        "type": "select",
-        "id": "type_base_size",
-        "label": "Base size",
-        "default": "16px",
-        "options": [
-          {
-            "value": "14px",
-            "label": "14px"
-          },
-          {
-            "value": "15px",
-            "label": "15px"
-          },
-          {
-            "value": "16px",
-            "label": "16px"
-          },
-          {
-            "value": "17px",
-            "label": "17px"
-          }
-        ]
+        "type": "font_picker",
+        "id": "font_heading",
+        "default": "helvetica_n4",
+        "label": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "default": "helvetica_n4",
+        "label": "Body text"
       }
     ]
   },

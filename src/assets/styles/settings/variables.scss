@@ -1,6 +1,4 @@
-/* stylelint-disable color-no-hex */
-
-/* ================ Color Variables ================ */
+/* Colors */
 $color-primary: var(--color-primary);
 
 // Text colors
@@ -20,17 +18,12 @@ $color-error-bg: #ffffff;
 $color-success: #000000;
 $color-success-bg: #000000;
 
-/* ================ Typography Variables ================ */
-$font-weight-normal: 400;
-$font-weight-bold: 700;
-
-$font-stack-header: 'HelveticaNeue', 'Helvetica Neue', helvetica, arial,
-  sans-serif;
-$font-weight-header: $font-weight-bold;
-
-$font-stack-body: 'HelveticaNeue', 'Helvetica Neue', helvetica, arial,
-  sans-serif;
-$font-size-base: 16px;
+/* Typography */
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
+$font-body-weight: var(--font-body-weight);
+$font-body-style: var(--font-body-style);
+$font-body-bold-weight: var(--font-body-bold-weight);
 
 /* ============================================================================
   Grid Breakpoints and Class Names
