@@ -21,6 +21,7 @@
 @import './global/responsive-tables';
 @import './global/forms';
 
+<<<<<<< HEAD
 /* ================ Components ================ */
 @import './components/buttons';
 @import './components/site-header';
@@ -30,3 +31,11 @@
 
 /* ================ Templates ================ */
 @import './templates/gift_card';
+=======
+/* ================ MODULES ================ */
+@import './modules/site-header';
+@import './modules/gift-card-template';
+@import './modules/responsive-images';
+@import './modules/hero-banner';
+@import './modules/image-with-text';
+>>>>>>> Removed class and unnecessary markups
