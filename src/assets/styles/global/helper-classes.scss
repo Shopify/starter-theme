@@ -63,7 +63,7 @@
 .skip-link:focus {
   @include visually-shown(absolute);
   z-index: $z-index-skip-to-content;
-  padding: $gutter / 2;
+  padding: $grid-gutter / 2;
   background-color: $color-body;
   color: $color-body-text;
   transition: none;
