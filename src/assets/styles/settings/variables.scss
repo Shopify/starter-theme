@@ -32,13 +32,11 @@ $font-stack-body: 'HelveticaNeue', 'Helvetica Neue', helvetica, arial,
   sans-serif;
 $font-size-base: 16px;
 
-/* ============================================================================
-  Grid Breakpoints and Class Names
-    - Do not change the variable names
-============================================================================== */
+/* Grid */
 $grid-medium: 750px;
 $grid-large: 990px;
 $grid-widescreen: 1400px;
+$grid-max-width: 1180px;
 $grid-gutter: 30px;
 
 $small: 'small';
@@ -50,8 +48,8 @@ $large-down: 'large-down';
 $large-up: 'large-up';
 $widescreen: 'widescreen';
 
-// The `$breakpoints` list is used to build our media queries.
-// You can use these in the media-query mixin.
+// Breakpoints used with the media-query mixin
+// Usage: @include media-query($medium-up) { ... }
 $breakpoints: (
   $small '(max-width: #{$grid-medium - 1})',
   $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
@@ -62,22 +60,6 @@ $breakpoints: (
   $large-up '(min-width: #{$grid-large})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
-
-/* ============================================================================
-  Generate breakpoint-specific column widths and push classes
-    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
-    - Default is no push classes
-    - Will not work if `styles/global/grid.scss` is removed
-============================================================================== */
-$breakpoint-has-widths: (
-  $small,
-  $medium-up
-);
-$breakpoint-has-push: ();
-
-/* ================ Sizing Variables ================ */
-$width-site: 1180px;
-$gutter: 30px;
 
 /* ================ Z-Index ================ */
 $z-index-dropdown: 2;

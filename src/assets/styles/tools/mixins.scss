@@ -63,10 +63,6 @@
       }
     }
   }
-
-  @if $breakpoint-found == false {
-    @warn 'Breakpoint '#{$media-query}' does not exist';
-  }
 }
 
 /* ================ Responsive Show/Hide Helper ================ */
