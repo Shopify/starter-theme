@@ -1,6 +1,6 @@
 {%- comment -%}
   This is a required section for the Shopify Theme Store.
-  It is available when you add "Image With Text" section on the Theme Editor.
+  It is available when you add the "Image with text" section in the theme editor.
 
   Theme Store required settings
   - Image
@@ -9,8 +9,8 @@
   Theme Store optional settings
   - Heading: title of the block
   - Text: description of the block
-  - Button label: Label associated with the button
-  - Button link: Link of the button
+  - Button label: label associated with the button
+  - Button link: link of the button
 {%- endcomment -%}
 
 <div class="image-with-text">
@@ -37,7 +37,7 @@
       <h2>{{ section.settings.title | escape }}</h2>
     {% endif %}
     {% if section.settings.text != blank %}
-      <div>{{ section.settings.text }}</div>
+      <div>{{ section.settings.text | escape }}</div>
     {% endif %}
     {% if section.settings.button_label != blank and section.settings.button_link != blank %}
       <a href="{{ section.settings.button_link }}">
