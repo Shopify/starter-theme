@@ -11,10 +11,6 @@
     "name": "Colors",
     "settings": [
       {
-        "type": "header",
-        "content": "General colors"
-      },
-      {
         "type": "color",
         "id": "color_accent",
         "label": "Accent",
