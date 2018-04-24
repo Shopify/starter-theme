@@ -1,4 +1,3 @@
-/* ================ General layout styles ================ */
 body,
 html {
   background-color: $color-body;
@@ -6,7 +5,7 @@ html {
 
 .page-width {
   @include clearfix;
-  max-width: $width-site;
+  max-width: $grid-max-width;
   margin: 0 auto;
-  padding: 0 $gutter;
+  padding: 0 $grid-gutter;
 }
