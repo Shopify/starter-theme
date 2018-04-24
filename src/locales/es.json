@@ -48,6 +48,12 @@
       "title": "Buscar productos en nuestro sitio",
       "placeholder": "buscar en nuestra tienda",
       "submit": "Buscar"
+    },
+    "newsletter_form": {
+      "newsletter_email": "Join our mailing list",
+      "email_placeholder": "Dirección de correo electrónico",
+      "confirmation": "Gracias por su suscripción",
+      "submit": "Suscribir"
     }
   },
   "blogs": {
