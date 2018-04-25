@@ -64,11 +64,13 @@
       <label for="Search" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
+
       <input type="search"
-             name="q"
-             id="Search"
-             value="{{ search.terms | escape }}"
-             placeholder="{{ 'general.search.placeholder' | t }}">
+        name="q"
+        id="Search"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.placeholder' | t }}">
+
       <button type="submit" class="btn">
         {% include 'icon-search' %}
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
@@ -78,26 +80,27 @@
   </header>
 
   <nav role="navigation">
-    <ul class="site-nav">
-      {% for link in linklists[section.settings.main_linklist].links %}
-        {%- assign child_list_handle = link.title | handleize -%}
-        {% if menus[child_list_handle].links != blank %}
-          <li class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
-            <a href="{{ link.url }}" class="site-nav__link">
+    <ul class="menu">
+      {% for link in linklists[section.settings.menu].links %}
+        {% if link.links != blank %}
+          <li class="menu-item{% if link.active %} menu-item--active{% endif %}">
+            <a href="{{ link.url }}" class="menu-link">
               {{ link.title }}
               {% include 'icon-arrow-down' %}
             </a>
-            <ul class="site-nav__submenu">
-              {% for childlink in menus[child_list_handle].links %}
-                <li {% if childlink.active %}class="site-nav--active"{% endif %}>
-                  <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+            <ul class="sub-menu">
+              {% for childlink in link.links %}
+                <li class="sub-menu-item{% if childlink.active %} sub-menu-item--active{% endif %}">
+                  <a href="{{ childlink.url }}" class="sub-menu-link">
+                    {{ childlink.title }}
+                  </a>
                 </li>
               {% endfor %}
             </ul>
           </li>
         {% else %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          <li class="menu-item{% if link.active %} menu-item--active{% endif %}">
+            <a href="{{ link.url }}" class="menu-link">{{ link.title }}</a>
           </li>
         {% endif %}
       {% endfor %}
@@ -126,7 +129,7 @@
       },
       {
         "type": "link_list",
-        "id": "main_linklist",
+        "id": "menu",
         "label": "Menu",
         "default": "main-menu"
       }
