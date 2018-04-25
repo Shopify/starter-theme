@@ -1,6 +1,14 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Featured Collection" section on the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the featured collection section
+  - Collection
+{%- endcomment -%}
 <section class="featured-collection">
   {% if section.settings.title != blank %}
-    <h2>{{ section.settings.title | escape }}</h2>
+    <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
   {% endif %}
 
   {%- assign collection = collections[section.settings.collection] -%}
@@ -15,7 +23,7 @@
         %}
       {% endif %}
 
-      <div>
+      <div class="featured-collection__info">
         <p>{{ product.title }}</p>
         <span>
           {% if product.compare_at_price > product.price %}
@@ -38,18 +46,19 @@
       </div>
     </a>
   {% else %}
-
     {% for i in (1..6) %}
-      <a href="#">
+      <a href="#" class="featured-collection__item">
         {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
         {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
 
-        <p>
-          {{ 'homepage.onboarding.product_title' | t }}
-        </p>
-      </a>
+        <div class="featured-collection__info">
+          <p>
+            {{ 'homepage.onboarding.product_title' | t }}
+          </p>
 
-      <p>{{ 1999 | money }}</p>
+          <p>{{ 1999 | money }}</p>
+        </div>
+      </a>
     {% endfor %}
   {% endfor %}
 </section>
@@ -77,5 +86,4 @@
       }
     ]
   }
-
 {% endschema %}

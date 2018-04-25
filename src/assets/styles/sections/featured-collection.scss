@@ -1,0 +1,16 @@
+.featured-collection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featured-collection__item {
+  flex: 1 1 percentage(1/3);
+}
+
+.featured-collection__title {
+  flex-basis: 100%;
+}
+
+.featured-collection__info {
+  text-align: center;
+}
