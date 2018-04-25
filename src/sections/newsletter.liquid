@@ -1,0 +1,63 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Newsletter" section on the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the newsletter section
+  - Subheading: description of the newsletter section
+{%- endcomment -%}
+<section>
+  {% if section.settings.section_title != blank %}
+    <label for="Email">{{ section.settings.section_title | escape }}</label>
+  {% endif %}
+  {% if section.settings.subheading != blank %}
+    <p>{{ section.settings.subheading | escape }}</p>
+  {% endif %}
+
+  {% form 'customer' %}
+    {{ form.errors | default_errors }}
+    {% if form.posted_successfully? %}
+      <p>{{ 'general.newsletter_form.confirmation' | t }}</p>
+    {% else %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input type="email"
+        name="contact[email]"
+        id="Email"
+        value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+        placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+        autocorrect="off"
+        autocapitalize="off">
+      <button type="submit" name="commit" id="Subscribe">
+        <span>{{ 'general.newsletter_form.submit' | t }}</span>
+      </button>
+    {% endif %}
+  {% endform %}
+</section>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      },
+      {
+        "type": "paragraph",
+        "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}
