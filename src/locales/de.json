@@ -49,6 +49,12 @@
       "title": "Suchen Sie auf unserer Seite nach Produkten",
       "placeholder": "Durchsuchen Sie unseren Shop",
       "submit": "Suchen"
+    },
+    "newsletter_form": {
+      "newsletter_email": "Im Bilde sein",
+      "email_placeholder": " E-Mail-Adresse ",
+      "confirmation": " Danke für Ihre Anmeldung ",
+      "submit": "Abonnieren"
     }
   },
   "blogs": {
