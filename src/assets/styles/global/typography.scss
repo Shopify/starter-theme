@@ -1,6 +1,7 @@
-.heading,
-%heading {
-  font-family: $font-heading;
+body {
+  font-family: $font-body;
+  font-weight: $font-body-weight;
+  font-style: $font-body-style;
 }
 
 h1,
@@ -9,20 +10,10 @@ h3,
 h4,
 h5,
 h6 {
-  @extend %heading;
-}
-
-body {
-  font-family: $font-body;
-  font-weight: $font-body-weight;
-  font-style: $font-body-style;
+  font-family: $font-heading;
 }
 
 p,
-%p {
-  font-family: $font-body;
-}
-
 ul {
-  @extend %p;
+  font-family: $font-body;
 }
