@@ -1,0 +1,19 @@
+body {
+  font-family: $font-body;
+  font-weight: $font-body-weight;
+  font-style: $font-body-style;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+}
+
+p,
+ul {
+  font-family: $font-body;
+}

@@ -3,7 +3,6 @@
 /**
  * [replace with theme name] | Built with Slate
  */
-
 @import '~normalize.css/normalize';
 
 /* Utils */
@@ -15,9 +14,9 @@
 /* Global */
 @import './global/slate-reset';
 @import './global/helper-classes';
-@import './global/grid';
 @import './global/layout';
 @import './global/icons';
+@import './global/typography';
 @import './global/rte';
 @import './global/responsive-tables';
 @import './global/links-buttons';

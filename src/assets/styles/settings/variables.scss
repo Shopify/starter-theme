@@ -1,6 +1,4 @@
-/* stylelint-disable color-no-hex */
-
-/* ================ Color Variables ================ */
+/* Colors */
 $color-primary: var(--color-primary);
 
 // Text colors
@@ -20,25 +18,18 @@ $color-error-bg: #ffffff;
 $color-success: #000000;
 $color-success-bg: #000000;
 
-/* ================ Typography Variables ================ */
-$font-weight-normal: 400;
-$font-weight-bold: 700;
+/* Typography */
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
+$font-body-weight: var(--font-body-weight);
+$font-body-style: var(--font-body-style);
+$font-body-bold-weight: var(--font-body-bold-weight);
 
-$font-stack-header: 'HelveticaNeue', 'Helvetica Neue', helvetica, arial,
-  sans-serif;
-$font-weight-header: $font-weight-bold;
-
-$font-stack-body: 'HelveticaNeue', 'Helvetica Neue', helvetica, arial,
-  sans-serif;
-$font-size-base: 16px;
-
-/* ============================================================================
-  Grid Breakpoints and Class Names
-    - Do not change the variable names
-============================================================================== */
-$grid-medium: 750px;
-$grid-large: 990px;
-$grid-widescreen: 1400px;
+/* Grid */
+$grid-medium: 46.85em;
+$grid-large: 61.85em;
+$grid-widescreen: 87.5em;
+$grid-max-width: 73.75em;
 $grid-gutter: 30px;
 
 $small: 'small';
@@ -50,8 +41,8 @@ $large-down: 'large-down';
 $large-up: 'large-up';
 $widescreen: 'widescreen';
 
-// The `$breakpoints` list is used to build our media queries.
-// You can use these in the media-query mixin.
+// Breakpoints used with the media-query mixin
+// Usage: @include media-query($medium-up) { ... }
 $breakpoints: (
   $small '(max-width: #{$grid-medium - 1})',
   $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
@@ -62,22 +53,6 @@ $breakpoints: (
   $large-up '(min-width: #{$grid-large})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
-
-/* ============================================================================
-  Generate breakpoint-specific column widths and push classes
-    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
-    - Default is no push classes
-    - Will not work if `styles/global/grid.scss` is removed
-============================================================================== */
-$breakpoint-has-widths: (
-  $small,
-  $medium-up
-);
-$breakpoint-has-push: ();
-
-/* ================ Sizing Variables ================ */
-$width-site: 1180px;
-$gutter: 30px;
 
 /* ================ Z-Index ================ */
 $z-index-dropdown: 2;

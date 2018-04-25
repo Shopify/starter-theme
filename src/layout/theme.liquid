@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <meta name="theme-color" content="{{ settings.color_accent }}">
   <link rel="canonical" href="{{ canonical_url }}">
 
   {%- if settings.favicon != blank -%}
@@ -33,13 +33,13 @@
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags' %}
+  {% include 'css-variables' %}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
   </script>
 
   {% include 'script-tags', layout: 'theme' %}
-
 
   {{ content_for_header }}
 </head>
