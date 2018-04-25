@@ -33,13 +33,13 @@
 
   {% include 'social-meta-tags' %}
   {% include 'style-tags' %}
+  {% include 'css-variables' %}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
   </script>
 
   {% include 'script-tags', layout: 'theme' %}
-
 
   {{ content_for_header }}
 </head>

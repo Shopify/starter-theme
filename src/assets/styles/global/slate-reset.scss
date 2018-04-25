@@ -27,13 +27,10 @@ form {
   margin: 0;
 }
 
-// Prevent zoom on touch devices in active inputs
-@include media-query($medium-down) {
-  input,
-  textarea,
-  select {
-    font-size: 16px;
-  }
+input,
+textarea,
+select {
+  font-size: 16px;
 }
 
 button,
@@ -43,7 +40,7 @@ label[for] {
 }
 
 optgroup {
-  font-weight: $font-weight-bold;
+  font-weight: $font-body-bold-weight;
 }
 
 // Force option color (affects IE only)
