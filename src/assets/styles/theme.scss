@@ -2,7 +2,6 @@
 
 /* ============================================================================
   [replace with theme name] | Built with Slate
-    - You cannot use native CSS/Sass @imports in this file without a build script
 ============================================================================== */
 @import '~normalize.css/normalize';
 
@@ -17,6 +16,7 @@
 @import './global/helper-classes';
 @import './global/layout';
 @import './global/icons';
+@import './global/typography';
 @import './global/rte';
 @import './global/responsive-tables';
 @import './global/links-buttons';
