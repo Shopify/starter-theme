@@ -123,14 +123,14 @@
   </nav>
 </section>
 
-<style>
-  {% if section.settings.logo != blank %}
+{% if section.settings.logo != blank %}
+  <style>
     .logo-image {
       display: block;
       max-width: {{ section.settings.logo_max_width }}px;
     }
-  {% endif %}
-</style>
+  </style>
+{% endif %}
 
 {% schema %}
   {
