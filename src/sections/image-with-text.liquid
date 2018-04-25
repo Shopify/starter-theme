@@ -4,23 +4,22 @@
 
   Theme Store required settings
   - Image
-  - Image alignment: to align your image left or right
-
-  Theme Store optional settings
   - Heading: title of the block
   - Text: description of the block
+
+  Theme Store optional settings
   - Button label: label associated with the button
   - Button link: link of the button
 {%- endcomment -%}
 
-<div class="image-with-text">
+<section class="image-with-text">
   {% capture image_layout %}
     <div class="image-with-text__image">
       {% if section.settings.image != blank %}
         {% include 'responsive-image' with
           image: section.settings.image,
-          max_width: 545,
-          max_height: 545
+          max_width: 2000,
+          max_height: 2000
         %}
       {% else %}
         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -37,7 +36,7 @@
       <h2>{{ section.settings.title | escape }}</h2>
     {% endif %}
     {% if section.settings.text != blank %}
-      <div>{{ section.settings.text | escape }}</div>
+      <div>{{ section.settings.text }}</div>
     {% endif %}
     {% if section.settings.button_label != blank and section.settings.button_link != blank %}
       <a href="{{ section.settings.button_link }}">
@@ -49,7 +48,7 @@
   {% if section.settings.layout == 'right' %}
     {{ image_layout }}
   {% endif %}
-</div>
+</section>
 
 {% schema %}
   {
