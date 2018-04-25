@@ -12,12 +12,9 @@ import $ from 'jquery';
 import {pageLinkFocus} from '@shopify/theme-a11y';
 import {cookiesEnabled} from '@shopify/theme-cart';
 import {wrapTable, wrapIframe} from '@shopify/theme-rte';
-import sections from '@shopify/theme-sections';
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};
-
-window.theme.sections = sections;
 
 $(document).ready(() => {
   // Common a11y fixes

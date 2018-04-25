@@ -1,23 +1,16 @@
-<style>
-  {% if section.settings.logo != blank %}
-    .site-header__logo-image {
-      max-width: {{ section.settings.logo_max_width }}px;
-    }
-  {% endif %}
-</style>
-<div data-section-id="{{ section.id }}" data-section-type="header">
-  {%- comment -%}
-    This is a required section for the Shopify Theme Store.
-    It is available in the "Header" section in the theme editor.
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available in the "Header" section in the theme editor.
 
-    Theme Store required settings
-    - Show announcement
-    - Text: message to announce
-    - Link: link of the announcement bar
+  Theme Store required settings
+  - Show announcement
+  - Text: message to announce
+  - Link: link of the announcement bar
 
-    Theme Store optional settings
-    - Home page only: only shows on the index template
-  {%- endcomment -%}
+  Theme Store optional settings
+  - Home page only: only shows on the home page
+{%- endcomment -%}
+<section data-section-id="{{ section.id }}" data-section-type="header">
   {%- if section.settings.announcement_bar_enabled -%}
     <div>
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
@@ -38,13 +31,13 @@
     {% else %}
       <div class="h1" itemscope itemtype="http://schema.org/Organization">
     {% endif %}
-        <a href="/" itemprop="url" class="site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
+        <a href="/" itemprop="url"{% if section.settings.logo != blank %} class="logo-image"{% endif %}>
           {% if section.settings.logo != blank %}
             {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
             <img src="{{ section.settings.logo | img_url: image_size }}"
-                 srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                 alt="{{ section.settings.logo.alt | default: shop.name }}"
-                 itemprop="logo">
+                srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                alt="{{ section.settings.logo.alt | default: shop.name }}"
+                itemprop="logo">
           {% else %}
             {{ shop.name }}
           {% endif %}
@@ -128,7 +121,16 @@
       {% endfor %}
     </ul>
   </nav>
-</div>
+</section>
+
+<style>
+  {% if section.settings.logo != blank %}
+    .logo-image {
+      display: block;
+      max-width: {{ section.settings.logo_max_width }}px;
+    }
+  {% endif %}
+</style>
 
 {% schema %}
   {
@@ -147,7 +149,7 @@
       {
         "type": "checkbox",
         "id": "announcement_bar_home_page_only",
-        "label": "Home page only",
+        "label": "Show on home page only",
         "default": true
       },
       {

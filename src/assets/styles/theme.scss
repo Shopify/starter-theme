@@ -1,18 +1,18 @@
 @charset 'UTF-8';
 
-/* ============================================================================
-  [replace with theme name] | Built with Slate
-    - You cannot use native CSS/Sass @imports in this file without a build script
-============================================================================== */
+/**
+ * [replace with theme name] | Built with Slate
+ */
+
 @import '~normalize.css/normalize';
 
-/* ================ UTILS ================ */
+/* Utils */
 @import './tools/mixins';
 
-/* ================ SETTINGS ================ */
+/* Settings */
 @import './settings/variables';
 
-/* ================ COMMON ================ */
+/* Global */
 @import './global/slate-reset';
 @import './global/helper-classes';
 @import './global/grid';
@@ -24,8 +24,10 @@
 @import './global/forms';
 @import './global/blank-states';
 
-/* ================ MODULES ================ */
-@import './modules/header';
+/* Modules */
 @import './modules/gift-card-template';
 @import './modules/responsive-images';
 @import './modules/hero-banner';
+
+/* Sections */
+@import './sections/header';
