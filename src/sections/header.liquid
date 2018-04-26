@@ -80,18 +80,18 @@
   </header>
 
   <nav role="navigation">
-    <ul class="menu">
+    <ul>
       {% for link in linklists[section.settings.menu].links %}
         {% if link.links != blank %}
-          <li class="menu-item{% if link.active %} menu-item--active{% endif %}">
-            <a href="{{ link.url }}" class="menu-link">
+          <li>
+            <a href="{{ link.url }}">
               {{ link.title }}
               {% include 'icon-arrow-down' %}
             </a>
-            <ul class="sub-menu">
+            <ul>
               {% for childlink in link.links %}
-                <li class="sub-menu-item{% if childlink.active %} sub-menu-item--active{% endif %}">
-                  <a href="{{ childlink.url }}" class="sub-menu-link">
+                <li>
+                  <a href="{{ childlink.url }}">
                     {{ childlink.title }}
                   </a>
                 </li>
@@ -99,8 +99,10 @@
             </ul>
           </li>
         {% else %}
-          <li class="menu-item{% if link.active %} menu-item--active{% endif %}">
-            <a href="{{ link.url }}" class="menu-link">{{ link.title }}</a>
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
           </li>
         {% endif %}
       {% endfor %}
