@@ -1,14 +1,17 @@
 /* Colors */
-$color-primary: var(--color-primary);
-
 // Text colors
-$color-body-text: #444444;
+$color-body-text: var(--color-body-text);
 
 // Backgrounds
 $color-body: var(--color-main-background);
 
-// Border colors
-$color-border: #f6f6f6;
+// Placeholders
+$placeholder-color-foreground: #161d25;
+$placeholder-color-background: #f9fafb;
+
+// Other colors
+$color-accent: var(--color-accent);
+$color-border: var(--color-border);
 
 // Helper colors for form error states
 $color-disabled: #000000;
@@ -53,9 +56,3 @@ $breakpoints: (
   $large-up '(min-width: #{$grid-large})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
-
-/* ================ Z-Index ================ */
-$z-index-dropdown: 2;
-
-// really high to be safe of app markup
-$z-index-skip-to-content: 10000;

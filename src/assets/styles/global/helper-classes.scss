@@ -62,7 +62,7 @@
 ============================================================================== */
 .skip-link:focus {
   @include visually-shown(absolute);
-  z-index: $z-index-skip-to-content;
+  z-index: 10000;
   padding: $grid-gutter / 2;
   background-color: $color-body;
   color: $color-body-text;
