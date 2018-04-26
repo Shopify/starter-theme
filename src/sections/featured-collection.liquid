@@ -27,7 +27,7 @@
         </div>
       {% endif %}
 
-      <p>{{ product.title }}</p>
+      <p>{{ product.title | escape }}</p>
       <span>
         {% if product.compare_at_price > product.price %}
           {% if product.price_varies %}
