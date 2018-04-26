@@ -1,16 +1,18 @@
 .featured-collection {
   display: flex;
   flex-wrap: wrap;
+  max-width: $grid-max-width;
 }
 
-.featured-collection__item {
+.featured-collection-item {
   flex: 1 1 percentage(1/3);
+  text-align: center;
+}
+
+.featured-collection__image {
+  min-width: 320px;
 }
 
 .featured-collection__title {
   flex-basis: 100%;
-}
-
-.featured-collection__info {
-  text-align: center;
 }
