@@ -53,10 +53,8 @@
         {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
         {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
 
-        <div class="featured-collection__info">
-          <p>{{ 'homepage.onboarding.product_title' | t }}</p>
-          <p>{{ 1999 | money }}</p>
-        </div>
+        <p>{{ 'homepage.onboarding.product_title' | t }}</p>
+        <p>{{ 1999 | money }}</p>
       </a>
     {% endfor %}
   {% endfor %}
