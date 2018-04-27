@@ -38,7 +38,7 @@
 
   <h2>{{ 'gift_cards.issued.initial_value' | t: value: formatted_initial_value }}</h2>
 
-  {% assign formatted_current_balance = gift_card.balance | money %}  
+  {% assign formatted_current_balance = gift_card.balance | money %}
 
   {% if gift_card.balance != gift_card.initial_value %}
     <p>{{ 'gift_cards.issued.remaining_html' | t: balance: formatted_current_balance }}</p>
@@ -49,7 +49,7 @@
 
   <p>{{ 'gift_cards.issued.redeem' | t }}</p>
 
-  <a href="{{ shop.url }}" class="btn" target="_blank">{{ 'gift_cards.issued.shop_link' | t }}</a>
+  <a href="{{ shop.url }}" class="button" target="_blank">{{ 'gift_cards.issued.shop_link' | t }}</a>
 
   <div id="QrCode" class="giftcard-qr" data-identifier="{{ gift_card.qr_identifier }}"></div>
 
