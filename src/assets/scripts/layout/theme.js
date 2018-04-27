@@ -16,8 +16,6 @@ import {wrapTable, wrapIframe} from '@shopify/theme-rte';
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
-/* = =============== Templates ================ */
-
 $(document).ready(() => {
   // Common a11y fixes
   if (window.location.hash !== '#') {
