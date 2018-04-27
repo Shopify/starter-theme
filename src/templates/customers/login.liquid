@@ -32,7 +32,7 @@
              placeholder="{{ 'customer.login.password' | t }}">
     {% endif %}
 
-    <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
+    <input type="submit" class="button" value="{{ 'customer.login.sign_in' | t }}">
 
     <a href="/">{{ 'customer.login.cancel' | t }}</a>
 
@@ -69,7 +69,7 @@
            autocomplete="off"
            autocapitalize="off">
 
-    <input type="submit" class="btn" value="{{ 'customer.recover_password.submit' | t }}">
+    <input type="submit" class="button" value="{{ 'customer.recover_password.submit' | t }}">
 
     <button type="button" id="HideRecoverPasswordLink">
       {{ 'customer.recover_password.cancel' | t }}
@@ -82,6 +82,6 @@
   <h2>{{ 'customer.login.guest_title' | t }}</h2>
 
   {% form 'guest_login' %}
-    <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">
+    <input type="submit" class="button" value="{{ 'customer.login.guest_continue' | t }}">
   {% endform %}
 {% endif %}

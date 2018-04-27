@@ -1,17 +1,17 @@
 @charset 'UTF-8';
 
-/* ============================================================================
-  [replace with theme name] | Built with Slate
-============================================================================== */
+/**
+ * [replace with theme name] | Built with Slate
+ */
 @import '~normalize.css/normalize';
 
-/* ================ UTILS ================ */
+/* Utils */
 @import './tools/mixins';
 
-/* ================ SETTINGS ================ */
+/* Settings */
 @import './settings/variables';
 
-/* ================ COMMON ================ */
+/* Global */
 @import './global/slate-reset';
 @import './global/helper-classes';
 @import './global/layout';
@@ -19,15 +19,18 @@
 @import './global/typography';
 @import './global/rte';
 @import './global/responsive-tables';
-@import './global/links-buttons';
 @import './global/forms';
-@import './global/blank-states';
 
-/* ================ MODULES ================ */
-@import './modules/site-header';
-@import './modules/gift-card-template';
-@import './modules/responsive-images';
-@import './modules/hero-banner';
+/* Components */
+@import './components/buttons';
+@import './components/site-header';
+@import './components/responsive-images';
+@import './components/hero-banner';
+@import './components/placeholders';
 
-/* ================ SECTIONS ================ */
+/* Templates */
+@import './templates/gift_card';
+
+/* Sections */
+@import './sections/image-with-text';
 @import './sections/featured-collection';
