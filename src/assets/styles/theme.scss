@@ -1,17 +1,17 @@
 @charset 'UTF-8';
 
-/* ============================================================================
-  [replace with theme name] | Built with Slate
-============================================================================== */
+/**
+ * [replace with theme name] | Built with Slate
+ */
 @import '~normalize.css/normalize';
 
-/* ================ UTILS ================ */
+/* Utils */
 @import './tools/mixins';
 
-/* ================ SETTINGS ================ */
+/* Settings */
 @import './settings/variables';
 
-/* ================ COMMON ================ */
+/* Global */
 @import './global/slate-reset';
 @import './global/helper-classes';
 @import './global/layout';
