@@ -1,38 +1,40 @@
-{% if section.settings.title != blank %}
-  <h2>{{ section.settings.title | escape }}</h2>
-{% endif %}
+<section>
+  {% if section.settings.title != blank %}
+    <h2>{{ section.settings.title | escape }}</h2>
+  {% endif %}
 
-{% for block in section.blocks limit: section.blocks.size %}
-  <div {{ block.shopify_attributes }}>
-    {%- assign collection = collections[block.settings.collection] -%}
+  {% for block in section.blocks limit: section.blocks.size %}
+    <div {{ block.shopify_attributes }}>
+      {%- assign collection = collections[block.settings.collection] -%}
 
-    <a href="{% if collection == empty %}#{% else %}{{ collection.url }}{% endif %}">
-      {% if collection.image != blank or collection.products.first != blank %}
-        {%- assign image_object = collection.image | default: collection.products.first.featured_image -%}
-        {% include 'responsive-image' with
-          image: image_object,
-          max_width: 480,
-          max_height: 480
-        %}
-      {% elsif collection == empty %}
-        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-        {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
-      {% endif %}
-
-      <p>
-        {% if collection == empty %}
-          {{ 'homepage.onboarding.collection_title' | t }}
-        {% else %}
-          {{ collection.title }}
+      <a href="{% if collection == empty %}#{% else %}{{ collection.url }}{% endif %}">
+        {% if collection.image != blank or collection.products.first != blank %}
+          {%- assign image_object = collection.image | default: collection.products.first.featured_image -%}
+          {% include 'responsive-image' with
+            image: image_object,
+            max_width: 480,
+            max_height: 480
+          %}
+        {% elsif collection == empty %}
+          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
         {% endif %}
-      </p>
-    </a>
-  </div>
-{% endfor %}
 
-{% if section.blocks.size == 0 %}
-  {% include 'no-blocks' %}
-{% endif %}
+        <p>
+          {% if collection == empty %}
+            {{ 'homepage.onboarding.collection_title' | t }}
+          {% else %}
+            {{ collection.title }}
+          {% endif %}
+        </p>
+      </a>
+    </div>
+  {% endfor %}
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</section>
 
 {% schema %}
   {
