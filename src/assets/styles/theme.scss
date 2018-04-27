@@ -19,11 +19,14 @@
 @import './global/typography';
 @import './global/rte';
 @import './global/responsive-tables';
-@import './global/links-buttons';
 @import './global/forms';
-@import './global/blank-states';
 
-/* Modules */
-@import './modules/gift-card-template';
-@import './modules/responsive-images';
-@import './modules/hero-banner';
+/* ================ Components ================ */
+@import './components/buttons';
+@import './components/site-header';
+@import './components/responsive-images';
+@import './components/hero-banner';
+@import './components/placeholders';
+
+/* ================ Templates ================ */
+@import './templates/gift_card';
