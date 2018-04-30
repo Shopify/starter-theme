@@ -240,6 +240,10 @@
   },
   "homepage": {
     "onboarding": {
+      "blog_title": "Der Titel Ihres Posts",
+      "blog_excerpt":
+        "Ihr Laden hat noch keine Blogposts veröffentlicht. Ein Blog kann genutzt werden, um über die Einführung neuer Produkte, Tipps oder andere Neuigkeiten, die Sie mit Ihren Kunden teilen möchten, zu berichten. Für Inspiration und Ratschläge für Ihren eigenen Laden und Blog können Sie den E-Commerce-Blog von Shopify besuchen.",
+      "blog_author": "Name des Autors",
       "product_title": "Beispielhafter Produkttitel",
       "collection_title": "Beispielhafter Zusammenstellungstitel",
       "no_content":

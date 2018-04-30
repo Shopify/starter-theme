@@ -238,6 +238,10 @@
   },
   "homepage": {
     "onboarding": {
+      "blog_title": "Título de tu publicación",
+      "blog_excerpt":
+        "Tu tienda no ha publicado ninguna entrada en el blog. Un blog puede ser utilizado para hablar sobre los nuevos lanzamientos del producto, consejos u otras noticias que deseas compartir con tus clientes. Puedes verificar el blog de comercio electrónico Shopify para la inspiración y consejos para tu propia tienda y blog.",
+      "blog_author": "Nombre del autor",
       "product_title": "Ejemplo título de producto",
       "collection_title": "Ejemplo título de colección",
       "no_content":
