@@ -61,7 +61,8 @@
     "article": {
       "author_on_date_html": "Geposted von {{ author }} am {{ date }}",
       "comment_meta_html": "{{ author }} am {{ date }}",
-      "read_more": "Weiterlesen"
+      "read_more": "Weiterlesen",
+      "by_author": "von {{ author }}"
     },
     "comments": {
       "title": "Hinterlassen Sie einen Kommentar",
