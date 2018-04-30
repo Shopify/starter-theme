@@ -1,4 +1,3 @@
-/* ================ Slate specific reset ================ */
 *,
 *::before,
 *::after {
@@ -22,7 +21,6 @@ img {
   max-width: 100%;
 }
 
-/* ================ Form element helpers ================ */
 form {
   margin: 0;
 }
@@ -49,15 +47,11 @@ option {
   color: $color-body-text;
 }
 
-// hide outline on focus for elements which are given focus by JS
+// Hide outline on focus for elements which are given focus by JS
 [tabindex='-1']:focus {
   outline: none;
 }
 
-/* ============================================================================
-  Fast Tap
-  enables no-delay taps (FastClick-esque) on supporting browsers
-============================================================================== */
 a,
 button,
 [role='button'],
