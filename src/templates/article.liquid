@@ -35,11 +35,11 @@
 <article role="article" itemscope itemtype="http://schema.org/Article">
 
   {% if article.image %}
-    <div class="hero-banner hero-banner--article lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
+    <div class="lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
 
     <noscript>
       {%- assign image_size = article.image.width | append: 'x' -%}
-      <div class="hero-banner hero-banner--article" style="background-image: {{ article.image | img_url: image_size }}"></div>
+      <div style="background-image: {{ article.image | img_url: image_size }}"></div>
     </noscript>
   {% endif %}
 
