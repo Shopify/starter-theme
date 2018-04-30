@@ -24,6 +24,10 @@ symbol {
     path,
     polygon,
     polyline,
+    img {
+      max-width: 100%;
+    }
+
     rect {
       fill: inherit;
       stroke: inherit;
@@ -43,6 +47,6 @@ symbol {
 
 // Payment icons
 .payment-icons {
-  @include prefix('user-select', 'none', moz ms webkit spec);
+  user-select: none;
   cursor: default;
 }

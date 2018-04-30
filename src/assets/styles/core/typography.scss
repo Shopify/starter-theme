@@ -12,3 +12,16 @@ h5,
 h6 {
   font-family: $font-heading;
 }
+
+body,
+input,
+textarea,
+button,
+select {
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+a:focus {
+  color: inherit;
+}

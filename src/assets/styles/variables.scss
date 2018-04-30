@@ -27,6 +27,10 @@ $font-body-weight: var(--font-body-weight);
 $font-body-style: var(--font-body-style);
 $font-body-bold-weight: var(--font-body-bold-weight);
 
+// Animations
+$animation-duration: 250ms;
+$animation-timing: ease-in-out;
+
 // Grid
 $grid-medium: 46.85em;
 $grid-large: 61.85em;
@@ -34,6 +38,7 @@ $grid-widescreen: 87.5em;
 $grid-max-width: 73.75em;
 $grid-gutter: 30px;
 
+// Breakpoints used with the media-query mixin
 $small: 'small';
 $medium: 'medium';
 $medium-down: 'medium-down';
@@ -43,7 +48,6 @@ $large-down: 'large-down';
 $large-up: 'large-up';
 $widescreen: 'widescreen';
 
-// Breakpoints used with the media-query mixin
 $breakpoints: (
   $small '(max-width: #{$grid-medium - 1})',
   $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',

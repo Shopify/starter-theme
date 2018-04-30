@@ -65,3 +65,8 @@
   color: $color-body-text;
   transition: none;
 }
+
+// Hide outline on focus for elements which are given focus by JS
+[tabindex='-1']:focus {
+  outline: none;
+}

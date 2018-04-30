@@ -1,34 +1,3 @@
-// stylelint-disable declaration-no-important
-@mixin clearfix() {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  // stylelint-disable-next-line
-  *zoom: 1;
-}
-
-// This mixin will be removed in the next PR
-@mixin prefix($property, $value, $prefixes) {
-  @each $prefix in $prefixes {
-    @if $prefix == webkit {
-      -webkit-#{$property}: $value;
-    } @else if $prefix == moz {
-      -moz-#{$property}: $value;
-    } @else if $prefix == ms {
-      -ms-#{$property}: $value;
-    } @else if $prefix == o {
-      -o-#{$property}: $value;
-    } @else if $prefix == spec {
-      #{$property}: $value;
-    } @else {
-      @warn 'Unrecognized prefix: #{$prefix}';
-    }
-  }
-}
-
 /**
  * Sets a media query for the specified breakpoint
  *
@@ -59,33 +28,45 @@
   }
 }
 
-// Responsive Show/Hide Helper
-@mixin responsive-display-helper($breakpoint: '') {
-  .#{$breakpoint}show {
-    display: block !important;
-  }
+/**
+ * Outputs list of transition properties
+ *
+ * Accepts:
+ * - $transitions: {String} List of transition properties to set
+ *
+ * Usage:
+ * .selector {
+ *   @include transition(width, height 0.5s ease-in);
+ * }
+ */
+@mixin transition($transitions...) {
+  $output: ();
 
-  .#{$breakpoint}hide {
-    display: none !important;
+  @each $transition in $transitions {
+    $output: append($output, get-transition-properties($transition), comma);
   }
+  transition: $output;
 }
 
-// Responsive Text Alignment Helper
-@mixin responsive-text-align-helper($breakpoint: '') {
-  .#{$breakpoint}text-left {
-    text-align: left !important;
+/**
+ * Forces an element to self-clear its children
+ */
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
   }
 
-  .#{$breakpoint}text-right {
-    text-align: right !important;
-  }
-
-  .#{$breakpoint}text-center {
-    text-align: center !important;
-  }
+  // stylelint-disable-next-line
+  *zoom: 1;
 }
 
+/**
+ * Hide element but make it accessible to screen readers
+ */
 @mixin visually-hidden() {
+  // stylelint-disable-next-line
   position: absolute !important;
   overflow: hidden;
   width: 1px;
@@ -96,7 +77,11 @@
   clip: rect(0 0 0 0);
 }
 
+/**
+ * Reverse the properties applied by @mixin visually-hidden
+ */
 @mixin visually-shown($position: inherit) {
+  // stylelint-disable-next-line
   position: $position !important;
   overflow: auto;
   width: auto;
