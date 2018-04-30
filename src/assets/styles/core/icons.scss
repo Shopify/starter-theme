@@ -1,4 +1,3 @@
-/* ================ Icons ================ */
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -32,10 +31,8 @@ symbol {
   }
 }
 
-/* ============================================================================
-  A generic way to visually hide content while
-  remaining accessible to screen readers (h5bp.com)
-============================================================================== */
+// A generic way to visually hide content while
+// remaining accessible to screen readers (h5bp.com)
 .icon-fallback-text {
   @include visually-hidden;
 
@@ -44,7 +41,7 @@ symbol {
   }
 }
 
-/* ================ Payment Icons ================ */
+// Payment icons
 .payment-icons {
   @include prefix('user-select', 'none', moz ms webkit spec);
   cursor: default;
