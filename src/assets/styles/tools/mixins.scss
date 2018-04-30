@@ -50,6 +50,11 @@
 
 /**
  * Forces an element to self-clear its children
+ *
+ * Usage:
+ * .selector {
+ *   @include clearfix;
+ * }
  */
 @mixin clearfix() {
   &::after {
@@ -64,6 +69,11 @@
 
 /**
  * Hide element but make it accessible to screen readers
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-hidden;
+ * }
  */
 @mixin visually-hidden() {
   // stylelint-disable-next-line
@@ -79,6 +89,14 @@
 
 /**
  * Reverse the properties applied by @mixin visually-hidden
+ *
+ * Accepts:
+ * - $position: {String} Positioning method for element
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-shown(relative);
+ * }
  */
 @mixin visually-shown($position: inherit) {
   // stylelint-disable-next-line
