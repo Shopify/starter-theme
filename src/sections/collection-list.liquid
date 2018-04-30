@@ -1,19 +1,17 @@
 {%- comment -%}
   This is a required section for the Shopify Theme Store.
-  It is available when you add "Collection list" section on the Theme Editor.
+  It is available when you add "Collection list" section in the Theme Editor.
 
   Theme Store required settings
-  - Collection
-
-  Theme Store optional settings
   - Heading: title of the collection list section
+  - Collection
 {%- endcomment -%}
 <section class="collection-list">
   {% if section.settings.title != blank %}
     <h2 class="collection-list__title">{{ section.settings.title | escape }}</h2>
   {% endif %}
 
-  {% for block in section.blocks limit: section.blocks.size %}
+  {% for block in section.blocks %}
     {%- assign collection = collections[block.settings.collection] -%}
 
     <a href="{{ collection.url | default: "#" }}" class="collection-list-item">
