@@ -16,7 +16,7 @@
   {% for block in section.blocks limit: section.blocks.size %}
     {%- assign collection = collections[block.settings.collection] -%}
 
-    <a href="{% if collection == empty %}#{% else %}{{ collection.url }}{% endif %}" class="collection-list-item">
+    <a href="{{ collection.url | default: "#" }}" class="collection-list-item">
       {% if collection.image != blank or collection.products.first != blank %}
         {%- assign image_object = collection.image | default: collection.products.first.featured_image -%}
         <div class="collection-list__image">
