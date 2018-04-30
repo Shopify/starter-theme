@@ -1,11 +1,10 @@
 .blog-post {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
 .blog-post__item {
-  flex: 1 1 percentage(1/3);
+  flex: 1 1 percentage(1 / 3);
 }
 
 .blog-post__title {

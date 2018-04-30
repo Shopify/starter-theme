@@ -1,0 +1,132 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Blog posts" section in the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the blog posts section
+  - Blog (which blog category to show in your store)
+
+  Theme Store optional settings
+  - Number of posts to show
+  - Show author
+  - Show date
+{%- endcomment -%}
+<section class="blog-post">
+  {% if section.settings.title != blank %}
+    <h2 class="blog-post__title">{{ section.settings.title | escape }}</h2>
+  {% endif %}
+
+  {%- assign blog = blogs[section.settings.blog] -%}
+
+  {% for article in blog.articles limit: section.settings.post_limit %}
+    <div class="blog-post__item">
+      {% if article.image %}
+        <a href="{{ article.url }}">
+          {% include 'responsive-image' with
+              image: article.image,
+              max_width: 400,
+              max_height: 400
+          %}
+        </a>
+      {% endif %}
+
+      <div>
+        <h2>
+          <a href="{{ article.url }}">{{ article.title }}</a>
+        </h2>
+
+        {% if section.settings.blog_show_author %}
+          <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+        {% endif %}
+
+        {% if section.settings.blog_show_date %}
+          <p>
+            {{ article.published_at | time_tag: format: 'month_day_year' }}
+          </p>
+        {% endif %}
+
+        <div>
+          {% if article.excerpt.size > 0 %}
+            {{ article.excerpt }}
+          {% else %}
+            {{ article.content | strip_html | truncate: 150 }}
+          {% endif %}
+        </div>
+
+        {% if article.tags.size > 0 %}
+          {% for tag in article.tags %}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+          {% endfor %}
+        {% endif %}
+
+        <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
+      </div>
+    </div>
+  {% else %}
+    {% for i in (1..section.settings.post_limit) %}
+      <div class="blog-post__item">
+        <h3>
+          <a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a>
+        </h3>
+
+        {% if section.settings.blog_show_author %}
+          <span>{{ 'homepage.onboarding.blog_author' | t }}</span>
+        {% endif %}
+
+        <div>{{ 'homepage.onboarding.blog_excerpt' | t }}</div>
+
+        <a href="#">{{ 'blogs.article.read_more' | t }}</a>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</section>
+
+{% schema %}
+  {
+    "name": "Blog posts",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Blog posts"
+      },
+      {
+        "id": "blog",
+        "type": "blog",
+        "label": "Blog"
+      },
+      {
+        "type": "range",
+        "id": "post_limit",
+        "label": "Posts",
+        "min": 3,
+        "max": 12,
+        "step": 3,
+        "default": 3
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog posts",
+        "category": "Blog",
+        "settings": {
+          "blog": "News",
+          "post_limit": 3
+        }
+      }
+    ]
+  }
+{% endschema %}
