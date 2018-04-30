@@ -1,8 +1,7 @@
-/* Colors */
 // Text colors
 $color-body-text: var(--color-body-text);
 
-// Backgrounds
+// Background colors
 $color-body: var(--color-main-background);
 
 // Placeholders
@@ -21,14 +20,14 @@ $color-error-bg: #ffffff;
 $color-success: #000000;
 $color-success-bg: #000000;
 
-/* Typography */
+// Typography
 $font-heading: var(--font-heading);
 $font-body: var(--font-body);
 $font-body-weight: var(--font-body-weight);
 $font-body-style: var(--font-body-style);
 $font-body-bold-weight: var(--font-body-bold-weight);
 
-/* Grid */
+// Grid
 $grid-medium: 46.85em;
 $grid-large: 61.85em;
 $grid-widescreen: 87.5em;
@@ -45,7 +44,6 @@ $large-up: 'large-up';
 $widescreen: 'widescreen';
 
 // Breakpoints used with the media-query mixin
-// Usage: @include media-query($medium-up) { ... }
 $breakpoints: (
   $small '(max-width: #{$grid-medium - 1})',
   $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',

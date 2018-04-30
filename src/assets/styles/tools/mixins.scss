@@ -1,6 +1,4 @@
-/* stylelint-disable declaration-no-important */
-
-/* ================ Mixins ================ */
+// stylelint-disable declaration-no-important
 @mixin clearfix() {
   &::after {
     content: '';
@@ -8,27 +6,11 @@
     clear: both;
   }
 
-  // sass-lint:disable;
+  // stylelint-disable-next-line
   *zoom: 1;
 }
 
-/* ============================================================================
-  Prefix mixin for generating vendor prefixes.
-  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
-
-  Usage:
-    // Input:
-    .element {
-      @include prefix(transform, scale(1), ms webkit spec);
-    }
-
-    // Output:
-    .element {
-      -ms-transform: scale(1);
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-============================================================================== */
+// This mixin will be removed in the next PR
 @mixin prefix($property, $value, $prefixes) {
   @each $prefix in $prefixes {
     @if $prefix == webkit {
@@ -47,7 +29,19 @@
   }
 }
 
-/* ================ Media Query Mixin ================ */
+/**
+ * Sets a media query for the specified breakpoint
+ *
+ * Accepts:
+ * - $media-query: {String} Breakpoint variable (list found in variables.scss)
+ *
+ * Usage:
+ * .selector {
+ *   @include media-query($medium-up) {
+ *     color: red;
+ *   }
+ * }
+ */
 @mixin media-query($media-query) {
   $breakpoint-found: false;
 
@@ -65,7 +59,7 @@
   }
 }
 
-/* ================ Responsive Show/Hide Helper ================ */
+// Responsive Show/Hide Helper
 @mixin responsive-display-helper($breakpoint: '') {
   .#{$breakpoint}show {
     display: block !important;
@@ -76,9 +70,8 @@
   }
 }
 
-/* ================ Responsive Text Alignment Helper ================ */
+// Responsive Text Alignment Helper
 @mixin responsive-text-align-helper($breakpoint: '') {
-  // stylelint:disable no-important
   .#{$breakpoint}text-left {
     text-align: left !important;
   }
@@ -93,7 +86,6 @@
 }
 
 @mixin visually-hidden() {
-  // sass-lint:disable no-important
   position: absolute !important;
   overflow: hidden;
   width: 1px;
@@ -105,7 +97,6 @@
 }
 
 @mixin visually-shown($position: inherit) {
-  // sass-lint:disable no-important
   position: $position !important;
   overflow: auto;
   width: auto;
