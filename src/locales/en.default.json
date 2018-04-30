@@ -232,6 +232,10 @@
   },
   "homepage": {
     "onboarding": {
+      "blog_title": "Your post's title",
+      "blog_excerpt":
+        "Your store hasn’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers. You can check out Shopify’s ecommerce blog for inspiration and advice for your own store and blog.",
+      "blog_author": "Author name",
       "product_title": "Example Product Title",
       "collection_title": "Example Collection Title",
       "no_content":

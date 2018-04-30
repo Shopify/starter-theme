@@ -235,6 +235,10 @@
   },
   "homepage": {
     "onboarding": {
+      "blog_title": "O título do seu post",
+      "blog_excerpt":
+        "A sua loja não publicou ainda qualquer post no blog. Um blog pode ser usado para falar de lançamentos de novos produtos, dicas e outras notícias que deseje partilhar com os seus clientes. Pode dar uma vista de olhos no blog comercial da Shopify para se inspirar e obter alguns conselhos para a sua própria loja e blog.",
+      "blog_author": "Nome do autor",
       "product_title": "Exemplo de título de produto",
       "collection_title": "Exemplo de título de coleção",
       "no_content":

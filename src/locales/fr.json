@@ -237,6 +237,10 @@
   },
   "homepage": {
     "onboarding": {
+      "blog_title": "Le titre de votre publication",
+      "blog_excerpt":
+        "Votre magasin n'a encore rien bloggué. Un blog peut être utilisé pour parler des lancements de nouveaux produits, d'astuces, ou d'autres nouvelles que vous voulez partager avec vos clients. Vous pouvez regarder le blog d'e-commerce de Shopify pour trouver de l'inspiration et des conseils pour votre propre magasin et blog.",
+      "blog_author": "Nom de l'auteur",
       "product_title": "Titre du produit",
       "collection_title": "Titre de la collection",
       "no_content":
