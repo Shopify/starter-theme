@@ -5,33 +5,32 @@
  */
 @import '~normalize.css/normalize';
 
-/* Utils */
+// Settings
+@import './variables';
+
+// Tools
 @import './tools/mixins';
 
-/* Settings */
-@import './settings/variables';
+// Core
+@import './core/slate-reset';
+@import './core/helper-classes';
+@import './core/layout';
+@import './core/icons';
+@import './core/typography';
+@import './core/rte';
+@import './core/responsive-tables';
+@import './core/forms';
 
-/* Global */
-@import './global/slate-reset';
-@import './global/helper-classes';
-@import './global/layout';
-@import './global/icons';
-@import './global/typography';
-@import './global/rte';
-@import './global/responsive-tables';
-@import './global/forms';
-
-/* Components */
+// Components
 @import './components/buttons';
-@import './components/site-header';
-@import './components/responsive-images';
 @import './components/hero-banner';
 @import './components/placeholders';
+@import './components/responsive-images';
 
-/* Templates */
-@import './templates/gift_card';
-
-/* Sections */
-@import './sections/image-with-text';
-@import './sections/featured-collection';
+// Sections
 @import './sections/blog-post';
+@import './sections/featured-collection';
+@import './sections/image-with-text';
+
+// Templates
+@import './templates/gift_card';
