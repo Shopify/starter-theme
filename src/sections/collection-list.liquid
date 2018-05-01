@@ -14,7 +14,7 @@
   {% for block in section.blocks %}
     {%- assign collection = collections[block.settings.collection] -%}
 
-    <a href="{{ collection.url | default: "#" }}" class="collection-list-item">
+    <a href="{{ collection.url | default: "#" }}" class="collection-list-item" {{ block.shopify_attributes }}>
       {% if collection.image != blank or collection.products.first != blank %}
         {%- assign image_object = collection.image | default: collection.products.first.featured_image -%}
         <div class="collection-list__image">
