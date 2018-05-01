@@ -5,13 +5,8 @@
   {%- assign font_body_bold = settings.font_body | font_modify: 'weight', 'bolder' -%}
   {%- assign font_body_bold_italic = font_body_bold | font_modify: 'style', 'italic' -%}
 
-  {% if font_body_bold %}
-    {{ font_body_bold | font_face }}
-  {% endif %}
-
-  {% if font_body_bold_italic %}
-    {{ font_body_bold_italic | font_face }}
-  {% endif %}
+  {{ font_body_bold | font_face }}
+  {{ font_body_bold_italic | font_face }}
 
   :root {
     --color-accent: {{ settings.color_accent }};
