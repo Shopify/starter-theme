@@ -10,20 +10,21 @@
 
 // Tools
 @import './tools/mixins';
+@import './tools/functions';
 
 // Core
-@import './core/slate-reset';
-@import './core/helper-classes';
-@import './core/layout';
-@import './core/icons';
-@import './core/typography';
-@import './core/rte';
-@import './core/responsive-tables';
 @import './core/forms';
+@import './core/helpers';
+@import './core/layout';
+@import './core/media';
+@import './core/responsive-tables';
+@import './core/rte';
+@import './core/typography';
 
 // Components
 @import './components/buttons';
 @import './components/hero-banner';
+@import './components/icons';
 @import './components/placeholders';
 @import './components/responsive-images';
 

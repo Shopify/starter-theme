@@ -1,11 +1,15 @@
-body,
 html {
   background-color: $color-body;
+  box-sizing: border-box;
 }
 
-.page-width {
-  @include clearfix;
-  max-width: $grid-max-width;
-  margin: 0 auto;
-  padding: 0 $grid-gutter;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
 }
