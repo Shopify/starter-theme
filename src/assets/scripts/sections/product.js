@@ -8,8 +8,9 @@
 
 import $ from 'jquery';
 import Variants from '@shopify/theme-variants';
-import images from '@shopify/theme-images';
-import currency from '@shopify/theme-currency';
+import {imageSize, preload, getSizedImageUrl} from '@shopify/theme-images';
+import {formatMoney} from '@shopify/theme-currency';
+import sections from '@shopify/theme-sections';
 
 const selectors = {
   addToCart: '[data-add-to-cart]',
@@ -30,53 +31,50 @@ const selectors = {
  * `section:load` events.
  * @param {string} container - selector for the section container DOM element
  */
-export default function Product(container) {
-  this.$container = $(container);
 
-  // Stop parsing if we don't have the product json script tag when loading
-  // section in the Theme Editor
-  if (!$(selectors.productJson, this.$container).html()) {
-    return;
-  }
+sections.register('product', {
+  onLoad() {
+    // Stop parsing if we don't have the product json script tag when loading
+    // section in the Theme Editor
+    if (!$(selectors.productJson, this.$container).html()) {
+      return;
+    }
 
-  this.productSingleObject = JSON.parse(
-    $(selectors.productJson, this.$container).html(),
-  );
+    this.productSingleObject = JSON.parse(
+      $(selectors.productJson, this.$container).html(),
+    );
 
-  const options = {
-    $container: this.$container,
-    enableHistoryState: this.$container.data('enable-history-state') || false,
-    singleOptionSelector: selectors.singleOptionSelector,
-    originalSelectorId: selectors.originalSelectorId,
-    product: this.productSingleObject,
-  };
+    const options = {
+      $container: this.$container,
+      enableHistoryState: this.$container.data('enable-history-state') || false,
+      singleOptionSelector: selectors.singleOptionSelector,
+      originalSelectorId: selectors.originalSelectorId,
+      product: this.productSingleObject,
+    };
 
-  this.settings = {};
-  this.namespace = '.product';
-  this.variants = new Variants(options);
-  this.$featuredImage = $(selectors.productFeaturedImage, this.$container);
-
-  this.$container.on(
-    `variantChange${this.namespace}`,
-    this.updateAddToCartState.bind(this),
-  );
-  this.$container.on(
-    `variantPriceChange${this.namespace}`,
-    this.updateProductPrices.bind(this),
-  );
-
-  if (this.$featuredImage.length > 0) {
-    this.settings.imageSize = images.imageSize(this.$featuredImage.attr('src'));
-    images.preload(this.productSingleObject.images, this.settings.imageSize);
+    this.settings = {};
+    this.variants = new Variants(options);
+    this.$featuredImage = $(selectors.productFeaturedImage, this.$container);
 
     this.$container.on(
-      `variantImageChange${this.namespace}`,
-      this.updateProductImage.bind(this),
+      `variantChange${this.namespace}`,
+      this.updateAddToCartState.bind(this),
     );
-  }
-}
+    this.$container.on(
+      `variantPriceChange${this.namespace}`,
+      this.updateProductPrices.bind(this),
+    );
 
-Product.prototype = $.extend({}, Product.prototype, {
+    if (this.$featuredImage.length > 0) {
+      this.settings.imageSize = imageSize(this.$featuredImage.attr('src'));
+      preload(this.productSingleObject.images, this.settings.imageSize);
+
+      this.$container.on(
+        `variantImageChange${this.namespace}`,
+        this.updateProductImage.bind(this),
+      );
+    }
+  },
 
   /**
    * Updates the DOM state of the add to cart button
@@ -122,12 +120,12 @@ Product.prototype = $.extend({}, Product.prototype, {
     );
 
     $(selectors.productPrice, this.$container).html(
-      currency.formatMoney(variant.price, theme.moneyFormat),
+      formatMoney(variant.price, theme.moneyFormat),
     );
 
     if (variant.compare_at_price > variant.price) {
       $comparePrice.html(
-        currency.formatMoney(variant.compare_at_price, theme.moneyFormat),
+        formatMoney(variant.compare_at_price, theme.moneyFormat),
       );
       $compareEls.removeClass('hide');
     } else {
@@ -143,7 +141,7 @@ Product.prototype = $.extend({}, Product.prototype, {
    */
   updateProductImage(evt) {
     const variant = evt.variant;
-    const sizedImgUrl = images.getSizedImageUrl(
+    const sizedImgUrl = getSizedImageUrl(
       variant.featured_image.src,
       this.settings.imageSize,
     );
