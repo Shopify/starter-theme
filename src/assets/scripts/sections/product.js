@@ -33,14 +33,13 @@ const selectors = {
  */
 
 sections.register('product', {
-  onLoad(container) {
+  onLoad() {
     // Stop parsing if we don't have the product json script tag when loading
     // section in the Theme Editor
     if (!$(selectors.productJson, this.$container).html()) {
       return;
     }
 
-    const sectionId = this.$container.attr('data-section-id');
     this.productSingleObject = JSON.parse(
       $(selectors.productJson, this.$container).html(),
     );
