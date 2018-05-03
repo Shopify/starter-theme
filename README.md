@@ -1,6 +1,6 @@
 # Shopify Starter Theme
 
-> ⚠️ Shopify Starter Theme and [Slate v1.0](https://github.com/Shopify/slate/tree/1.x) are currently an Alpha release, meaning you should expect breaking changes between updates and more bugs than a finalized release. We believe that by getting Slate in the hands of developer communtiy as soon as possible, we can gather critical feedback to make it an even bigger success. Slate v1.0 has not yet been tested on Windows.
+> **Shopify Starter Theme and [Slate v1](https://github.com/Shopify/slate) are currently in beta!** You should expect potentially breaking changes between updates and more bugs than a finalized release. Slate v1.0 has not yet been tested on Windows.
 
 The Starter Theme represents the Shopify Themes Team opinionated starting point for new a Slate theme project. It strives to include up-to-date best-practices and solutions that we have deemed needed for the majority of themes we build. It is a reflection of what’s possible when building a theme.
 
