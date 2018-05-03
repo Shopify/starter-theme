@@ -12,7 +12,7 @@ To get started with Shopify Starter Theme, run the following command in your ter
 $ yarn create slate-theme my-new-theme
 ```
 
-For more information on connecting your new project with a Shopify store, see the [Slate docs](https://github.com/Shopify/slate/tree/1.x#connect-to-your-store).
+For more information on connecting your new project with a Shopify store, see the [Slate docs](https://github.com/Shopify/slate/wiki/2.-Connect-to-your-store).
 
 ## Project Structure
 
@@ -53,7 +53,7 @@ Starter Theme comes with [Babel](https://babeljs.io/) preconfigured with [`shopi
 
 `.env` (optional)
 
-Slate will use the environment variables declared in this file to connect to deploy files to your Shopify store. For more information, visit the [`@shopify/slate-env` docs](https://github.com/Shopify/slate/tree/1.x/packages/slate-env).
+Slate will use the environment variables declared in this file to connect to deploy files to your Shopify store. For more information, visit the [`@shopify/slate-env` docs](https://github.com/Shopify/slate/wiki/Deploy-environments).
 
 This file, along with any other `.env.[environment]` files, contain sensitive information and should not be commited to Github.
 
@@ -81,7 +81,7 @@ The `package.json` includes npm/yarn scripts for you to be able to use Slate's C
 
 `slate.config.js`
 
-The Slate Config file allows you to custimize Slate to the specific needs of your project. For more information, visit the [`@shopify/slate-config` docs](https://github.com/Shopify/slate/tree/1.x/packages/slate-config).
+The Slate Config file allows you to custimize Slate to the specific needs of your project. For more information, visit the [`@shopify/slate-config` docs](https://github.com/Shopify/slate/wiki/Slate-config).
 
 #### [7] Yarn.lock
 
@@ -115,7 +115,7 @@ You **must** include your style index file at the top of your `theme.js` file fo
 import '../sass/index.scss';
 ```
 
-Liquid variables are accesible in `.css`, `.scss`, and `.sass` files via CSS Custom Properties that are declared in the `snippets/css-variables.liquid`. For more information, visit the [Slate Docs](https://github.com/Shopify/slate/tree/1.x).
+Liquid variables are accesible in `.css`, `.scss`, and `.sass` files via CSS Custom Properties that are declared in the `snippets/css-variables.liquid`. For more information, visit the [Slate Docs](https://github.com/Shopify/slate).
 
 #### [10] SVGs
 
@@ -131,7 +131,7 @@ On build, Slate moves all SVGs in this folder to the `snippets/` folder and rena
 
 `src/assets/static`
 
-Sometimes you need the ability to upload unmodified files to the Shopify server. This is where the `static` directory comes in. Any files placed inside this directory will be uploaded, as-is, to Shopify. To reference them in your `.liquid` files, you'll want to [ensure Webpack doesn't parse your liquid filters](https://github.com/Shopify/slate/tree/1.x/packages/slate-tools#how-to-prevent-webpack-from-parsing-some-liquid-methods-and-filters) when referencing those files.
+Sometimes you need the ability to upload unmodified files to the Shopify server. This is where the `static` directory comes in. Any files placed inside this directory will be uploaded, as-is, to Shopify. To reference them in your `.liquid` files, you'll want to [ensure Webpack doesn't parse your liquid filters](https://github.com/Shopify/slate/wiki/Slate%20Tools#how-to-prevent-webpack-from-parsing-some-liquid-methods-and-filters) when referencing those files.
 
 This special directory can be useful for files added by plugins you've installed, or for when you need to construct an image URL in Liquid.
 
