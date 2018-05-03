@@ -34,7 +34,7 @@ Once Slate has created the scaffolding of your project, it will have the followi
     │   ├── scripts [8]
     │   └── styles [9]
     │   └── svg [10]
-    │   └── vendors [11]
+    │   └── static [11]
     ├── config [12]
     ├── layout [12]
     ├── locales [12]
@@ -127,11 +127,11 @@ On build, Slate moves all SVGs in this folder to the `snippets/` folder and rena
 {% include 'icon-shopify' %}
 ```
 
-#### [11] Vendors
+#### [11] Static
 
-`src/assets/vendors`
+`src/assets/static`
 
-Sometimes you need the ability to upload unmodified files to the Shopify server. This is where the `vendors` directory comes in. Any files placed inside this directory will be uploaded, as-is, to Shopify. To reference them in your `.liquid` files, you'll want to [ensure Webpack doesn't parse your liquid filters](https://github.com/Shopify/slate/tree/1.x/packages/slate-tools#how-to-prevent-webpack-from-parsing-some-liquid-methods-and-filters) when referencing those files.
+Sometimes you need the ability to upload unmodified files to the Shopify server. This is where the `static` directory comes in. Any files placed inside this directory will be uploaded, as-is, to Shopify. To reference them in your `.liquid` files, you'll want to [ensure Webpack doesn't parse your liquid filters](https://github.com/Shopify/slate/tree/1.x/packages/slate-tools#how-to-prevent-webpack-from-parsing-some-liquid-methods-and-filters) when referencing those files.
 
 This special directory can be useful for files added by plugins you've installed, or for when you need to construct an image URL in Liquid.
 
