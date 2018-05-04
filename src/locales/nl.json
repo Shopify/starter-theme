@@ -49,13 +49,20 @@
       "title": "Zoek naar producten",
       "placeholder": "Zoek in onze winkel",
       "submit": "Zoeken"
+    },
+    "newsletter_form": {
+      "newsletter_email": "Kom bij onze maillijst",
+      "email_placeholder": "E-mail",
+      "confirmation": "Bedankt voor het abonneren",
+      "submit": "Abonneren"
     }
   },
   "blogs": {
     "article": {
       "author_on_date_html": "Geplaats door {{ author }} op {{ date }}",
       "comment_meta_html": "{{ author }} op {{ date }}",
-      "read_more": "Lees verder"
+      "read_more": "Lees verder",
+      "by_author": "door {{ author }}"
     },
     "comments": {
       "title": "Laat een reactie achter",
@@ -231,6 +238,10 @@
   },
   "homepage": {
     "onboarding": {
+      "blog_title": "De titel van je bericht",
+      "blog_excerpt":
+        "Je winkel heeft nog geen blog-berichten gepubliceerd. Een blog kan worden gebruikt om te praten over nieuwe productlanceringen, tips of ander nieuws dat u met uw klanten wilt delen. Je kunt het ecommerce-blog van Shopify bekijken voor inspiratie en advies voor je eigen winkel en blog.",
+      "blog_author": "Auteur naam",
       "product_title": "Product Titel Voorbeeld",
       "collection_title": "Collectie Titel Voorbeeld",
       "no_content":
