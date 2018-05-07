@@ -9,7 +9,7 @@ If you're thinking of adding a big new feature, consider opening an issue first 
 To start working on the codebase, first fork the repo, then clone it:
 
 ```
-git clone git@github.com:your-username/slate.git
+git clone git@github.com:your-username/starter-theme.git
 ```
 
 _Note: replace "your-username" with your GitHub handle_
