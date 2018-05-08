@@ -3,9 +3,11 @@
   "version": "1.0.0-alpha.1",
   "private": true,
   "author": "Shopify Inc.",
-  "description":
-    "An opinionated, Slate compatible, starting point for developing Shopify themes.",
-  "keywords": ["shopify", "theme"],
+  "description": "An opinionated, Slate compatible, starting point for developing Shopify themes.",
+  "keywords": [
+    "shopify",
+    "theme"
+  ],
   "bugs": "https://github.com/Shopify/starter-theme/issues",
   "license": "MIT",
   "repository": {
@@ -28,7 +30,6 @@
     "@shopify/theme-sections": "^1.0.0-alpha.4",
     "@shopify/theme-variants": "^1.0.0-alpha.5",
     "jquery": "^3.2.1",
-    "lazysizes": "^4.0.2",
     "lodash-es": "^4.17.4",
     "normalize.css": "^7.0.0"
   },

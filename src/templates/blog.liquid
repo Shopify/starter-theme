@@ -46,6 +46,7 @@
       <a href="{{ article.url }}">
         {% include 'responsive-image' with
           image: article.image,
+          sizes: "(min-width: 36em) 50vw, 100vw",
           max_width: 1024,
           max_height: 1024
         %}

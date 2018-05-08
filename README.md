@@ -8,7 +8,7 @@ Starter Theme represents the Shopify Themes Team's opinionated starting point fo
 
 When launching Starter Theme for the first time, you may notice a lack of CSS styles. Is Starter Theme broken? Definitely not! Keep in mind this was done intentionally. Starter Theme is not a framework but rather a starting point for your project. It contains all the files the Shopify Themes team considers to be the bare essentials to building a Shopify theme.
 
-For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The [`src/styles/theme.scss`](https://github.com/Shopify/starter-theme/blob/master/src/assets/styles/theme.scss) file contains extremely limited styling to not get in the way of developers' CSS preferences. The JavaScript files contain most of our [helper scripts](https://github.com/Shopify/theme-scripts/tree/master/packages) and [lazysizes](https://github.com/aFarkas/lazysizes) for responsive image lazy loading.
+For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The [`src/styles/theme.scss`](https://github.com/Shopify/starter-theme/blob/master/src/assets/styles/theme.scss) file contains extremely limited styling to not get in the way of developers' CSS preferences. The JavaScript files contain most of our [helper scripts](https://github.com/Shopify/theme-scripts/tree/master/packages).
 
 ## Getting started
 
@@ -104,8 +104,8 @@ This folder constains all your JS modules. A `theme.js` must be present, as it w
 You can use ES6/ES2015's standard, which allows you to require your modules with the `import` syntax:
 
 ```js
-import { contains } from 'lodash';
-import Foo from './modules/foo';
+import { contains } from "lodash";
+import Foo from "./modules/foo";
 // const Bar = require('./modules/bar') is also available if that's your jam!
 ```
 
@@ -118,7 +118,7 @@ Slate fully supports `.css`, `.scss` and `.sass` files and their syntax, includi
 You **must** include your style index file at the top of your `theme.js` file for Webpack to be able to load your styles into its build process. For example:
 
 ```js
-import '../styles/theme.scss';
+import "../styles/theme.scss";
 ```
 
 Liquid variables are accessible in `.css`, `.scss`, and `.sass` files via CSS custom properties that are declared in the `layout/theme.liquid`. For more information, visit the [Slate docs](https://github.com/Shopify/slate/wiki/Local-SASS-compilation).

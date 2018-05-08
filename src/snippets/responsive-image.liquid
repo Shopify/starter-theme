@@ -1,24 +1,20 @@
 {%- comment -%}
-    It creates a style tag and it restricts an image from growing larger than its max resolution.
+  It creates a style tag and it restricts an image from growing larger than its max resolution.
 
-    Dependencies:
-    - Lazysizes plugin (https://github.com/aFarkas/lazysizes) which enable responsive image with faster load time and better performance.
-    - Lazysizes Responsive Images as a Service (https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/rias) To load the correct image size with our CDN
-    - Lazysizes Bgset (https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/bgset) To use responsive images on background-image (CSS)
+  Accepts:
+  - image: {Object} Image object
+  - sizes: {String} A set of source sizes, defaults to 100vw
+  - max_width: {Number} Max width of the image container
+  - max_height: {Number} Max height of the image container
+  - img_class: {String} class name of the <img />
+  - wrapper_class: {String} class name of the <div> wrapper
 
-    Accepts:
-    - image: {Object} Image object
-    - max_width: {Number} Max width of the image container
-    - max_height: {Number} Max height of the image container
-    - img_class: {String} class name of the <img />
-    - wrapper_class: {String} class name of the <div> wrapper
-
-    Usage:
-    In your liquid template file, copy the following line
-    - {% include 'responsive-image' with image: featured_image, img_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
+  Usage:
+  In your liquid template file, copy the following line
+  - {% include 'responsive-image' with image: featured_image, sizes: "(min-width: 45em) 50vw, 100vw", img_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
 {%- endcomment -%}
 
-{%- comment -%} Added incremental number to avoid conflict styling code when the same images are using this snippet {%- endcomment -%}
+{%- comment -%}Incremental number to avoid conflict styling code when the same images are using this snippet{%- endcomment -%}
 {%- capture responsive_image_counter %}{% increment responsive_image_counter %}{% endcapture -%}
 
 <style>
@@ -53,20 +49,27 @@
   }
 </style>
 
-{%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-
-<div id="ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" >
+<div id="ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" class="responsive-image__wrapper {{ wrapper_class }}" >
   <img id="Image-{{ image.id }}-{{ responsive_image_counter }}"
-    class="responsive-image__image lazyload {{ img_class }}"
+    class="responsive-image__image {{ img_class }}"
     src="{{ image | img_url: '300x' }}"
-    data-src="{{ img_url }}"
-    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]"
-    data-aspectratio="{{ image.aspect_ratio }}"
-    data-sizes="auto"
+    srcset="
+      {%- if image.width > 3024 -%}{{ image | img_url: '3024x' }} 3024w,{%- endif -%}
+      {%- if image.width > 2808 -%}{{ image | img_url: '2808x' }} 2808w,{%- endif -%}
+      {%- if image.width > 2592 -%}{{ image | img_url: '2592x' }} 2592w,{%- endif -%}
+      {%- if image.width > 2376 -%}{{ image | img_url: '2376x' }} 2376w,{%- endif -%}
+      {%- if image.width > 2160 -%}{{ image | img_url: '2160x' }} 2160w,{%- endif -%}
+      {%- if image.width > 1944 -%}{{ image | img_url: '1944x' }} 1944w,{%- endif -%}
+      {%- if image.width > 1728 -%}{{ image | img_url: '1728x' }} 1728w,{%- endif -%}
+      {%- if image.width > 1512 -%}{{ image | img_url: '1512x' }} 1512w,{%- endif -%}
+      {%- if image.width > 1296 -%}{{ image | img_url: '1296x' }} 1296w,{%- endif -%}
+      {%- if image.width > 1080 -%}{{ image | img_url: '1080x' }} 1080w,{%- endif -%}
+      {%- if image.width > 900 -%}{{ image | img_url: '900x' }} 900w,{%- endif -%}
+      {%- if image.width > 720 -%}{{ image | img_url: '720x' }} 720w,{%- endif -%}
+      {%- if image.width > 540 -%}{{ image | img_url: '540x' }} 540w,{%- endif -%}
+      {%- if image.width > 360 -%}{{ image | img_url: '360x' }} 360w,{%- endif -%}
+      {%- if image.width > 180 -%}{{ image | img_url: '180x' }} 180w{%- endif -%}"
+    sizes="{% if sizes %}{{ sizes}}{% else %}100vw{% endif %}"
     alt="{{ image.alt | escape }}"
   >
 </div>
-
-<noscript>
-  <img class="{{ img_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
-</noscript>
