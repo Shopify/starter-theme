@@ -30,15 +30,13 @@
     <ul>
       {% for item in search.results %}
         <li>
-          {% assign featured_image = item.image | default: item.featured_image %}
-          {% if featured_image != blank %}
-            <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-              {{ featured_image | img_url: '240x240' | img_tag: featured_image.alt }}
-            </a>
-          {% endif %}
-
-          <h3>{{ item.title | link_to: item.url }}</h3>
-
+          <a href="{{ item.url | within: collection }}">
+            {% assign featured_image = item.image | default: item.featured_image %}
+            {% if featured_image != blank %}
+              {{ featured_image | img_url: '240x240' | img_tag: '' }}
+            {% endif %}
+            <h3>{{ item.title }}</h3>
+          </a>
           {% if item.object_type == 'product' %}
             <p>
               {% if item.compare_at_price > item.price %}
