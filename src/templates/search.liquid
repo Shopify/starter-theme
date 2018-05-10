@@ -29,53 +29,53 @@
 
 
 {% if search.performed %}
-    <ul>
-      {% for item in search.results %}
-        <li>
-          {% assign featured_image = item.image | default: item.featured_image %}
-          {% if featured_image != blank %}
-            <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-              {{ featured_image | img_url: '240x240' | img_tag: featured_image.alt }}
-            </a>
-          {% endif %}
+  <ul>
+    {% for item in search.results %}
+      <li>
+        {% assign featured_image = item.image | default: item.featured_image %}
+        {% if featured_image != blank %}
+          <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
+            {{ featured_image | img_url: '240x240' | img_tag: featured_image.alt }}
+          </a>
+        {% endif %}
 
-          <h5>{{ item.title | link_to: item.url }}</h5>
+        <h5>{{ item.title | link_to: item.url }}</h5>
 
-          {% if item.object_type == 'product' %}
-            <p>
-              {% if item.compare_at_price > item.price %}
-                {% if item.price_varies %}
-                  {% assign sale_price = item.price | money %}
-                  {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                {% else %}
-                  {{ 'products.product.on_sale' | t }}
-                  <span itemprop="price">{{ item.price | money }}</span>
-                {% endif %}
-                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                <s>{{ item.compare_at_price | money }}</s>
+        {% if item.object_type == 'product' %}
+          <p>
+            {% if item.compare_at_price > item.price %}
+              {% if item.price_varies %}
+                {% assign sale_price = item.price | money %}
+                {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
               {% else %}
-                {% if item.price_varies %}
-                  {% assign price = item.price | money %}
-                  <span itemprop="price">{{ 'products.product.from_text_html' | t: price: price }}</span>
-                {% else %}
-                  <span itemprop="price">{{ item.price | money }}</span>
-                {% endif %}
+                {{ 'products.product.on_sale' | t }}
+                <span itemprop="price">{{ item.price | money }}</span>
               {% endif %}
-              {% unless item.available %}
-              {{ 'products.product.sold_out' | t }}
-              {% endunless %}
-            </p>
-          {% else %}
-            <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
-          {% endif %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <s>{{ item.compare_at_price | money }}</s>
+            {% else %}
+              {% if item.price_varies %}
+                {% assign price = item.price | money %}
+                <span itemprop="price">{{ 'products.product.from_text_html' | t: price: price }}</span>
+              {% else %}
+                <span itemprop="price">{{ item.price | money }}</span>
+              {% endif %}
+            {% endif %}
+            {% unless item.available %}
+            {{ 'products.product.sold_out' | t }}
+            {% endunless %}
+          </p>
+        {% else %}
+          <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
+        {% endif %}
 
-        </li>
-      {% endfor %}
-    </ul>
+      </li>
+    {% endfor %}
+  </ul>
 
-    {% if paginate.pages > 1 %}
-      {% include 'pagination' %}
-    {% endif %}
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
   {% endif %}
+{% endif %}
 
 {% endpaginate %}
