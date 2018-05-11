@@ -10,6 +10,16 @@ When launching Starter Theme for the first time, you may notice a lack of CSS st
 
 For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The [`src/styles/theme.scss`](https://github.com/Shopify/starter-theme/blob/master/src/assets/styles/theme.scss) file contains extremely limited styling to not get in the way of developers' CSS preferences. The JavaScript files contain most of our [helper scripts](https://github.com/Shopify/theme-scripts/tree/master/packages) and [lazysizes](https://github.com/aFarkas/lazysizes) for responsive image lazy loading.
 
+## Requirements
+
+You'll want to ensure you have the following already installed on your local machine before getting started with Slate:
+
+#### Node
+The current LTS (long-term support) release. You can download it from the [Node website](https://nodejs.org/).
+
+#### Yarn
+We recommend this over NPM because of its speed, reliability and security. Follow the installation instructions on the [Yarn website](https://yarnpkg.com/en/docs/install).
+
 ## Getting started
 
 To get started with Starter Theme, run the following command in your terminal:
