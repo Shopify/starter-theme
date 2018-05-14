@@ -48,7 +48,15 @@
         "A sua pesquisa por \"{{ terms }}\" teve os seguintes resultados:",
       "title": "Procure produtos no nosso site",
       "placeholder": "Procure na nossa loja",
-      "submit": "Procurar"
+      "submit": "Procurar",
+      "heading": {
+        "one": "Resultado da pesquisa",
+        "other": "Procurar Resultados"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultado para \"{{ terms }}\"",
+        "other": "{{ count }} resultados para \"{{ terms }}\""
+      }
     },
     "newsletter_form": {
       "newsletter_email": "Assine nossa newsletter",
