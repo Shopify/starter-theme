@@ -2,11 +2,8 @@
 
   <h1>
     {% if search.performed %}
-      {% if search.results_count == 0 %}
-        {{ 'general.search.no_results_html' | t: terms: search.terms }}
-      {% else %}
-        {{ 'general.search.results_for_html' | t: terms: search.terms }}
-      {% endif %}
+      <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+        {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
     {% else %}
       {{ 'general.search.title' | t }}
     {% endif %}
@@ -27,20 +24,19 @@
     </button>
   </form>
 
+  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
 
-{% if search.performed %}
+  {% if search.performed %}
     <ul>
       {% for item in search.results %}
         <li>
-          {% assign featured_image = item.image | default: item.featured_image %}
-          {% if featured_image != blank %}
-            <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-              {{ featured_image | img_url: '240x240' | img_tag: featured_image.alt }}
-            </a>
-          {% endif %}
-
-          <h5>{{ item.title | link_to: item.url }}</h5>
-
+          <a href="{{ item.url | within: collection }}">
+            {% assign featured_image = item.image | default: item.featured_image %}
+            {% if featured_image != blank %}
+              {{ featured_image | img_url: '240x240' | img_tag }}
+            {% endif %}
+            <h3>{{ item.title }}</h3>
+          </a>
           {% if item.object_type == 'product' %}
             <p>
               {% if item.compare_at_price > item.price %}

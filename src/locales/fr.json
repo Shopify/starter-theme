@@ -48,7 +48,15 @@
         "Votre recherche pour \"{{ terms }}\" a généré les résultats suivants:",
       "title": "Effectuez une recherche",
       "placeholder": "Rechercher dans la boutique",
-      "submit": "Recherche"
+      "submit": "Recherche",
+      "heading": {
+        "one": "Résultat de la recherche",
+        "other": "Résultats de la recherche"
+      },
+      "results_with_count": {
+        "one": "{{ count }} résultat pour \"{{ terms }}\"",
+        "other": "{{ count }} résultats pour \"{{ terms }}\""
+      }
     },
     "newsletter_form": {
       "newsletter_email": "Soyez au courant",
