@@ -42,10 +42,6 @@
       }
     },
     "search": {
-      "no_results_html":
-        "Uw zoekopdracht naar \"{{ terms }}\" heeft geen resultaten opgeleverd.",
-      "results_for_html":
-        "Uw zoekopdracht naar \"{{ terms }}\" geeft de volgende resultaten:",
       "title": "Zoek naar producten",
       "placeholder": "Zoek in onze winkel",
       "submit": "Zoeken",
@@ -56,7 +52,8 @@
       "results_with_count": {
         "one": "{{ count }} resultaat voor \"{{ terms }}\"",
         "other": "{{ count }} resultaten voor \"{{ terms }}\""
-      }
+      },
+      "no_results_html": "Probeer een ander trefwoord of ga terug naar de <a href=\"/\">startpagina</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Kom bij onze maillijst",

@@ -42,10 +42,6 @@
       }
     },
     "search": {
-      "no_results_html":
-        "A sua pesquisa por \"{{ terms }}\" não teve resultados.",
-      "results_for_html":
-        "A sua pesquisa por \"{{ terms }}\" teve os seguintes resultados:",
       "title": "Procure produtos no nosso site",
       "placeholder": "Procure na nossa loja",
       "submit": "Procurar",
@@ -56,7 +52,8 @@
       "results_with_count": {
         "one": "{{ count }} resultado para \"{{ terms }}\"",
         "other": "{{ count }} resultados para \"{{ terms }}\""
-      }
+      },
+      "no_results_html": "Por favor, tente um termo de pesquisa diferente ou volte para a <a href=\"/\">página inicial</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Assine nossa newsletter",

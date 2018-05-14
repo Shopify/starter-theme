@@ -42,9 +42,6 @@
       }
     },
     "search": {
-      "no_results_html": "Su búsqueda de \"{{ terms }}\" no tuvo resultados.",
-      "results_for_html":
-        "Su búsqueda de \"{{ terms }}\" muestra lo siguiente:",
       "title": "Buscar productos en nuestro sitio",
       "placeholder": "buscar en nuestra tienda",
       "submit": "Buscar",
@@ -55,7 +52,8 @@
       "results_with_count": {
         "one": "{{ count }} resultado para \"{{ terms }}\"",
         "other": "{{ count }} resultados para \"{{ terms }}\""
-      }
+      },
+      "no_results_html": "Intente con un término de búsqueda diferente o regrese a la <a href=\"/\">página de inicio</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Estar en el saber",
