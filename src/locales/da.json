@@ -45,7 +45,15 @@
       "results_for_html": "Din søgning for \"{{ terms }}\" fandt følgende:",
       "title": "Søg efter produkter på vores site",
       "placeholder": "Søg på vores butik",
-      "submit": "Søg"
+      "submit": "Søg",
+      "heading": {
+        "one": "Søgeresultat",
+        "other": "Søgeresultater"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultat for \"{{ terms }}\"",
+        "other": "{{ count }} resultat for \"{{ terms }}\""
+      }
     },
     "newsletter_form": {
       "newsletter_email": "Deltag i vores mailingliste",
