@@ -47,7 +47,15 @@
         "Su búsqueda de \"{{ terms }}\" muestra lo siguiente:",
       "title": "Buscar productos en nuestro sitio",
       "placeholder": "buscar en nuestra tienda",
-      "submit": "Buscar"
+      "submit": "Buscar",
+      "heading": {
+        "one": "Resultado de búsqueda",
+        "other": "Resultados de la búsqueda"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultado para \"{{ terms }}\"",
+        "other": "{{ count }} resultados para \"{{ terms }}\""
+      }
     },
     "newsletter_form": {
       "newsletter_email": "Estar en el saber",

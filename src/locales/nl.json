@@ -48,7 +48,15 @@
         "Uw zoekopdracht naar \"{{ terms }}\" geeft de volgende resultaten:",
       "title": "Zoek naar producten",
       "placeholder": "Zoek in onze winkel",
-      "submit": "Zoeken"
+      "submit": "Zoeken",
+      "heading": {
+        "one": "Zoekresultaat",
+        "other": "Zoekresultaten"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultaat voor \"{{ terms }}\"",
+        "other": "{{ count }} resultaten voor \"{{ terms }}\""
+      }
     },
     "newsletter_form": {
       "newsletter_email": "Kom bij onze maillijst",
