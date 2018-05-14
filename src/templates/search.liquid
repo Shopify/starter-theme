@@ -33,7 +33,7 @@
           <a href="{{ item.url | within: collection }}">
             {% assign featured_image = item.image | default: item.featured_image %}
             {% if featured_image != blank %}
-              {{ featured_image | img_url: '240x240' | img_tag: '' }}
+              {{ featured_image | img_url: '240x240' | img_tag }}
             {% endif %}
             <h3>{{ item.title }}</h3>
           </a>
