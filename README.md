@@ -65,7 +65,7 @@ Once the scaffolding has been created, your project will consist of the followin
 
 Starter Theme comes with [Babel](https://babeljs.io/) preconfigured with [`shopify/babel-preset-shopify`](https://github.com/Shopify/babel-preset-shopify). You can modify this config file based on your project requirements, or remove it completely if you do not wish to take advantage of ES6+ transpilation for legacy browser support
 
-#### 1. Shopify API environment variables
+#### 2. Shopify API environment variables
 
 `.env`
 
