@@ -42,10 +42,6 @@
       }
     },
     "search": {
-      "no_results_html":
-        "Ihre Suche nach \"{{ terms }}\" hat keine Ergebnisse hervorgebracht.",
-      "results_for_html":
-        "Ihre Suche nach \"{{ terms }}\" hat folgende Ergebnisse hervorgebracht:",
       "title": "Suchen Sie auf unserer Seite nach Produkten",
       "placeholder": "Durchsuchen Sie unseren Shop",
       "submit": "Suchen",
@@ -56,7 +52,8 @@
       "results_with_count": {
         "one": "{{ count }} Ergebnis für \"{{ terms }}\"",
         "other": "{{ count }} Ergebnisse für \"{{ terms }}\""
-      }
+      },
+      "no_results_html": "Bitte versuchen Sie einen anderen Suchbegriff oder gehen Sie zurück zur <a href=\"/\">Startseite</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Im Bilde sein",

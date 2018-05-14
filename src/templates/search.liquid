@@ -26,7 +26,7 @@
 
   {% if search.performed %}
     {% if search.results_count == 0 %}
-      <p>{{ 'general.search.no_results' | t: terms: search.terms }}</p>
+      <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
     {% else %}
       <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
       <ul>
