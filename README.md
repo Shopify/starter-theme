@@ -28,7 +28,7 @@ To get started with Starter Theme, run the following command in your terminal:
 $ yarn create slate-theme my-new-theme
 ```
 
-For more information on connecting your new project with a Shopify store, see the [Slate docs](https://github.com/Shopify/slate/wiki/2.-Connect-to-your-store).
+For more information on connecting your new project with a Shopify store, see the [Slate docs](https://github.com/Shopify/slate/wiki/3.-Connect-to-your-store).
 
 ## Project structure
 
