@@ -30,7 +30,9 @@
     "jquery": "^3.2.1",
     "lazysizes": "^4.0.2",
     "lodash-es": "^4.17.4",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "webpack": "^4.8.3",
+    "wrapper-webpack-plugin": "^2.0.0"
   },
   "scripts": {
     "start": "slate-tools start",
