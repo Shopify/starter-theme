@@ -11,74 +11,75 @@
   - Show author
   - Show date
 {%- endcomment -%}
-<section class="blog-post">
+<section>
   {% if section.settings.title != blank %}
-    <h2 class="blog-post__title">{{ section.settings.title | escape }}</h2>
+    <h2>{{ section.settings.title | escape }}</h2>
   {% endif %}
 
   {%- assign blog = blogs[section.settings.blog] -%}
 
-  {% for article in blog.articles limit: section.settings.post_limit %}
-    <div class="blog-post__item">
-      {% if article.image %}
+  <ul class="blog-post">
+    {% for article in blog.articles limit: section.settings.post_limit %}
+      <li class="blog-post__item">
         <a href="{{ article.url }}">
-          {% include 'responsive-image' with
-              image: article.image,
-              max_width: 400,
-              max_height: 400
-          %}
+          {% if article.image %}
+            {% include 'responsive-image' with
+                image: article.image,
+                max_width: 400,
+                max_height: 400
+            %}
+          {% endif %}
+          <h2>{{ article.title }}</h2>
         </a>
-      {% endif %}
-
-      <div>
-        <h2>
-          <a href="{{ article.url }}">{{ article.title }}</a>
-        </h2>
-
-        {% if section.settings.blog_show_author %}
-          <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
-        {% endif %}
-
-        {% if section.settings.blog_show_date %}
-          <p>
-            {{ article.published_at | time_tag: format: 'month_day_year' }}
-          </p>
-        {% endif %}
 
         <div>
-          {% if article.excerpt.size > 0 %}
-            {{ article.excerpt }}
-          {% else %}
-            {{ article.content | strip_html | truncate: 150 }}
+          {% if section.settings.blog_show_author %}
+            <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
           {% endif %}
+
+          {% if section.settings.blog_show_date %}
+            <p>
+              {{ article.published_at | time_tag: format: 'month_day_year' }}
+            </p>
+          {% endif %}
+
+          <div>
+            {% if article.excerpt.size > 0 %}
+              {{ article.excerpt }}
+            {% else %}
+              {{ article.content | strip_html | truncate: 150 }}
+            {% endif %}
+          </div>
+
+          {% if article.tags.size > 0 %}
+            <ul>
+              {% for tag in article.tags %}
+                <li><a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <a href="{{ article.url }}" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">{{ 'blogs.article.read_more' | t }}</a>
         </div>
+      </li>
+    {% else %}
+      {% for i in (1..section.settings.post_limit) %}
+        <li class="blog-post__item">
+          <h3>
+            <a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a>
+          </h3>
 
-        {% if article.tags.size > 0 %}
-          {% for tag in article.tags %}
-            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
-          {% endfor %}
-        {% endif %}
+          {% if section.settings.blog_show_author %}
+            <span>{{ 'homepage.onboarding.blog_author' | t }}</span>
+          {% endif %}
 
-        <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a>
-      </div>
-    </div>
-  {% else %}
-    {% for i in (1..section.settings.post_limit) %}
-      <div class="blog-post__item">
-        <h3>
-          <a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a>
-        </h3>
+          <div>{{ 'homepage.onboarding.blog_excerpt' | t }}</div>
 
-        {% if section.settings.blog_show_author %}
-          <span>{{ 'homepage.onboarding.blog_author' | t }}</span>
-        {% endif %}
-
-        <div>{{ 'homepage.onboarding.blog_excerpt' | t }}</div>
-
-        <a href="#">{{ 'blogs.article.read_more' | t }}</a>
-      </div>
+          <a href="#">{{ 'blogs.article.read_more' | t }}</a>
+        </li>
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
+  </ul>
 </section>
 
 {% schema %}

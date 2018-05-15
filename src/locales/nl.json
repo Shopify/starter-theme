@@ -53,7 +53,8 @@
         "one": "{{ count }} resultaat voor \"{{ terms }}\"",
         "other": "{{ count }} resultaten voor \"{{ terms }}\""
       },
-      "no_results_html": "Probeer een ander trefwoord of ga terug naar de <a href=\"/\">startpagina</a>."
+      "no_results_html":
+        "Probeer een ander trefwoord of ga terug naar de <a href=\"/\">startpagina</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Kom bij onze maillijst",
@@ -67,6 +68,7 @@
       "author_on_date_html": "Geplaats door {{ author }} op {{ date }}",
       "comment_meta_html": "{{ author }} op {{ date }}",
       "read_more": "Lees verder",
+      "read_more_title": "Lees verder: {{ title }}",
       "by_author": "door {{ author }}"
     },
     "comments": {
