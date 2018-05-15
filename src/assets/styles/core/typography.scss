@@ -30,3 +30,7 @@ select {
 a:focus {
   color: inherit;
 }
+
+a.alert {
+  color: $color-alert;
+}

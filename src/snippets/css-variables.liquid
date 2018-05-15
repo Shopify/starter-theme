@@ -1,3 +1,5 @@
+{% include 'liquid-variables' %}
+
 <style>
   {{ settings.font_heading | font_face }}
   {{ settings.font_body | font_face }}
@@ -10,6 +12,7 @@
 
   :root {
     --color-accent: {{ settings.color_accent }};
+    --color-alert: {{ color_alert }};
     --color-body-text: {{ settings.color_body_text }};
     --color-main-background: {{ settings.color_main_bg }};
     --color-border: {{ settings.color_body_text | color_lighten: 50 }};
