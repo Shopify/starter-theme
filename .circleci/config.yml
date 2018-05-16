@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Installing dependencies
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Installing Theme Kit
+          command: curl -s https://raw.githubusercontent.com/Shopify/themekit/master/scripts/install | sudo python
+      - run:
+          name: Building files
+          command: yarn build
+      - run:
+          name: Linting
+          command: yarn lint
