@@ -7,11 +7,7 @@
   {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
 {% endif %}
 
-<div data-section-id="{{ section.id }}" data-section-type="product" itemscope itemtype="http://schema.org/Product">
-  <meta itemprop="name" content="{{ product.title }}">
-  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
-  <meta itemprop="image" content="{{ featured_image | img_url: '800x' }}">
-  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+<div data-section-id="{{ section.id }}" data-section-type="product">
 
   {% if featured_image.src != blank %}
     {% include 'responsive-image' with
@@ -38,10 +34,7 @@
     <p>{{ product.vendor }}</p>
   {% endif %}
 
-  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-    <meta itemprop="price" content="{{ product.price | divided_by: 100.00 }}">
-    <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+  <div>
 
     <form action="/cart/add" method="post" enctype="multipart/form-data">
       {% unless product.has_only_default_variant %}
@@ -152,3 +145,63 @@
     ]
   }
 {% endschema %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  {% if product.featured_image %}
+    {% assign image_size = product.featured_image.width | append: 'x' %}
+    "image": [
+      "https:{{ product.featured_image.src | img_url: image_size }}"
+    ],
+  {% endif %}
+  "description": "{{ product.description | strip_html | escape }}",
+  {% if current_variant.sku != blank %}
+    "sku": "{{ current_variant.sku }}",
+  {% endif %}
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.vendor | escape }}"
+  },
+  {% if product.variants %}
+    "offers": [
+      {% for variant in product.variants %}
+        {
+          "@type" : "Offer",
+          "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : "{{ variant.price | divided_by: 100.00 }}",
+          "priceCurrency" : "{{ shop.currency }}",
+          "url" : "{{ shop.url }}{{ variant.url }}",
+          "itemOffered" :
+          {
+              "@type" : "Product",
+              {% if variant.image %}
+                {% assign variant_image_size = variant.image.width | append: 'x' %}
+                "image": "http:{{ variant.image.src | img_url: variant_image_size }}",
+              {% endif %}
+              {% if variant.title != blank %}
+                "name" : "{{ variant.title | escape }}",
+              {% endif %}
+              {% if variant.sku != blank %}
+                "sku": "{{ variant.sku }}",
+              {% endif %}
+              {% if variant.weight != blank %}
+                "weight": {
+                  "@type": "QuantitativeValue",
+                  {% if variant.weight_unit != blank %}
+                    "unitCode": "{{ variant.weight_unit }}",
+                  {% endif %}
+                  "value": "{{ variant.weight | weight_with_unit: variant.weight_unit }}"
+                },
+              {% endif %}
+              "url": "{{ shop.url }}{{ variant.url }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  {% endif %}
+}
+</script>

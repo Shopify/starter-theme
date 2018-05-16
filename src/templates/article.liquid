@@ -32,7 +32,7 @@
   {%- endunless -%}
 {%- endif -%}
 
-<article role="article" itemscope itemtype="http://schema.org/Article">
+<article role="article">
 
   {% if article.image %}
     <div class="hero-banner hero-banner--article lazyload" data-bgset="{% include 'responsive-bg-image', image: article.image %}"></div>
@@ -49,7 +49,7 @@
     <p>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>
   </header>
 
-  <div class="rte" itemprop="articleBody">
+  <div class="rte">
     {{ article.content }}
   </div>
 
@@ -168,3 +168,44 @@
   {% endif %}
 
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": "{{ article.content | strip_html }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ shop.url }}{{ page.url }}"
+  },
+  "headline": "{{ article.title }}",
+  {% if article.excerpt != blank %}
+    "description": "{{ article.excerpt | strip_html }}",
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      "https:{{ article | img_url: image_size }}"
+    ],
+  {% endif %}
+  "datePublished": "{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "dateCreated": "{{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ article.author }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": "{{ settings.share_image.height }}",
+        "url": "https:{{ settings.share_image | img_url: image_size }}",
+        "width": "{{ settings.share_image.width }}"
+      },
+    {% endif %}
+    "name": "{{ shop.name }}"
+  }
+}
+</script>
