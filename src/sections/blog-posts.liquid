@@ -19,7 +19,7 @@
   {%- assign blog = blogs[section.settings.blog] -%}
 
   {%- comment -%}
-    Due to accessibility requirement, the Blog entries list functions
+    Due to accessibility requirements, the Blog entries list functions
     as a list of content items. Non-visual users will expect lists of content
     to appear in a list structure, allowing for easier understanding and navigation of list items.
   {%- endcomment -%}
@@ -27,7 +27,7 @@
     {% for article in blog.articles limit: section.settings.post_limit %}
       <li class="blog-post__item">
         {%- comment -%}
-          Due to accessibility requirement, we are regrouping all logical elements into the <a> element.
+          Due to accessibility requirements, we are regrouping all logical elements into the <a> element.
           If a screen reader user is tabbing through the page, or browsing by links on the page with duplicated links,
           they will appear identical which may lead to a confusing user experience.
         {%- endcomment -%}
