@@ -69,7 +69,8 @@
       "comment_meta_html": "{{ author }} em {{ date }}",
       "read_more": "Saiba mais",
       "read_more_title": "Ler mais: {{ title }}",
-      "by_author": "por {{ author }}"
+      "by_author": "por {{ author }}",
+      "tags": "Tag"
     },
     "comments": {
       "title": "Deixe um comentário",

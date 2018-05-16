@@ -69,7 +69,8 @@
       "comment_meta_html": "{{ author }} op {{ date }}",
       "read_more": "Lees verder",
       "read_more_title": "Lees verder: {{ title }}",
-      "by_author": "door {{ author }}"
+      "by_author": "door {{ author }}",
+      "tags": "Labels"
     },
     "comments": {
       "title": "Laat een reactie achter",

@@ -67,7 +67,8 @@
       "comment_meta_html": "{{ author }} den {{ date }}",
       "read_more": "Læs mere",
       "read_more_title": "Læs mere: {{ title }}",
-      "by_author": "af {{ author }}"
+      "by_author": "af {{ author }}",
+      "tags": "Tags"
     },
     "comments": {
       "title": "Skriv en kommentar",

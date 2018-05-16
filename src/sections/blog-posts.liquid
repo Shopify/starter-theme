@@ -67,7 +67,7 @@
               Non-visual users will expect lists of content to appear
               in a list structure, allowing for easier understanding and navigation of list items.
             {%- endcomment -%}
-            <ul>
+            <ul aria-label="{{ 'blogs.article.tags' | t }}">
               {% for tag in article.tags %}
                 <li><a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a></li>
               {% endfor %}
