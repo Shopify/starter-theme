@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Installing dependencies
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Installing Theme Kit
+          command: curl -s https://raw.githubusercontent.com/Shopify/themekit/master/scripts/install | sudo python
+      - run:
+          name: Building files
+          command: yarn build
+      - run:
+          name: Linting JavaScript
+          command: yarn lint --js
+      - run:
+          name: Linting styles
+          command: yarn lint --styles
+      - run:
+          name: Linting locales
+          command: yarn lint --locales
