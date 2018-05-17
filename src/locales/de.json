@@ -53,7 +53,8 @@
         "one": "{{ count }} Ergebnis für \"{{ terms }}\"",
         "other": "{{ count }} Ergebnisse für \"{{ terms }}\""
       },
-      "no_results_html": "Bitte versuchen Sie einen anderen Suchbegriff oder gehen Sie zurück zur <a href=\"/\">Startseite</a>."
+      "no_results_html":
+        "Bitte versuchen Sie einen anderen Suchbegriff oder gehen Sie zurück zur <a href=\"/\">Startseite</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Im Bilde sein",
@@ -67,7 +68,9 @@
       "author_on_date_html": "Geposted von {{ author }} am {{ date }}",
       "comment_meta_html": "{{ author }} am {{ date }}",
       "read_more": "Weiterlesen",
-      "by_author": "von {{ author }}"
+      "read_more_title": "Weiterlesen: {{ title }}",
+      "by_author": "von {{ author }}",
+      "tags": "Stichworte"
     },
     "comments": {
       "title": "Hinterlassen Sie einen Kommentar",

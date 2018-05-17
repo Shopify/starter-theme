@@ -65,7 +65,9 @@
       "author_on_date_html": "Posted by {{ author }} on {{ date }}",
       "comment_meta_html": "{{ author }} on {{ date }}",
       "read_more": "Read more",
-      "by_author": "by {{ author }}"
+      "read_more_title": "Read more: {{ title }}",
+      "by_author": "by {{ author }}",
+      "tags": "Tags"
     },
     "comments": {
       "title": "Leave a comment",
