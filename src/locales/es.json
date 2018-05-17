@@ -53,7 +53,8 @@
         "one": "{{ count }} resultado para \"{{ terms }}\"",
         "other": "{{ count }} resultados para \"{{ terms }}\""
       },
-      "no_results_html": "Intente con un término de búsqueda diferente o regrese a la <a href=\"/\">página de inicio</a>."
+      "no_results_html":
+        "Intente con un término de búsqueda diferente o regrese a la <a href=\"/\">página de inicio</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Estar en el saber",
@@ -67,7 +68,9 @@
       "author_on_date_html": "Publicado por {{ author }} en {{ date }}",
       "comment_meta_html": "{{ author }} en {{ date }}",
       "read_more": "Leer más",
-      "by_author": "por {{ author }}"
+      "read_more_title": "Leer más: {{ title }}",
+      "by_author": "por {{ author }}",
+      "tags": "Etiquetas"
     },
     "comments": {
       "title": "Dejar un comentario",

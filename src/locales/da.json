@@ -51,7 +51,8 @@
         "one": "{{ count }} resultat for \"{{ terms }}\"",
         "other": "{{ count }} resultat for \"{{ terms }}\""
       },
-      "no_results_html": "Prøv et andet søgeord eller gå tilbage til <a href=\"/\">hjemmesiden</a>."
+      "no_results_html":
+        "Prøv et andet søgeord eller gå tilbage til <a href=\"/\">hjemmesiden</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Deltag i vores mailingliste",
@@ -65,7 +66,9 @@
       "author_on_date_html": "Skrevet af {{ author }} den {{ date }}",
       "comment_meta_html": "{{ author }} den {{ date }}",
       "read_more": "Læs mere",
-      "by_author": "af {{ author }}"
+      "read_more_title": "Læs mere: {{ title }}",
+      "by_author": "af {{ author }}",
+      "tags": "Tags"
     },
     "comments": {
       "title": "Skriv en kommentar",

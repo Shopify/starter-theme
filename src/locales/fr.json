@@ -53,7 +53,8 @@
         "one": "{{ count }} résultat pour \"{{ terms }}\"",
         "other": "{{ count }} résultats pour \"{{ terms }}\""
       },
-      "no_results_html": "Veuillez essayer un terme de recherche différent ou revenir à la <a href=\"/\">page d'accueil</a>."
+      "no_results_html":
+        "Veuillez essayer un terme de recherche différent ou revenir à la <a href=\"/\">page d'accueil</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Soyez au courant",
@@ -67,7 +68,9 @@
       "author_on_date_html": "Publié par {{ author }} le {{ date }}",
       "comment_meta_html": "{{ author }} le {{ date }}",
       "read_more": "Plus",
-      "by_author": "par {{ author }}"
+      "read_more_title": "Plus: {{ title }}",
+      "by_author": "par {{ author }}",
+      "tags": "Mots clés"
     },
     "comments": {
       "title": "Laissez un commentaire",
