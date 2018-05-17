@@ -21,5 +21,11 @@ jobs:
           name: Building files
           command: yarn build
       - run:
-          name: Linting
-          command: yarn lint
+          name: Linting JavaScript
+          command: yarn lint --js
+      - run:
+          name: Linting styles
+          command: yarn lint --styles
+      - run:
+          name: Linting locales
+          command: yarn lint --locales
