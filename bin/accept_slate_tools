@@ -1,0 +1,1 @@
+echo '{"uuid":"e0fa6ff1-8dd5-41d8-9408-34feb888cea9","email":"starter.theme@shopify.com","tracking":true,"trackingVersion":1}' > ~/.slaterc
