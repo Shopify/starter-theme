@@ -118,8 +118,8 @@ This folder constains all your JS modules. A `theme.js` must be present, as it w
 You can use ES6/ES2015's standard, which allows you to require your modules with the `import` syntax:
 
 ```js
-import { contains } from "lodash";
-import Foo from "./modules/foo";
+import { contains } from 'lodash';
+import Foo from './modules/foo';
 // const Bar = require('./modules/bar') is also available if that's your jam!
 ```
 
@@ -132,7 +132,7 @@ Slate fully supports `.css`, `.scss` and `.sass` files and their syntax, includi
 You **must** include your style index file at the top of your `theme.js` file for Webpack to be able to load your styles into its build process. For example:
 
 ```js
-import "../styles/theme.scss";
+import '../styles/theme.scss';
 ```
 
 Liquid variables are accessible in `.css`, `.scss`, and `.sass` files via CSS custom properties that are declared in the `layout/theme.liquid`. For more information, visit the [Slate docs](https://github.com/Shopify/slate/wiki/Local-SASS-compilation).
