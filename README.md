@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Shopify/starter-theme.svg?branch=master)](https://travis-ci.org/Shopify/starter-theme)
+
 # Starter Theme
 
 > **Starter Theme and [Slate v1](https://github.com/Shopify/slate) are currently in beta!** You should expect potentially breaking changes between updates and more bugs than a finalized release. Slate v1.0 has not yet been tested on Windows.
@@ -15,9 +17,11 @@ For templates and snippets, standard Liquid tags and logic have been included wi
 You'll want to ensure you have the following already installed on your local machine before getting started with Slate:
 
 #### Node
+
 The current LTS (long-term support) release. You can download it from the [Node website](https://nodejs.org/).
 
 #### Yarn
+
 We recommend this over NPM because of its speed, reliability and security. Follow the installation instructions on the [Yarn website](https://yarnpkg.com/en/docs/install).
 
 ## Getting started
@@ -114,8 +118,8 @@ This folder constains all your JS modules. A `theme.js` must be present, as it w
 You can use ES6/ES2015's standard, which allows you to require your modules with the `import` syntax:
 
 ```js
-import { contains } from 'lodash';
-import Foo from './modules/foo';
+import { contains } from "lodash";
+import Foo from "./modules/foo";
 // const Bar = require('./modules/bar') is also available if that's your jam!
 ```
 
@@ -128,7 +132,7 @@ Slate fully supports `.css`, `.scss` and `.sass` files and their syntax, includi
 You **must** include your style index file at the top of your `theme.js` file for Webpack to be able to load your styles into its build process. For example:
 
 ```js
-import '../styles/theme.scss';
+import "../styles/theme.scss";
 ```
 
 Liquid variables are accessible in `.css`, `.scss`, and `.sass` files via CSS custom properties that are declared in the `layout/theme.liquid`. For more information, visit the [Slate docs](https://github.com/Shopify/slate/wiki/Local-SASS-compilation).
