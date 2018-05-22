@@ -36,7 +36,7 @@
     name="contact[phone]"
     id="ContactFormPhone"
     placeholder="{{ 'contact.form.phone' | t }}"
-    value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+    value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
     pattern="[0-9\-]*">
 
   <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
@@ -44,9 +44,9 @@
     name="contact[body]"
     id="ContactFormMessage"
     placeholder="{{ 'contact.form.message' | t }}">
-    {% if form.body %}
-      {{ form.body }}
-    {% endif %}
+    {%- if form.body -%}
+      {{- form.body -}}
+    {%- endif -%}
   </textarea>
 
   <input type="submit" class="button" value="{{ 'contact.form.send' | t }}">
