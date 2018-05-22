@@ -204,6 +204,14 @@
         "url": "https:{{ settings.share_image | img_url: image_size }}",
         "width": "{{ settings.share_image.width }}"
       },
+    {% elsif article.image %}
+      {% assign image_size = article.image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": "{{ article.image.height }}",
+        "url": "https:{{ article.image | img_url: image_size }}",
+        "width": "{{ article.image.width }}"
+      },
     {% endif %}
     "name": "{{ shop.name }}"
   }
