@@ -47,16 +47,16 @@
                     {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
                   {% else %}
                     {{ 'products.product.on_sale' | t }}
-                    <span itemprop="price">{{ item.price | money }}</span>
+                    <span>{{ item.price | money }}</span>
                   {% endif %}
                   <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
                   <s>{{ item.compare_at_price | money }}</s>
                 {% else %}
                   {% if item.price_varies %}
                     {% assign price = item.price | money %}
-                    <span itemprop="price">{{ 'products.product.from_text_html' | t: price: price }}</span>
+                    <span>{{ 'products.product.from_text_html' | t: price: price }}</span>
                   {% else %}
-                    <span itemprop="price">{{ item.price | money }}</span>
+                    <span>{{ item.price | money }}</span>
                   {% endif %}
                 {% endif %}
                 {% unless item.available %}

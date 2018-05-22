@@ -7,11 +7,9 @@
 {% layout 'gift_card' %}
 
 <header role="banner">
-  <div itemscope itemtype="http://schema.org/Organization">
-    <a href="{{ shop.url }}" itemprop="url" class="site-logo">
+    <a href="{{ shop.url }}">
       {{ shop.name }}
     </a>
-  </div>
   <div>{{ shop.url | escape }}</div>
 </header>
 
