@@ -31,7 +31,7 @@
     {% else %}
       <div class="h1">
     {% endif %}
-        <a href="/" class="logo-image"{% endif %}>
+        <a href="/" class="logo-image">
           {% if section.settings.logo != blank %}
             {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
             <img src="{{ section.settings.logo | img_url: image_size }}"
