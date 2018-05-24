@@ -3,21 +3,23 @@
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-  {% if featured_image != blank %}
+  {% for image in product.images %}
     {% include 'responsive-image' with
-      image: featured_image,
+      image: image,
       max_width: 700,
       max_height: 800,
-      image_attributes: "data-product-featured-image"
+      image_attributes: "data-product-featured-image",
+      wrapper_class: "product-image-wrapper",
+      wrapper_attributes: "data-product-image-wrapper",
     %}
-  {% endif %}
+  {% endfor %}
 
   {% if product.images.size > 1 %}
     <ul>
       {% for image in product.images %}
         <li>
-          <a href="{{ image.src | img_url: '480x480' }}" data-product-single-thumbnail>
-            <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
+            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
           </a>
         </li>
       {% endfor %}

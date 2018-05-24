@@ -19,6 +19,7 @@ const selectors = {
   comparePriceText: '[data-compare-text]',
   originalSelectorId: '[data-product-select]',
   priceWrapper: '[data-price-wrapper]',
+  productImageWraps: '[data-product-image-wrapper]',
   productFeaturedImage: '[data-product-featured-image]',
   productJson: '[data-product-json]',
   productPrice: '[data-product-price]',
@@ -64,6 +65,10 @@ sections.register('product', {
       `variantPriceChange${this.namespace}`,
       this.updateProductPrices.bind(this),
     );
+    this.$container.on(
+      `variantImageChange${this.namespace}`,
+      this.updateImages.bind(this),
+    );
 
     if (this.$featuredImage.length > 0) {
       this.settings.imageSize = imageSize(this.$featuredImage.attr('src'));
@@ -74,6 +79,43 @@ sections.register('product', {
         this.updateProductImage.bind(this),
       );
     }
+  },
+
+  setActiveThumbnail(imageId) {
+    const activeClass = 'active-thumb';
+    let newImageId = imageId;
+
+    // If there is no element passed, find it by the current product image
+    if (typeof newImageId === 'undefined') {
+      newImageId = $(`${selectors.productImageWraps}:not('.hide')`).data(
+        'image-id',
+      );
+    }
+
+    const $thumbnail = $(
+      `${selectors.productThumbs}[data-thumbnail-id='${newImageId}']`,
+    );
+
+    $(selectors.productThumbs)
+      .removeClass(activeClass)
+      .removeAttr('aria-current');
+
+    $thumbnail.addClass(activeClass);
+    $thumbnail.attr('aria-current', true);
+  },
+
+  switchImage(imageId) {
+    const $newImage = $(
+      `${selectors.productImageWraps}[data-image-id='${imageId}']`,
+      this.$container,
+    );
+    const $otherImages = $(
+      `${selectors.productImageWraps}:not([data-image-id='${imageId}'])`,
+      this.$container,
+    );
+    $newImage.removeClass('hide');
+    $newImage.find(selectors.productFeaturedImage).focus();
+    $otherImages.addClass('hide');
   },
 
   /**
@@ -103,6 +145,14 @@ sections.register('product', {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(theme.strings.soldOut);
     }
+  },
+
+  updateImages(evt) {
+    const variant = evt.variant;
+    const imageId = variant.featured_image.id;
+
+    this.switchImage(imageId);
+    this.setActiveThumbnail(imageId);
   },
 
   /**
