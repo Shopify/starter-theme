@@ -4,12 +4,19 @@
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
   {% for image in product.images %}
+    {% capture image_class %}
+      hello
+      {% unless featured_image == image %}
+        hide
+      {% endunless %}
+    {% endcapture %}
+
     {% include 'responsive-image' with
       image: image,
       max_width: 700,
       max_height: 800,
       image_attributes: "data-product-featured-image",
-      wrapper_class: "product-image-wrapper",
+      wrapper_class: image_class,
       wrapper_attributes: "data-product-image-wrapper",
     %}
   {% endfor %}
