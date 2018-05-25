@@ -27,6 +27,11 @@ const selectors = {
   singleOptionSelector: '[data-single-option-selector]',
 };
 
+const cssClasses = {
+  activeThumbnail: 'active-thumb',
+  hiddenClass: 'hide',
+};
+
 /**
  * Product section constructor. Runs on page load as well as Theme Editor
  * `section:load` events.
@@ -65,31 +70,23 @@ sections.register('product', {
       `variantPriceChange${this.namespace}`,
       this.updateProductPrices.bind(this),
     );
-    this.$container.on(
-      `variantImageChange${this.namespace}`,
-      this.updateImages.bind(this),
-    );
 
     if (this.$featuredImage.length > 0) {
-      this.settings.imageSize = imageSize(this.$featuredImage.attr('src'));
-      preload(this.productSingleObject.images, this.settings.imageSize);
-
       this.$container.on(
         `variantImageChange${this.namespace}`,
-        this.updateProductImage.bind(this),
+        this.updateImages.bind(this),
       );
     }
   },
 
   setActiveThumbnail(imageId) {
-    const activeClass = 'active-thumb';
     let newImageId = imageId;
 
-    // If there is no element passed, find it by the current product image
+    // If "imageId" is not defined in the function parameter, find it by the current product image
     if (typeof newImageId === 'undefined') {
-      newImageId = $(`${selectors.productImageWraps}:not('.hide')`).data(
-        'image-id',
-      );
+      newImageId = $(
+        `${selectors.productImageWraps}:not('.${cssClasses.hiddenClass}')`,
+      ).data('image-id');
     }
 
     const $thumbnail = $(
@@ -97,10 +94,10 @@ sections.register('product', {
     );
 
     $(selectors.productThumbs)
-      .removeClass(activeClass)
+      .removeClass(cssClasses.activeThumbnail)
       .removeAttr('aria-current');
 
-    $thumbnail.addClass(activeClass);
+    $thumbnail.addClass(cssClasses.activeThumbnail);
     $thumbnail.attr('aria-current', true);
   },
 
@@ -113,9 +110,8 @@ sections.register('product', {
       `${selectors.productImageWraps}:not([data-image-id='${imageId}'])`,
       this.$container,
     );
-    $newImage.removeClass('hide');
-    $newImage.find(selectors.productFeaturedImage).focus();
-    $otherImages.addClass('hide');
+    $newImage.removeClass(cssClasses.hiddenClass);
+    $otherImages.addClass(cssClasses.hiddenClass);
   },
 
   /**
@@ -128,13 +124,17 @@ sections.register('product', {
     const variant = evt.variant;
 
     if (variant) {
-      $(selectors.priceWrapper, this.$container).removeClass('hide');
+      $(selectors.priceWrapper, this.$container).removeClass(
+        cssClasses.hiddenClass,
+      );
     } else {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(
         theme.strings.unavailable,
       );
-      $(selectors.priceWrapper, this.$container).addClass('hide');
+      $(selectors.priceWrapper, this.$container).addClass(
+        cssClasses.hiddenClass,
+      );
       return;
     }
 
@@ -177,26 +177,11 @@ sections.register('product', {
       $comparePrice.html(
         formatMoney(variant.compare_at_price, theme.moneyFormat),
       );
-      $compareEls.removeClass('hide');
+      $compareEls.removeClass(cssClasses.hiddenClass);
     } else {
       $comparePrice.html('');
-      $compareEls.addClass('hide');
+      $compareEls.addClass(cssClasses.hiddenClass);
     }
-  },
-
-  /**
-   * Updates the DOM with the specified image URL
-   *
-   * @param {string} src - Image src URL
-   */
-  updateProductImage(evt) {
-    const variant = evt.variant;
-    const sizedImgUrl = getSizedImageUrl(
-      variant.featured_image.src,
-      this.settings.imageSize,
-    );
-
-    this.$featuredImage.attr('src', sizedImgUrl);
   },
 
   /**
