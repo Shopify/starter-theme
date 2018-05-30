@@ -1,7 +1,7 @@
 .product-single__thumbnail-image {
   border: 2px solid transparent;
 
-  .active-thumb & {
+  .active-thumbnail & {
     border-color: $color-border;
   }
 }

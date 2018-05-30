@@ -18,7 +18,7 @@ const selectors = {
   comparePriceText: '[data-compare-text]',
   originalSelectorId: '[data-product-select]',
   priceWrapper: '[data-price-wrapper]',
-  productImageWraps: '[data-product-image-wrapper]',
+  productImageWrapper: '[data-product-image-wrapper]',
   productFeaturedImage: '[data-product-featured-image]',
   productJson: '[data-product-json]',
   productPrice: '[data-product-price]',
@@ -27,8 +27,8 @@ const selectors = {
 };
 
 const cssClasses = {
-  activeThumbnail: 'active-thumb',
-  hiddenClass: 'hide',
+  activeThumbnail: 'active-thumbnail',
+  hide: 'hide',
 };
 
 /**
@@ -84,7 +84,7 @@ sections.register('product', {
     // If "imageId" is not defined in the function parameter, find it by the current product image
     if (typeof newImageId === 'undefined') {
       newImageId = $(
-        `${selectors.productImageWraps}:not('.${cssClasses.hiddenClass}')`,
+        `${selectors.productImageWrapper}:not('.${cssClasses.hide}')`,
       ).data('image-id');
     }
 
@@ -102,15 +102,15 @@ sections.register('product', {
 
   switchImage(imageId) {
     const $newImage = $(
-      `${selectors.productImageWraps}[data-image-id='${imageId}']`,
+      `${selectors.productImageWrapper}[data-image-id='${imageId}']`,
       this.$container,
     );
     const $otherImages = $(
-      `${selectors.productImageWraps}:not([data-image-id='${imageId}'])`,
+      `${selectors.productImageWrapper}:not([data-image-id='${imageId}'])`,
       this.$container,
     );
-    $newImage.removeClass(cssClasses.hiddenClass);
-    $otherImages.addClass(cssClasses.hiddenClass);
+    $newImage.removeClass(cssClasses.hide);
+    $otherImages.addClass(cssClasses.hide);
   },
 
   /**
@@ -123,17 +123,13 @@ sections.register('product', {
     const variant = evt.variant;
 
     if (variant) {
-      $(selectors.priceWrapper, this.$container).removeClass(
-        cssClasses.hiddenClass,
-      );
+      $(selectors.priceWrapper, this.$container).removeClass(cssClasses.hide);
     } else {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(
         theme.strings.unavailable,
       );
-      $(selectors.priceWrapper, this.$container).addClass(
-        cssClasses.hiddenClass,
-      );
+      $(selectors.priceWrapper, this.$container).addClass(cssClasses.hide);
       return;
     }
 
@@ -176,10 +172,10 @@ sections.register('product', {
       $comparePrice.html(
         formatMoney(variant.compare_at_price, theme.moneyFormat),
       );
-      $compareEls.removeClass(cssClasses.hiddenClass);
+      $compareEls.removeClass(cssClasses.hide);
     } else {
       $comparePrice.html('');
-      $compareEls.addClass(cssClasses.hiddenClass);
+      $compareEls.addClass(cssClasses.hide);
     }
   },
 
