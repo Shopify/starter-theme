@@ -99,19 +99,13 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-<<<<<<< HEAD
-"@shopify/html-webpack-liquid-asset-tags-plugin@1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@shopify/html-webpack-liquid-asset-tags-plugin/-/html-webpack-liquid-asset-tags-plugin-1.0.0-beta.2.tgz#775276ad181ff43594307db22fb13462ad96fd1d"
-=======
 "@nodelib/fs.stat@^1.0.1":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.0.tgz#50c1e2260ac0ed9439a181de3725a0168d59c48a"
 
-"@shopify/html-webpack-liquid-asset-tags-plugin@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@shopify/html-webpack-liquid-asset-tags-plugin/-/html-webpack-liquid-asset-tags-plugin-1.0.0-beta.1.tgz#d077b589a4d0cd537f70dbee81b202d5b44f1d14"
->>>>>>> Fixed product image change
+"@shopify/html-webpack-liquid-asset-tags-plugin@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@shopify/html-webpack-liquid-asset-tags-plugin/-/html-webpack-liquid-asset-tags-plugin-1.0.0-beta.2.tgz#775276ad181ff43594307db22fb13462ad96fd1d"
 
 "@shopify/slate-analytics@1.0.0-beta.2":
   version "1.0.0-beta.2"
