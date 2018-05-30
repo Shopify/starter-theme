@@ -5,7 +5,7 @@
   "author": "Shopify Inc.",
   "description":
     "An opinionated, Slate compatible, starting point for developing Shopify themes.",
-  "keywords": ["shopify","theme"],
+  "keywords": ["shopify", "theme"],
   "bugs": "https://github.com/Shopify/starter-theme/issues",
   "license": "MIT",
   "repository": {
