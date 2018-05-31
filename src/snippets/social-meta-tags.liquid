@@ -33,8 +33,22 @@
   {%- assign og_type = 'product' -%}
   {%- capture og_image_tags -%}
     {%- for image in product.images limit: 3 -%}
-      <meta property="og:image" content="http:{{ image.src | product_img_url: og_image_default_size }}">
-      <meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: og_image_default_size }}">
+      {%- assign og_image = image -%}
+      {%- assign og_image_ratio = og_image.aspect_ratio -%}
+      {%- if og_image_ratio > 1 -%}
+        {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
+        {%- assign og_image_height = og_image_width | divided_by: og_image_ratio | round -%}
+      {%- elsif og_image_ratio < 1 -%}
+        {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
+        {%- assign og_image_width = og_image_height | times: og_image_ratio | round -%}
+      {%- else -%}
+        {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
+        {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
+      {%- endif -%}
+      <meta property="og:image" content="http:{{ og_image | product_img_url: og_image_default_size }}">
+      <meta property="og:image:secure_url" content="https:{{ og_image | product_img_url: og_image_default_size }}">
+      <meta property="og:image:width" content="{{ og_image_width }}">
+      <meta property="og:image:height" content="{{ og_image_height }}">
     {%- endfor -%}
   {%- endcapture -%}
 
