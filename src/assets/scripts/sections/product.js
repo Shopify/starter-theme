@@ -8,7 +8,6 @@
 
 import $ from 'jquery';
 import Variants from '@shopify/theme-variants';
-import {imageSize, preload, getSizedImageUrl} from '@shopify/theme-images';
 import {formatMoney} from '@shopify/theme-currency';
 import sections from '@shopify/theme-sections';
 
@@ -19,11 +18,17 @@ const selectors = {
   comparePriceText: '[data-compare-text]',
   originalSelectorId: '[data-product-select]',
   priceWrapper: '[data-price-wrapper]',
+  productImageWrapper: '[data-product-image-wrapper]',
   productFeaturedImage: '[data-product-featured-image]',
   productJson: '[data-product-json]',
   productPrice: '[data-product-price]',
   productThumbs: '[data-product-single-thumbnail]',
   singleOptionSelector: '[data-single-option-selector]',
+};
+
+const cssClasses = {
+  activeThumbnail: 'active-thumbnail',
+  hide: 'hide',
 };
 
 /**
@@ -66,14 +71,46 @@ sections.register('product', {
     );
 
     if (this.$featuredImage.length > 0) {
-      this.settings.imageSize = imageSize(this.$featuredImage.attr('src'));
-      preload(this.productSingleObject.images, this.settings.imageSize);
-
       this.$container.on(
         `variantImageChange${this.namespace}`,
-        this.updateProductImage.bind(this),
+        this.updateImages.bind(this),
       );
     }
+  },
+
+  setActiveThumbnail(imageId) {
+    let newImageId = imageId;
+
+    // If "imageId" is not defined in the function parameter, find it by the current product image
+    if (typeof newImageId === 'undefined') {
+      newImageId = $(
+        `${selectors.productImageWrapper}:not('.${cssClasses.hide}')`,
+      ).data('image-id');
+    }
+
+    const $thumbnail = $(
+      `${selectors.productThumbs}[data-thumbnail-id='${newImageId}']`,
+    );
+
+    $(selectors.productThumbs)
+      .removeClass(cssClasses.activeThumbnail)
+      .removeAttr('aria-current');
+
+    $thumbnail.addClass(cssClasses.activeThumbnail);
+    $thumbnail.attr('aria-current', true);
+  },
+
+  switchImage(imageId) {
+    const $newImage = $(
+      `${selectors.productImageWrapper}[data-image-id='${imageId}']`,
+      this.$container,
+    );
+    const $otherImages = $(
+      `${selectors.productImageWrapper}:not([data-image-id='${imageId}'])`,
+      this.$container,
+    );
+    $newImage.removeClass(cssClasses.hide);
+    $otherImages.addClass(cssClasses.hide);
   },
 
   /**
@@ -86,13 +123,13 @@ sections.register('product', {
     const variant = evt.variant;
 
     if (variant) {
-      $(selectors.priceWrapper, this.$container).removeClass('hide');
+      $(selectors.priceWrapper, this.$container).removeClass(cssClasses.hide);
     } else {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(
         theme.strings.unavailable,
       );
-      $(selectors.priceWrapper, this.$container).addClass('hide');
+      $(selectors.priceWrapper, this.$container).addClass(cssClasses.hide);
       return;
     }
 
@@ -103,6 +140,14 @@ sections.register('product', {
       $(selectors.addToCart, this.$container).prop('disabled', true);
       $(selectors.addToCartText, this.$container).html(theme.strings.soldOut);
     }
+  },
+
+  updateImages(evt) {
+    const variant = evt.variant;
+    const imageId = variant.featured_image.id;
+
+    this.switchImage(imageId);
+    this.setActiveThumbnail(imageId);
   },
 
   /**
@@ -127,26 +172,11 @@ sections.register('product', {
       $comparePrice.html(
         formatMoney(variant.compare_at_price, theme.moneyFormat),
       );
-      $compareEls.removeClass('hide');
+      $compareEls.removeClass(cssClasses.hide);
     } else {
       $comparePrice.html('');
-      $compareEls.addClass('hide');
+      $compareEls.addClass(cssClasses.hide);
     }
-  },
-
-  /**
-   * Updates the DOM with the specified image URL
-   *
-   * @param {string} src - Image src URL
-   */
-  updateProductImage(evt) {
-    const variant = evt.variant;
-    const sizedImgUrl = getSizedImageUrl(
-      variant.featured_image.src,
-      this.settings.imageSize,
-    );
-
-    this.$featuredImage.attr('src', sizedImgUrl);
   },
 
   /**
