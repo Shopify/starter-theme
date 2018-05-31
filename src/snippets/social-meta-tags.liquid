@@ -89,6 +89,12 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
 {%- if template.name == 'product' -%}
+  {%- if product.available -%}
+    {%- assign og_product_availability = 'instock' -%}
+  {%- else -%}
+    {%- assign og_product_availability = 'oos' -%}
+  {%- endif -%}
+  <meta property="product:availability" content="{{ og_product_availability }}">
   <meta property="product:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
   <meta property="product:price:currency" content="{{ shop.currency }}">
 {%- endif -%}
