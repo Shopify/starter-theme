@@ -70,3 +70,8 @@
 [tabindex='-1']:focus {
   outline: none;
 }
+
+.hide {
+  /* stylelint-disable declaration-no-important */
+  display: none !important;
+}
