@@ -1,6 +1,13 @@
 {%- assign og_title = page_title -%}
 {%- assign og_url = canonical_url -%}
-{%- assign og_type = 'website' -%}
+{% case template.name %}
+  {% when 'article' %}
+    {%- assign og_type = 'article' -%}
+  {% when 'product' %}
+    {%- assign og_type = 'product' -%}
+  {% else %}
+    {%- assign og_type = 'website' -%}
+{% endcase %}
 {%- assign og_description = page_description | default: shop.description | default: shop.name -%}
 {% if settings.share_image %}
   {%- capture og_image_tags -%}<meta property="og:image" content="http:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
