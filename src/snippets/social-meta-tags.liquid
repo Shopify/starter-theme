@@ -42,6 +42,19 @@
     {%- endcapture -%}
   {%- endif -%}
 
+{%- elsif template.name == 'collection' -%}
+  {%- assign og_title = collection.title | strip_html -%}
+  {%- assign og_type = 'product.group' -%}
+  {%- if collection.image -%}
+    {%- capture og_image_tags -%}
+      <meta property="og:image" content="http:{{ collection.image | img_url: 'master', format: 'jpg' }}">
+      <meta property="og:image:secure_url" content="https:{{ collection.image | img_url: 'master', format: 'jpg' }}">
+      <meta property="og:image:width" content="{{ collection.image.width }}">
+      <meta property="og:image:height" content="{{ collection.image.height }}">
+      <meta property="og:image:alt" content="{{ collection.image.alt | escape }}">
+    {%- endcapture -%}
+  {%- endif -%}
+
 {%- elsif template.name == 'password' -%}
   {%- assign og_title = shop.name -%}
   {%- assign og_url = shop.url -%}
