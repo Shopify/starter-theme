@@ -2,26 +2,12 @@
 {%- assign og_url = canonical_url -%}
 {%- assign og_type = 'website' -%}
 {%- assign og_description = page_description | default: shop.description | default: shop.name -%}
-{%- assign og_image_default_size = '1200x1200' -%}
-{%- assign og_image_at_most_size = 1200 -%}
 {% if settings.share_image %}
-  {%- assign og_image = settings.share_image -%}
-  {%- assign og_image_ratio = og_image.aspect_ratio -%}
-  {%- if og_image_ratio > 1 -%}
-    {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
-    {%- assign og_image_height = og_image_width | divided_by: og_image_ratio | round -%}
-  {%- elsif og_image_ratio < 1 -%}
-    {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
-    {%- assign og_image_width = og_image_height | times: og_image_ratio | round -%}
-  {%- else -%}
-    {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
-    {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
-  {%- endif -%}
   {%- capture og_image_tags -%}
-    <meta property="og:image" content="http:{{ og_image | img_url: og_image_default_size }}">
-    <meta property="og:image:secure_url" content="https:{{ og_image | img_url: og_image_default_size }}">
-    <meta property="og:image:width" content="{{ og_image_width }}">
-    <meta property="og:image:height" content="{{ og_image_height }}">
+    <meta property="og:image" content="http:{{ settings.share_image | img_url: 'master' }}">
+    <meta property="og:image:secure_url" content="https:{{ settings.share_image | img_url: 'master' }}">
+    <meta property="og:image:width" content="{{ settings.share_image.width }}">
+    <meta property="og:image:height" content="{{ settings.share_image.height }}">
   {%- endcapture -%}
 {% endif %}
 
@@ -33,22 +19,10 @@
   {%- assign og_type = 'product' -%}
   {%- capture og_image_tags -%}
     {%- for image in product.images limit: 3 -%}
-      {%- assign og_image = image -%}
-      {%- assign og_image_ratio = og_image.aspect_ratio -%}
-      {%- if og_image_ratio > 1 -%}
-        {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
-        {%- assign og_image_height = og_image_width | divided_by: og_image_ratio | round -%}
-      {%- elsif og_image_ratio < 1 -%}
-        {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
-        {%- assign og_image_width = og_image_height | times: og_image_ratio | round -%}
-      {%- else -%}
-        {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
-        {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
-      {%- endif -%}
-      <meta property="og:image" content="http:{{ og_image | product_img_url: og_image_default_size }}">
-      <meta property="og:image:secure_url" content="https:{{ og_image | product_img_url: og_image_default_size }}">
-      <meta property="og:image:width" content="{{ og_image_width }}">
-      <meta property="og:image:height" content="{{ og_image_height }}">
+      <meta property="og:image" content="http:{{ image | product_img_url: 'master' }}">
+      <meta property="og:image:secure_url" content="https:{{ image | product_img_url: 'master' }}">
+      <meta property="og:image:width" content="{{ image.width }}">
+      <meta property="og:image:height" content="{{ image.height }}">
     {%- endfor -%}
   {%- endcapture -%}
 
@@ -57,23 +31,11 @@
   {%- assign og_type = 'article' -%}
   {%- assign og_description = article.excerpt_or_content | strip_html -%}
   {%- if article.image -%}
-    {%- assign og_image = article.image -%}
-    {%- assign og_image_ratio = og_image.aspect_ratio -%}
-    {%- if og_image_ratio > 1 -%}
-      {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
-      {%- assign og_image_height = og_image_width | divided_by: og_image_ratio | round -%}
-    {%- elsif og_image_ratio < 1 -%}
-      {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
-      {%- assign og_image_width = og_image_height | times: og_image_ratio | round -%}
-    {%- else -%}
-      {%- assign og_image_width = og_image.width | at_most: og_image_at_most_size -%}
-      {%- assign og_image_height = og_image.height | at_most: og_image_at_most_size -%}
-    {%- endif -%}
     {%- capture og_image_tags -%}
-      <meta property="og:image" content="http:{{ og_image | img_url: og_image_default_size }}">
-      <meta property="og:image:secure_url" content="https:{{ og_image | img_url: og_image_default_size }}">
-      <meta property="og:image:width" content="{{ og_image_width }}">
-      <meta property="og:image:height" content="{{ og_image_height }}">
+      <meta property="og:image" content="http:{{ article.image | img_url: 'master' }}">
+      <meta property="og:image:secure_url" content="https:{{ article.image | img_url: 'master' }}">
+      <meta property="og:image:width" content="{{ article.image.width }}">
+      <meta property="og:image:height" content="{{ article.image.height }}">
     {%- endcapture -%}
   {%- endif -%}
 
