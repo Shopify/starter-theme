@@ -3,8 +3,13 @@
 {%- assign og_type = 'website' -%}
 {%- assign og_description = page_description | default: shop.description | default: shop.name -%}
 {% if settings.share_image %}
-  {%- capture og_image_tags -%}<meta property="og:image" content="http:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
-  {%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
+  {%- capture og_image_tags -%}
+    <meta property="og:image" content="http:{{ settings.share_image | img_url: 'master' }}">
+    <meta property="og:image:secure_url" content="https:{{ settings.share_image | img_url: 'master' }}">
+    <meta property="og:image:width" content="{{ settings.share_image.width }}">
+    <meta property="og:image:height" content="{{ settings.share_image.height }}">
+    <meta property="og:image:alt" content="{{ settings.share_image.alt | escape }}">
+  {%- endcapture -%}
 {% endif %}
 
 {% comment %}
@@ -15,12 +20,11 @@
   {%- assign og_type = 'product' -%}
   {%- capture og_image_tags -%}
     {%- for image in product.images limit: 3 -%}
-      <meta property="og:image" content="http:{{ image.src | product_img_url: '1024x1024' }}">
-    {%- endfor -%}
-  {%- endcapture -%}
-  {%- capture og_image_secure_url_tags -%}
-    {%- for image in product.images limit: 3 -%}
-      <meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '1024x1024' }}">
+      <meta property="og:image" content="http:{{ image | product_img_url: 'master' }}">
+      <meta property="og:image:secure_url" content="https:{{ image | product_img_url: 'master' }}">
+      <meta property="og:image:width" content="{{ image.width }}">
+      <meta property="og:image:height" content="{{ image.height }}">
+      <meta property="og:image:alt" content="{{ image.alt | escape }}">
     {%- endfor -%}
   {%- endcapture -%}
 
@@ -29,8 +33,26 @@
   {%- assign og_type = 'article' -%}
   {%- assign og_description = article.excerpt_or_content | strip_html -%}
   {%- if article.image -%}
-    {%- capture og_image_tags -%}<meta property="og:image" content="http:{{ article.image | img_url: '1024x1024' }}">{%- endcapture -%}
-    {%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ article.image | img_url: '1024x1024' }}">{%- endcapture -%}
+    {%- capture og_image_tags -%}
+      <meta property="og:image" content="http:{{ article.image | img_url: 'master' }}">
+      <meta property="og:image:secure_url" content="https:{{ article.image | img_url: 'master' }}">
+      <meta property="og:image:width" content="{{ article.image.width }}">
+      <meta property="og:image:height" content="{{ article.image.height }}">
+      <meta property="og:image:alt" content="{{ article.image.alt | escape }}">
+    {%- endcapture -%}
+  {%- endif -%}
+
+{%- elsif template.name == 'collection' -%}
+  {%- assign og_title = collection.title | strip_html -%}
+  {%- assign og_type = 'product.group' -%}
+  {%- if collection.image -%}
+    {%- capture og_image_tags -%}
+      <meta property="og:image" content="http:{{ collection.image | img_url: 'master' }}">
+      <meta property="og:image:secure_url" content="https:{{ collection.image | img_url: 'master' }}">
+      <meta property="og:image:width" content="{{ collection.image.width }}">
+      <meta property="og:image:height" content="{{ collection.image.height }}">
+      <meta property="og:image:alt" content="{{ collection.image.alt | escape }}">
+    {%- endcapture -%}
   {%- endif -%}
 
 {%- elsif template.name == 'password' -%}
@@ -45,11 +67,16 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
 {%- if template.name == 'product' -%}
-  <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
-  <meta property="og:price:currency" content="{{ shop.currency }}">
+  {%- if product.available -%}
+    {%- assign og_product_availability = 'instock' -%}
+  {%- else -%}
+    {%- assign og_product_availability = 'oos' -%}
+  {%- endif -%}
+  <meta property="product:availability" content="{{ og_product_availability }}">
+  <meta property="product:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
+  <meta property="product:price:currency" content="{{ shop.currency }}">
 {%- endif -%}
 {{ og_image_tags }}
-{{ og_image_secure_url_tags }}
 
 <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
 <meta name="twitter:card" content="summary_large_image">
