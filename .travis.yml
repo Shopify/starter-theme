@@ -5,8 +5,6 @@ cache:
   yarn: true
   directories:
   - node_modules
-env:
-  - NODE_ENV=test 
 script:
 - yarn build
 - yarn lint
