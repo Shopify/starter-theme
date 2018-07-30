@@ -9,7 +9,7 @@
 import $ from 'jquery';
 import Variants from '@shopify/theme-variants';
 import {formatMoney} from '@shopify/theme-currency';
-import sections from '@shopify/theme-sections';
+import {register} from '@shopify/theme-sections';
 
 const selectors = {
   addToCart: '[data-add-to-cart]',
@@ -37,8 +37,11 @@ const cssClasses = {
  * @param {string} container - selector for the section container DOM element
  */
 
-sections.register('product', {
+export default register('product', {
   onLoad() {
+    this.$container = $(this.container);
+    this.namespace = `.${this.id}`;
+
     // Stop parsing if we don't have the product json script tag when loading
     // section in the Theme Editor
     if (!$(selectors.productJson, this.$container).html()) {
