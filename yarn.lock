@@ -249,21 +249,21 @@
     yamljs "0.2.10"
     yargs "^11.0.0"
 
-"@shopify/theme-a11y@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-1.0.0.tgz#8b14e79800bb49a79c04d9d29f520e0065e22408"
+"@shopify/theme-a11y@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-1.0.1.tgz#0081521a779a90d16969ac464c7a4e365bae1886"
 
-"@shopify/theme-cart@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-cart/-/theme-cart-1.0.0-alpha.3.tgz#2d64d1372dc6a7f5781a4485f4e69697c2b5ace8"
+"@shopify/theme-cart@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-cart/-/theme-cart-1.0.0-alpha.7.tgz#7065012c580fe8944f9e897f5404dbf8e1ccad01"
 
-"@shopify/theme-currency@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-currency/-/theme-currency-1.0.0-alpha.3.tgz#3d42495072529185f82b9ab5d64edfa46c232fc9"
+"@shopify/theme-currency@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-currency/-/theme-currency-1.0.0-alpha.7.tgz#8c8b753b179848661779d88545cb8f9233a0f9d8"
 
-"@shopify/theme-images@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-images/-/theme-images-1.0.0-alpha.3.tgz#66a693b9ff5c75ba645e0ad5c4d4e75070595719"
+"@shopify/theme-images@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-images/-/theme-images-1.0.0-alpha.7.tgz#56ea398993a4f3ccd64ed9fe4d664d592390c04b"
 
 "@shopify/theme-lint@^2.0.0":
   version "2.0.0"
@@ -275,19 +275,17 @@
     htmllint "^0.6.0"
     lodash "^4.15.0"
 
-"@shopify/theme-rte@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.3.tgz#41090cb675896469298028adf264be6cb6b707f1"
+"@shopify/theme-rte@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.7.tgz#dfb99ac10c1b9a20bbdfde32929d6dbaf2404deb"
 
-"@shopify/theme-sections@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.4.tgz#b371daccd68b2b8e3ad5ff4d379b92a1900c3c03"
+"@shopify/theme-sections@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-1.0.0-alpha.7.tgz#b64485cc4df9ca8d895705cd32271668c32eec1f"
 
-"@shopify/theme-variants@^1.0.0-alpha.5":
-  version "1.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-variants/-/theme-variants-1.0.0-alpha.5.tgz#bfc335a170619c0e82b3143469ed06f3f334d2d3"
-  dependencies:
-    lodash-es "^4.17.10"
+"@shopify/theme-variants@^1.0.0-alpha.8":
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-variants/-/theme-variants-1.0.0-alpha.8.tgz#9084ff1db3eb4b244253e93905570ecbb804d389"
 
 "@shopify/themekit@0.6.12":
   version "0.6.12"
@@ -6295,7 +6293,7 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash-es@^4.17.10, lodash-es@^4.17.4:
+lodash-es@^4.17.4:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
