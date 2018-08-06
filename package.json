@@ -20,12 +20,12 @@
     "stylelint-config-shopify": "^5.0.0"
   },
   "dependencies": {
-    "@shopify/theme-a11y": "1.0.1",
+    "@shopify/theme-a11y": "^1.0.1",
     "@shopify/theme-cart": "^1.0.0-alpha.7",
     "@shopify/theme-currency": "^1.0.0-alpha.7",
     "@shopify/theme-images": "^1.0.0-alpha.7",
     "@shopify/theme-rte": "^1.0.0-alpha.7",
-    "@shopify/theme-sections": "^1.0.0-alpha.7",
+    "@shopify/theme-sections": "^1.0.0",
     "@shopify/theme-variants": "^1.0.0-alpha.8",
     "jquery": "^3.2.1",
     "lazysizes": "^4.0.2",
