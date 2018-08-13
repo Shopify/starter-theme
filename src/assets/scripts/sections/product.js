@@ -31,6 +31,10 @@ const cssClasses = {
   hide: 'hide',
 };
 
+const keyboardKeys = {
+  ENTER: 13,
+};
+
 /**
  * Product section constructor. Runs on page load as well as Theme Editor
  * `section:load` events.
@@ -79,6 +83,34 @@ export default register('product', {
         this.updateImages.bind(this),
       );
     }
+
+    this.initImageSwitch();
+  },
+
+  initImageSwitch() {
+    if (!$(selectors.productThumbs).length) {
+      return;
+    }
+
+    $(selectors.productThumbs)
+      .on('click', (evt) => {
+        evt.preventDefault();
+
+        const imageId = evt.currentTarget.dataset.thumbnailId;
+        this.switchImage(imageId);
+        this.setActiveThumbnail(imageId);
+      })
+      .on('keyup', this.handleImageFocus.bind(this));
+  },
+
+  handleImageFocus(evt) {
+    if (evt.keyCode !== keyboardKeys.ENTER) {
+      return;
+    }
+
+    $(`${selectors.productFeaturedImage}`, this.$container)
+      .filter(':visible')
+      .focus();
   },
 
   setActiveThumbnail(imageId) {
