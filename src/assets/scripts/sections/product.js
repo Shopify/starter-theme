@@ -41,7 +41,7 @@ const keyboardKeys = {
  * @param {string} container - selector for the section container DOM element
  */
 
-export default register('product', {
+register('product', {
   onLoad() {
     this.$container = $(this.container);
     this.namespace = `.${this.id}`;
@@ -92,11 +92,10 @@ export default register('product', {
       return;
     }
 
-    $(selectors.productThumbs)
+    $(selectors.productThumbs, this.$container)
       .on('click', (evt) => {
         evt.preventDefault();
-
-        const imageId = evt.currentTarget.dataset.thumbnailId;
+        const imageId = $(evt.currentTarget).data('thumbnail-id');
         this.switchImage(imageId);
         this.setActiveThumbnail(imageId);
       })
@@ -108,7 +107,7 @@ export default register('product', {
       return;
     }
 
-    $(`${selectors.productFeaturedImage}`, this.$container)
+    $(selectors.productFeaturedImage, this.$container)
       .filter(':visible')
       .focus();
   },
