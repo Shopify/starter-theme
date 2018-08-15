@@ -88,11 +88,13 @@ register('product', {
   },
 
   initImageSwitch() {
-    if (!$(selectors.productThumbs).length) {
+    const $productThumbs = $(selectors.productThumbs, this.$container);
+
+    if (!$productThumbs.length) {
       return;
     }
 
-    $(selectors.productThumbs, this.$container)
+    $productThumbs
       .on('click', (evt) => {
         evt.preventDefault();
         const imageId = $(evt.currentTarget).data('thumbnail-id');
@@ -107,9 +109,7 @@ register('product', {
       return;
     }
 
-    $(selectors.productFeaturedImage, this.$container)
-      .filter(':visible')
-      .focus();
+    this.$featuredImage.filter(':visible').focus();
   },
 
   setActiveThumbnail(imageId) {
