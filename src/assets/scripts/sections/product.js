@@ -31,13 +31,17 @@ const cssClasses = {
   hide: 'hide',
 };
 
+const keyboardKeys = {
+  ENTER: 13,
+};
+
 /**
  * Product section constructor. Runs on page load as well as Theme Editor
  * `section:load` events.
  * @param {string} container - selector for the section container DOM element
  */
 
-export default register('product', {
+register('product', {
   onLoad() {
     this.$container = $(this.container);
     this.namespace = `.${this.id}`;
@@ -79,6 +83,33 @@ export default register('product', {
         this.updateImages.bind(this),
       );
     }
+
+    this.initImageSwitch();
+  },
+
+  initImageSwitch() {
+    const $productThumbs = $(selectors.productThumbs, this.$container);
+
+    if (!$productThumbs.length) {
+      return;
+    }
+
+    $productThumbs
+      .on('click', (evt) => {
+        evt.preventDefault();
+        const imageId = $(evt.currentTarget).data('thumbnail-id');
+        this.switchImage(imageId);
+        this.setActiveThumbnail(imageId);
+      })
+      .on('keyup', this.handleImageFocus.bind(this));
+  },
+
+  handleImageFocus(evt) {
+    if (evt.keyCode !== keyboardKeys.ENTER) {
+      return;
+    }
+
+    this.$featuredImage.filter(':visible').focus();
   },
 
   setActiveThumbnail(imageId) {

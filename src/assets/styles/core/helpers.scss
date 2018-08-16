@@ -66,11 +66,6 @@
   transition: none;
 }
 
-// Hide outline on focus for elements which are given focus by JS
-[tabindex='-1']:focus {
-  outline: none;
-}
-
 .hide {
   /* stylelint-disable declaration-no-important */
   display: none !important;
