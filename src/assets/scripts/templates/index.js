@@ -1,4 +1,6 @@
 import {load} from '@shopify/theme-sections';
-import ProductSection from '../sections/product';
+import '../sections/product';
 
-load(ProductSection);
+document.addEventListener('DOMContentLoaded', () => {
+  load('*');
+});
