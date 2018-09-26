@@ -79,13 +79,13 @@
     {% endif %}
 
     <form action="/search" method="get" role="search">
-      <label for="Search" class="label-hidden">
+      <label for="Search-{{ section.id }}" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
 
       <input type="search"
         name="q"
-        id="Search"
+        id="Search-{{ section.id }}"
         value="{{ search.terms | escape }}"
         placeholder="{{ 'general.search.placeholder' | t }}">
 
