@@ -1,0 +1,18 @@
+.featured-product {
+  display: flex;
+  max-width: $grid-max-width;
+  align-items: flex-start;
+}
+
+.featured-product__image-container {
+  flex-basis: 50%;
+  margin-right: 5rem;
+}
+
+.featured-product__image {
+  width: 100%;
+}
+
+.featured-product__content {
+  flex-basis: 50%;
+}
