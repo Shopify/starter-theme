@@ -75,6 +75,17 @@
           {% endfor %}
         {% endunless %}
 
+         <select name="id" class="no-js" data-product-select>
+          {% for variant in product.variants %}
+            <option
+              {% if variant == current_variant %}selected="selected"{% endif %}
+              {% unless variant.available %}disabled="disabled"{% endunless %}
+              value="{{ variant.id }}">
+                {{ variant.title }}
+            </option>
+          {% endfor %}
+        </select>
+
         <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
         <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1">
 
@@ -96,7 +107,6 @@
         <button
           type="submit"
           name="add"
-          class="{{ product.available}} {{ section_onboarding }}"
           data-add-to-cart
           {% if product.available == false or section_onboarding %}disabled="disabled"{% endif %}>
             <span data-add-to-cart-text>
