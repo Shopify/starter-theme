@@ -16,3 +16,8 @@
 .featured-product__content {
   flex-basis: 50%;
 }
+
+.featured-product__image-thumbnails {
+  display: flex;
+  list-style: none;
+}
