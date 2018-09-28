@@ -2,6 +2,10 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
+{% if product == empty %}
+  {%- assign default_product_title = 'homepage.onboarding.product_title' | t -%}
+{% endif %}
+
 <section data-section-id="{{ section.id }}" data-section-type="product" class="featured-product">
 
   <div class="featured-product__image-container">
@@ -39,7 +43,7 @@
 
   <div class="featured-product__content">
 
-    <h1>{{ product.title | default: 'homepage.onboarding.product_title' }}</h1>
+    <h1>{{ product.title | default: default_product_title }}</h1>
 
     {%- unless product.vendor == blank -%}
       <p>{{ product.vendor }}</p>
