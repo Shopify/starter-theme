@@ -84,21 +84,6 @@
 
     </dl>
 
-     {% comment %} <div data-price-wrapper>
-        <span data-product-price>
-          {{- current_variant.price | default: '1999' | money -}}
-        </span>
-
-        {%- if product.compare_at_price_max > product.price -%}
-          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-          <s data-compare-price>
-            {%- if current_variant.compare_at_price > current_variant.price -%}
-              {{ current_variant.compare_at_price | money }}
-            {%- endif -%}
-          </s>
-        {%- endif -%}
-      </div> {% endcomment %}
-
     <form action="/cart/add" method="post" enctype="multipart/form-data">
       {%- unless product.has_only_default_variant -%}
         {%- for option in product.options_with_values -%}
