@@ -2,9 +2,9 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-{% if product == empty %}
+{%- if product == empty -%}
   {%- assign default_product_title = 'homepage.onboarding.product_title' | t -%}
-{% endif %}
+{%- endif -%}
 
 <section data-section-id="{{ section.id }}" data-section-type="product" class="featured-product">
 
@@ -45,7 +45,7 @@
 
     <h1>{{ product.title | default: default_product_title }}</h1>
 
-    <dl {% if current_variant.compare_at_price > current_variant.price %}class="price--on-sale"{% endif %} data-price-wrapper>
+    <dl{% if current_variant.compare_at_price > current_variant.price %} class="price--on-sale"{% endif %} data-price-wrapper>
 
       {%- unless product.vendor == blank -%}
         <dt>
@@ -68,7 +68,7 @@
               {{- current_variant.price | default: '1999' | money -}}
             {%- endif -%}
           {%- else -%}
-            {{ 'products.product.sold_out' | t }}
+            {{- 'products.product.sold_out' | t -}}
           {%- endif -%}
         </dd>
       </div>
