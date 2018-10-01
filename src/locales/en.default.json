@@ -9,8 +9,7 @@
     },
     "404": {
       "title": "404 Page Not Found",
-      "subtext_html":
-        "The page you requested does not exist. Click <a href=\"/collections/all\">here</a> to continue shopping."
+      "subtext_html": "The page you requested does not exist. Click <a href=\"/collections/all\">here</a> to continue shopping."
     },
     "password_page": {
       "opening_soon": "Opening Soon",
@@ -24,8 +23,7 @@
       "signup_form_email_placeholder": "Your email",
       "signup_form_submit": "Submit",
       "signup_form_success": "We will send you an email right before we open!",
-      "admin_link_html":
-        "Are you the store owner? <a href=\"/admin\">Log in here</a>",
+      "admin_link_html": "Are you the store owner? <a href=\"/admin\">Log in here</a>",
       "password_link": "Enter using password",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
@@ -75,10 +73,8 @@
       "email": "Email",
       "message": "Message",
       "post": "Post comment",
-      "moderated":
-        "Please note, comments must be approved before they are published",
-      "success_moderated":
-        "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
       "success": "Your comment was posted successfully! Thank you!",
       "with_count": {
         "one": "{{ count }} comment",
@@ -100,8 +96,7 @@
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
       "cookies_required": "Enable cookies to use the shopping cart",
-      "continue_browsing_html":
-        "Continue browsing <a href=\"/collections/all\">here</a>.",
+      "continue_browsing_html": "Continue browsing <a href=\"/collections/all\">here</a>.",
       "item_quantity": "Item quantity",
       "savings": "You're saving"
     },
@@ -127,8 +122,7 @@
       "phone": "Phone Number",
       "message": "Message",
       "send": "Send",
-      "post_success":
-        "Thanks for contacting us. We'll get back to you as soon as possible."
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
     }
   },
   "customer": {
@@ -240,13 +234,11 @@
   "homepage": {
     "onboarding": {
       "blog_title": "Your post's title",
-      "blog_excerpt":
-        "Your store hasn’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers. You can check out Shopify’s ecommerce blog for inspiration and advice for your own store and blog.",
+      "blog_excerpt": "Your store hasn’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers. You can check out Shopify’s ecommerce blog for inspiration and advice for your own store and blog.",
       "blog_author": "Author name",
       "product_title": "Example Product Title",
       "collection_title": "Example Collection Title",
-      "no_content":
-        "This section doesn’t currently include any content. Add content to this section using the sidebar."
+      "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
     }
   },
   "layout": {
@@ -279,7 +271,9 @@
       "on_sale_from_html": "On Sale from {{ price }}",
       "from_text_html": "From {{ price }}",
       "quantity": "Quantity",
-      "add_to_cart": "Add to Cart"
+      "add_to_cart": "Add to Cart",
+      "vendor": "Vendor",
+      "sale_price": "Sale price"
     }
   },
   "gift_cards": {

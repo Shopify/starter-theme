@@ -29,6 +29,7 @@ const selectors = {
 const cssClasses = {
   activeThumbnail: 'active-thumbnail',
   hide: 'hide',
+  productOnSale: 'price--on-sale',
 };
 
 const keyboardKeys = {
@@ -192,23 +193,23 @@ register('product', {
    */
   updateProductPrices(evt) {
     const variant = evt.variant;
+    const $priceWrapper = $(selectors.priceWrapper, this.$container);
+    const $price = $(selectors.productPrice, this.$container);
     const $comparePrice = $(selectors.comparePrice, this.$container);
     const $compareEls = $comparePrice.add(
       selectors.comparePriceText,
       this.$container,
     );
 
-    $(selectors.productPrice, this.$container).html(
-      formatMoney(variant.price, theme.moneyFormat),
-    );
-
     if (variant.compare_at_price > variant.price) {
-      $comparePrice.html(
-        formatMoney(variant.compare_at_price, theme.moneyFormat),
-      );
+      $price.html(formatMoney(variant.compare_at_price, theme.moneyFormat));
+      $comparePrice.html(formatMoney(variant.price, theme.moneyFormat));
+      $priceWrapper.addClass(cssClasses.productOnSale);
       $compareEls.removeClass(cssClasses.hide);
     } else {
+      $price.html(formatMoney(variant.price, theme.moneyFormat));
       $comparePrice.html('');
+      $priceWrapper.removeClass(cssClasses.productOnSale);
       $compareEls.addClass(cssClasses.hide);
     }
   },

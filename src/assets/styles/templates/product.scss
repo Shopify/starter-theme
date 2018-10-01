@@ -5,3 +5,18 @@
     border-color: $color-border;
   }
 }
+
+.price__regular {
+
+  .price--on-sale & {
+    text-decoration: line-through;
+  }
+}
+
+.price__sale {
+  display: none;
+
+  .price--on-sale & {
+    display: block;
+  }
+}
