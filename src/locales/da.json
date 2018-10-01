@@ -9,8 +9,7 @@
     },
     "404": {
       "title": "404 Siden findes ikke",
-      "subtext_html":
-        "Siden du leder efter findes ikke. Klik <a href=\"/collections/all\">her</a> for at fortsætte med at handle."
+      "subtext_html": "Siden du leder efter findes ikke. Klik <a href=\"/collections/all\">her</a> for at fortsætte med at handle."
     },
     "password_page": {
       "opening_soon": "Åbner Snart",
@@ -24,8 +23,7 @@
       "signup_form_email_placeholder": "Din email",
       "signup_form_submit": "Send",
       "signup_form_success": "Vi sender dig en email lige inden vi åbner!",
-      "admin_link_html":
-        "Ejer du denne butik? <a href=\"/admin\">Log ind her</a>",
+      "admin_link_html": "Ejer du denne butik? <a href=\"/admin\">Log ind her</a>",
       "password_link": "Åben ved brug af adgangskode",
       "powered_by_shopify_html": "Denne butik vil blive drevet af {{ shopify }}"
     },
@@ -51,8 +49,7 @@
         "one": "{{ count }} resultat for \"{{ terms }}\"",
         "other": "{{ count }} resultat for \"{{ terms }}\""
       },
-      "no_results_html":
-        "Prøv et andet søgeord eller gå tilbage til <a href=\"/\">hjemmesiden</a>."
+      "no_results_html": "Prøv et andet søgeord eller gå tilbage til <a href=\"/\">hjemmesiden</a>."
     },
     "newsletter_form": {
       "newsletter_email": "Deltag i vores mailingliste",
@@ -76,10 +73,8 @@
       "email": "Email",
       "message": "Besked",
       "post": "Skriv kommentar",
-      "moderated":
-        "Bemærk venligst at, kommentarer skal godkendes inden de vises",
-      "success_moderated":
-        "Din kommentar er modtaget. Vi offentliggør den inden længe.",
+      "moderated": "Bemærk venligst at, kommentarer skal godkendes inden de vises",
+      "success_moderated": "Din kommentar er modtaget. Vi offentliggør den inden længe.",
       "success": "Din kommentar er modtaget! Mange tak!",
       "with_count": {
         "one": "{{ count }} kommentar",
@@ -96,14 +91,12 @@
       "remove": "Fjern",
       "note": "Specielle instruktioner for sælger",
       "subtotal": "Sub total",
-      "shipping_at_checkout":
-        "Forsendelse og skatter bliver beregnet ved betaling",
+      "shipping_at_checkout": "Forsendelse og skatter bliver beregnet ved betaling",
       "update": "Opdater Kurv",
       "checkout": "Gå til betaling",
       "empty": "Din kurv er i øjeblikket tom.",
       "cookies_required": "Slå cookies til for at bruge indkøbskurven",
-      "continue_browsing_html":
-        "Fortsæt med at handle <a href=\"/collections/all\">her</a>.",
+      "continue_browsing_html": "Fortsæt med at handle <a href=\"/collections/all\">her</a>.",
       "item_quantity": "Produkt antal",
       "savings": "Du sparer"
     },
@@ -129,8 +122,7 @@
       "phone": "Telefonnummer",
       "message": "Besked",
       "send": "Send",
-      "post_success":
-        "Tak for din henvendelse. Vi vender tilbage hurtigst muligt"
+      "post_success": "Tak for din henvendelse. Vi vender tilbage hurtigst muligt"
     }
   },
   "customer": {
@@ -220,8 +212,7 @@
       "submit": "Send",
       "cancel": "Annuller",
       "subtext": "Vil vil sende dig en email for at nulstille din adgangskode.",
-      "success":
-        "Vi har sendt dig en email med et link hvor du kan opdatere din adgangskode."
+      "success": "Vi har sendt dig en email med et link hvor du kan opdatere din adgangskode."
     },
     "reset_password": {
       "title": "Nulstil din adgangskode",
@@ -243,13 +234,11 @@
   "homepage": {
     "onboarding": {
       "blog_title": "Dit indlægs titel",
-      "blog_excerpt":
-        "Din butik har endnu ikke offentliggjort nogen blogindlæg. En blog kan bruges til at tale om nye produktlanceringer, tips eller andre nyheder, du vil dele med dine kunder. Du kan tjekke Shopify's e-handelsblog for inspiration og rådgivning til din egen butik og blog.",
+      "blog_excerpt": "Din butik har endnu ikke offentliggjort nogen blogindlæg. En blog kan bruges til at tale om nye produktlanceringer, tips eller andre nyheder, du vil dele med dine kunder. Du kan tjekke Shopify's e-handelsblog for inspiration og rådgivning til din egen butik og blog.",
       "blog_author": "Forfatternavn",
       "product_title": "Produkt Titel Eksempel",
       "collection_title": "Samling Titel Eksempel",
-      "no_content":
-        "Denne afdeling indeholder i øjeblikket ikke noget indhold. Tilføj indhold til denne afdeling ved at bruge sidebaren."
+      "no_content": "Denne afdeling indeholder i øjeblikket ikke noget indhold. Tilføj indhold til denne afdeling ved at bruge sidebaren."
     }
   },
   "layout": {
@@ -282,7 +271,9 @@
       "on_sale_from_html": "På Tilbud fra {{ price }}",
       "from_text_html": "Fra {{ price }}",
       "quantity": "Antal",
-      "add_to_cart": "Tilføj til Kurv"
+      "add_to_cart": "Tilføj til Kurv",
+      "vendor": "Forhandler",
+      "sale_price": "Udsalgspris"
     }
   },
   "gift_cards": {
