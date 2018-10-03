@@ -48,6 +48,10 @@
     };
   </script>
 
+  {% if template.directory == 'customers' %}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {% endif %}
+
   {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
