@@ -6,6 +6,8 @@
 
 import $ from 'jquery';
 
+import '../../styles/templates/gift_card.scss';
+
 const config = {
   qrCode: '#QrCode',
   printButton: '#PrintGiftCard',
