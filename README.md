@@ -169,4 +169,4 @@ All developers who wish to contribute through code or issues, take a look at the
 
 ## License
 
-Copyright (c) 2018 Shopify. See [LICENSE](https://github.com/Shopify/starter-theme/blob/master/LICENSE) for further details.
+Copyright © 2018 Shopify. See [LICENSE](https://github.com/Shopify/starter-theme/blob/master/LICENSE) for further details.
