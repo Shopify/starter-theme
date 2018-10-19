@@ -8,6 +8,11 @@
  */
 
 import $ from 'jquery';
+import {CountryProvinceSelector} from '@shopify/theme-addresses';
+
+const billingCountryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
+billingCountryProvinceSelector.build($('#addressTestCountry')[0], $('#addressTestProvince')[0]);
+billingCountryProvinceSelector.build($('#addressTestCountry2')[0], $('#addressTestProvince2')[0], {hideClass: 'hide'});
 
 const $newAddressForm = $('#AddressNewForm');
 

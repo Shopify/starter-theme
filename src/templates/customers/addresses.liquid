@@ -9,6 +9,38 @@
     <a href="/account">{{ 'customer.account.return' | t }}</a>
   </p>
 
+  <select
+      name="address[country]"
+      id="addressTestCountry"
+      data-default="Canada">
+  </select>
+  <div>
+      <label for="AddressProvinceNew">
+        {{ 'customer.addresses.province' | t }}
+      </label>
+      <select
+        name="address[province]"
+        id="addressTestProvince"
+        data-default="British Columbia">
+      </select>
+    </div>
+
+  <select
+      name="address[country]"
+      id="addressTestCountry2"
+      data-default="Canada">
+  </select>
+  <div>
+      <label for="AddressProvinceNew">
+        {{ 'customer.addresses.province' | t }}
+      </label>
+      <select
+        name="address[province]"
+        id="addressTestProvince2"
+        data-default="British Columbia">
+      </select>
+    </div>
+
   <div id="AddressNewForm" class="hide">
     {% form 'customer_address', customer.new_address %}
     <h2>{{ 'customer.addresses.add_new' | t }}</h2>
