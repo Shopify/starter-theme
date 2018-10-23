@@ -10,34 +10,35 @@
 import $ from 'jquery';
 import {CountryProvinceSelector} from '@shopify/theme-addresses';
 
-const billingCountryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
-billingCountryProvinceSelector.build($('#addressTestCountry')[0], $('#addressTestProvince')[0]);
-billingCountryProvinceSelector.build($('#addressTestCountry2')[0], $('#addressTestProvince2')[0], {hideClass: 'hide'});
-
 const $newAddressForm = $('#AddressNewForm');
 
 if ($newAddressForm.length) {
-  // Initialize observers on address selectors, defined in shopify_common.js
-  if (Shopify) {
-    new Shopify.CountryProvinceSelector(
-      'AddressCountryNew',
-      'AddressProvinceNew',
-      {
-        hideElement: 'AddressProvinceContainerNew',
-      },
-    );
-  }
+  const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
+
+  countryProvinceSelector.build(
+    $('#AddressCountryNew')[0],
+    $('#AddressProvinceNew')[0],
+    {
+      hideClass: 'hide',
+      hideElement: $('#AddressProvinceContainerNew')[0],
+    },
+  );
 
   // Initialize each edit form's country/province selector
   $('.address-country-option').each(function() {
     const formId = $(this).data('form-id');
-    const countrySelector = `AddressCountry_${formId}`;
-    const provinceSelector = `AddressProvince_${formId}`;
-    const containerSelector = `AddressProvinceContainer_${formId}`;
+    const countrySelector = $(`AddressCountry_${formId}`)[0];
+    const provinceSelector = $(`AddressProvince_${formId}`)[0];
+    const containerSelector = $(`AddressProvinceContainer_${formId}`)[0];
 
-    new Shopify.CountryProvinceSelector(countrySelector, provinceSelector, {
-      hideElement: containerSelector,
-    });
+    countryProvinceSelector.build(
+      countrySelector,
+      provinceSelector,
+      {
+        hideClass: 'hide',
+        hideElement: containerSelector,
+      },
+    );
   });
 
   // Toggle new/edit address forms
