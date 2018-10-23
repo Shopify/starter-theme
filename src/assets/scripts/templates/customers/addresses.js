@@ -27,9 +27,9 @@ if ($newAddressForm.length) {
   // Initialize each edit form's country/province selector
   $('.address-country-option').each(function() {
     const formId = $(this).data('form-id');
-    const countrySelector = $(`AddressCountry_${formId}`)[0];
-    const provinceSelector = $(`AddressProvince_${formId}`)[0];
-    const containerSelector = $(`AddressProvinceContainer_${formId}`)[0];
+    const countrySelector = $(`#AddressCountry_${formId}`)[0];
+    const provinceSelector = $(`#AddressProvince_${formId}`)[0];
+    const containerSelector = $(`#AddressProvinceContainer_${formId}`)[0];
 
     countryProvinceSelector.build(
       countrySelector,

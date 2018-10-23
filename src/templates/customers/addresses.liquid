@@ -74,7 +74,6 @@
       name="address[country]"
       id="AddressCountryNew"
       data-default="{{ form.country }}">
-      {{ country_option_tags }}
     </select>
 
     <div id="AddressProvinceContainerNew" class="hide">
@@ -204,10 +203,9 @@
         class="address-country-option"
         data-form-id="{{ form.id }}"
         data-default="{{ form.country }}">
-        {{ country_option_tags }}
       </select>
 
-      <div id="AddressProvinceContainer_{{ form.id }}" style="display: none">
+      <div id="AddressProvinceContainer_{{ form.id }}" class="hide">
         <label for="AddressProvince_{{ form.id }}">
           {{ 'customer.addresses.province' | t }}
         </label>
