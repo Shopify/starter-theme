@@ -14,31 +14,36 @@ const $newAddressForm = $('#AddressNewForm');
 
 if ($newAddressForm.length) {
   const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
+  const newCountrySelector = document.querySelector('#AddressCountryNew');
+  const newProvinceSelector = document.querySelector('#AddressProvinceNew');
+  const newContainerSelector = document.querySelector('#AddressProvinceContainerNew');
 
-  countryProvinceSelector.build(
-    $('#AddressCountryNew')[0],
-    $('#AddressProvinceNew')[0],
-    {
-      hideClass: 'hide',
-      hideElement: $('#AddressProvinceContainerNew')[0],
+  countryProvinceSelector.build(newCountrySelector, newProvinceSelector, {
+    onCountryChange: (provinces) => {
+      if (provinces.length) {
+        newContainerSelector.classList.remove('hide');
+      } else {
+        newContainerSelector.classList.add('hide');
+      }
     },
-  );
+  });
 
   // Initialize each edit form's country/province selector
   $('.address-country-option').each(function() {
     const formId = $(this).data('form-id');
-    const countrySelector = $(`#AddressCountry_${formId}`)[0];
-    const provinceSelector = $(`#AddressProvince_${formId}`)[0];
-    const containerSelector = $(`#AddressProvinceContainer_${formId}`)[0];
+    const countrySelector = document.querySelector(`#AddressCountry_${formId}`);
+    const provinceSelector = document.querySelector(`#AddressProvince_${formId}`);
+    const containerSelector = document.querySelector(`#AddressProvinceContainer_${formId}`);
 
-    countryProvinceSelector.build(
-      countrySelector,
-      provinceSelector,
-      {
-        hideClass: 'hide',
-        hideElement: containerSelector,
+    countryProvinceSelector.build(countrySelector, provinceSelector, {
+      onCountryChange: (provinces) => {
+        if (provinces.length) {
+          containerSelector.classList.remove('hide');
+        } else {
+          containerSelector.classList.add('hide');
+        }
       },
-    );
+    });
   });
 
   // Toggle new/edit address forms
