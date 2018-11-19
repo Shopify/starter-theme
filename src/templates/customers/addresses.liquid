@@ -131,9 +131,12 @@
     <button type="button" class="address-edit-toggle" data-form-id="{{ address.id }}">
       {{ 'customer.addresses.edit' | t }}
     </button>
-    <button type="button" class="address-delete" data-form-id="{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
-      {{ 'customer.addresses.delete' | t }}
-    </button>
+    <form class="address-delete" method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+      <input type="hidden" name="_method" value="delete"/>
+      <button type="submit">
+        {{ 'customer.addresses.delete' | t }}
+      </button>
+    </form>
 
     <div id="EditAddress_{{ address.id }}" class="hide">
       {% form 'customer_address', address %}
