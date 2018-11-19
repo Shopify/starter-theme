@@ -7,12 +7,11 @@
  * @namespace customerAddresses
  */
 
-import $ from 'jquery';
 import {CountryProvinceSelector} from '@shopify/theme-addresses';
 
-const $newAddressForm = $('#AddressNewForm');
+const newAddressForm = document.querySelector('#AddressNewForm');
 
-if ($newAddressForm.length) {
+if (newAddressForm) {
   const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
   const newCountrySelector = document.querySelector('#AddressCountryNew');
   const newProvinceSelector = document.querySelector('#AddressProvinceNew');
@@ -29,8 +28,8 @@ if ($newAddressForm.length) {
   });
 
   // Initialize each edit form's country/province selector
-  $('.address-country-option').each(function() {
-    const formId = $(this).data('form-id');
+  document.querySelectorAll('.address-country-option').forEach((el) => {
+    const formId = el.getAttribute('data-form-id');
     const countrySelector = document.querySelector(`#AddressCountry_${formId}`);
     const provinceSelector = document.querySelector(`#AddressProvince_${formId}`);
     const containerSelector = document.querySelector(`#AddressProvinceContainer_${formId}`);
@@ -47,21 +46,26 @@ if ($newAddressForm.length) {
   });
 
   // Toggle new/edit address forms
-  $('.address-new-toggle').on('click', () => {
-    $newAddressForm.toggleClass('hide');
+  document.querySelector('.address-new-toggle').addEventListener('click', () => {
+    newAddressForm.classList.toggle('hide');
   });
 
-  $('.address-edit-toggle').on('click', function() {
-    const formId = $(this).data('form-id');
-    $(`#EditAddress_${formId}`).toggleClass('hide');
+  document.querySelectorAll('.address-edit-toggle').forEach((el) => {
+    el.addEventListener('click', () => {
+      const formId = el.getAttribute('data-form-id');
+      document.querySelector(`#EditAddress_${formId}`).classList.toggle('hide');
+    });
   });
 
-  $('.address-delete').on('submit', function() {
-    const $form = $(this);
-    const confirmMessage = $form.data('confirm-message');
+  document.querySelectorAll('.address-delete').forEach((el) => {
+    el.addEventListener('submit', (event) => {
+      const confirmMessage = el.getAttribute('data-confirm-message');
 
-    return window.confirm(
-        confirmMessage || 'Are you sure you wish to delete this address?',
-    );
+      if (!window.confirm(
+          confirmMessage || 'Are you sure you wish to delete this address?',
+      )) {
+        event.preventDefault();
+      }
+    });
   });
 }
