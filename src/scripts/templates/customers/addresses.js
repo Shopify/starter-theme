@@ -56,18 +56,12 @@ if ($newAddressForm.length) {
     $(`#EditAddress_${formId}`).toggleClass('hide');
   });
 
-  $('.address-delete').on('click', function() {
-    const $el = $(this);
-    const formId = $el.data('form-id');
-    const confirmMessage = $el.data('confirm-message');
-    if (
-      window.confirm(
+  $('.address-delete').on('submit', function() {
+    const $form = $(this);
+    const confirmMessage = $form.data('confirm-message');
+
+    return window.confirm(
         confirmMessage || 'Are you sure you wish to delete this address?',
-      )
-    ) {
-      Shopify.postLink(`/account/addresses/${formId}`, {
-        parameters: {_method: 'delete'},
-      });
-    }
+    );
   });
 }
