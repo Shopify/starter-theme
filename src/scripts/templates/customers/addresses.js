@@ -7,56 +7,54 @@
  * @namespace customerAddresses
  */
 
-import $ from 'jquery';
+import {CountryProvinceSelector} from '@shopify/theme-addresses';
 
-const $newAddressForm = $('#AddressNewForm');
+const selectors = {
+  addressContainer: '.address-wrapper',
+  addressToggle: '.address-toggle',
+  addressCountry: '[data-address-country]',
+  addressProvince: '[data-address-province]',
+  addressProvinceWrapper: '.address-province-wrapper',
+  addressForm: '.address-form',
+  addressDeleteForm: '.address-delete-form',
+};
+const hideClass = 'hide';
 
-if ($newAddressForm.length) {
-  // Initialize observers on address selectors, defined in shopify_common.js
-  if (Shopify) {
-    new Shopify.CountryProvinceSelector(
-      'AddressCountryNew',
-      'AddressProvinceNew',
-      {
-        hideElement: 'AddressProvinceContainerNew',
-      },
-    );
-  }
+function initializeAddressForm(countryProvinceSelector, container) {
+  const countrySelector = container.querySelector(selectors.addressCountry);
+  const provinceSelector = container.querySelector(selectors.addressProvince);
+  const provinceWrapper = container.querySelector(selectors.addressProvinceWrapper);
+  const addressForm = container.querySelector(selectors.addressForm);
+  const deleteForm = container.querySelector(selectors.addressDeleteForm);
 
-  // Initialize each edit form's country/province selector
-  $('.address-country-option').each(function() {
-    const formId = $(this).data('form-id');
-    const countrySelector = `AddressCountry_${formId}`;
-    const provinceSelector = `AddressProvince_${formId}`;
-    const containerSelector = `AddressProvinceContainer_${formId}`;
+  countryProvinceSelector.build(countrySelector, provinceSelector, {
+    onCountryChange: (provinces) => provinceWrapper.classList.toggle(hideClass, !provinces.length),
+  });
 
-    new Shopify.CountryProvinceSelector(countrySelector, provinceSelector, {
-      hideElement: containerSelector,
+  container.querySelectorAll(selectors.addressToggle).forEach((button) => {
+    button.addEventListener('click', () => {
+      addressForm.classList.toggle(hideClass);
     });
   });
 
-  // Toggle new/edit address forms
-  $('.address-new-toggle').on('click', () => {
-    $newAddressForm.toggleClass('hide');
-  });
+  if (deleteForm) {
+    deleteForm.addEventListener('submit', (event) => {
+      const confirmMessage = deleteForm.getAttribute('data-confirm-message');
 
-  $('.address-edit-toggle').on('click', function() {
-    const formId = $(this).data('form-id');
-    $(`#EditAddress_${formId}`).toggleClass('hide');
-  });
+      if (!window.confirm(confirmMessage || 'Are you sure you wish to delete this address?')) {
+        event.preventDefault();
+      }
+    });
+  }
+}
 
-  $('.address-delete').on('click', function() {
-    const $el = $(this);
-    const formId = $el.data('form-id');
-    const confirmMessage = $el.data('confirm-message');
-    if (
-      window.confirm(
-        confirmMessage || 'Are you sure you wish to delete this address?',
-      )
-    ) {
-      Shopify.postLink(`/account/addresses/${formId}`, {
-        parameters: {_method: 'delete'},
-      });
-    }
+const addresses = document.querySelectorAll(selectors.addressContainer);
+
+if (addresses.length) {
+
+  const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
+
+  addresses.forEach((addressContainer) => {
+    initializeAddressForm(countryProvinceSelector, addressContainer);
   });
 }
