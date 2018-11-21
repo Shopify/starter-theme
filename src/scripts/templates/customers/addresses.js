@@ -9,63 +9,52 @@
 
 import {CountryProvinceSelector} from '@shopify/theme-addresses';
 
-const newAddressForm = document.querySelector('#AddressNewForm');
+const selectors = {
+  addressContainer: '.address-wrapper',
+  addressToggle: '.address-toggle',
+  addressCountry: '[data-address-country]',
+  addressProvince: '[data-address-province]',
+  addressProvinceWrapper: '.address-province-wrapper',
+  addressForm: '.address-form',
+  addressDeleteForm: '.address-delete-form',
+};
+const hideClass = 'hide';
 
-if (newAddressForm) {
-  const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
-  const newCountrySelector = document.querySelector('#AddressCountryNew');
-  const newProvinceSelector = document.querySelector('#AddressProvinceNew');
-  const newContainerSelector = document.querySelector('#AddressProvinceContainerNew');
+function initializeAddressForm(countryProvinceSelector, container) {
+  const countrySelector = container.querySelector(selectors.addressCountry);
+  const provinceSelector = container.querySelector(selectors.addressProvince);
+  const provinceWrapper = container.querySelector(selectors.addressProvinceWrapper);
+  const addressForm = container.querySelector(selectors.addressForm);
+  const deleteForm = container.querySelector(selectors.addressDeleteForm);
 
-  countryProvinceSelector.build(newCountrySelector, newProvinceSelector, {
-    onCountryChange: (provinces) => {
-      if (provinces.length) {
-        newContainerSelector.classList.remove('hide');
-      } else {
-        newContainerSelector.classList.add('hide');
-      }
-    },
+  countryProvinceSelector.build(countrySelector, provinceSelector, {
+    onCountryChange: (provinces) => provinceWrapper.classList.toggle(hideClass, !provinces.length),
   });
 
-  // Initialize each edit form's country/province selector
-  document.querySelectorAll('.address-country-option').forEach((el) => {
-    const formId = el.getAttribute('data-form-id');
-    const countrySelector = document.querySelector(`#AddressCountry_${formId}`);
-    const provinceSelector = document.querySelector(`#AddressProvince_${formId}`);
-    const containerSelector = document.querySelector(`#AddressProvinceContainer_${formId}`);
-
-    countryProvinceSelector.build(countrySelector, provinceSelector, {
-      onCountryChange: (provinces) => {
-        if (provinces.length) {
-          containerSelector.classList.remove('hide');
-        } else {
-          containerSelector.classList.add('hide');
-        }
-      },
+  container.querySelectorAll(selectors.addressToggle).forEach((button) => {
+    button.addEventListener('click', () => {
+      addressForm.classList.toggle(hideClass);
     });
   });
 
-  // Toggle new/edit address forms
-  document.querySelector('.address-new-toggle').addEventListener('click', () => {
-    newAddressForm.classList.toggle('hide');
-  });
+  if (deleteForm) {
+    deleteForm.addEventListener('submit', (event) => {
+      const confirmMessage = deleteForm.getAttribute('data-confirm-message');
 
-  document.querySelectorAll('.address-edit-toggle').forEach((el) => {
-    el.addEventListener('click', () => {
-      const formId = el.getAttribute('data-form-id');
-      document.querySelector(`#EditAddress_${formId}`).classList.toggle('hide');
-    });
-  });
-
-  document.querySelectorAll('.address-delete').forEach((el) => {
-    el.addEventListener('submit', (event) => {
-      const confirmMessage = el.getAttribute('data-confirm-message');
-
-      if (!window.confirm(
-          confirmMessage || 'Are you sure you wish to delete this address?',
-      )) {
+      if (!window.confirm(confirmMessage || 'Are you sure you wish to delete this address?')) {
         event.preventDefault();
       }
     });
+  }
+}
+
+const addresses = document.querySelectorAll(selectors.addressContainer);
+
+if (addresses.length) {
+
+  const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
+
+  addresses.forEach((addressContainer) => {
+    initializeAddressForm(countryProvinceSelector, addressContainer);
   });
 }
