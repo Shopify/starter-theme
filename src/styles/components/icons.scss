@@ -3,10 +3,7 @@
   vertical-align: middle;
   width: 20px;
   height: 20px;
-  
-  path {
-    fill: currentColor;
-  }
+  fill: currentColor;
 
   .no-svg & {
     display: none;
