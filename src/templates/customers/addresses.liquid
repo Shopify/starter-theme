@@ -8,10 +8,10 @@
     <a href="/account">{{ 'customer.account.return' | t }}</a>
   </p>
 
-  <div class="address-wrapper">
-    <button type="button" class="address-toggle">{{ 'customer.addresses.add_new' | t }}</button>
+  <div data-address>
+    <button type="button" data-address-toggle>{{ 'customer.addresses.add_new' | t }}</button>
 
-    <div class="address-form hide">
+    <div data-address-form class="hide">
       {% form 'customer_address', customer.new_address %}
         <h2>{{ 'customer.addresses.add_new' | t }}</h2>
 
@@ -78,7 +78,7 @@
           data-default="{{ form.country }}">
         </select>
 
-        <div class="address-province-wrapper hide">
+        <div data-address-province-wrapper class="hide">
           <label for="AddressProvinceNew">
             {{ 'customer.addresses.province' | t }}
           </label>
@@ -113,7 +113,7 @@
         </label>
 
         <button type="submit">{{ 'customer.addresses.add' | t }}</button>
-        <button type="button" class="address-toggle">
+        <button type="button" data-address-toggle>
           {{ 'customer.addresses.cancel' | t }}
         </button>
       {% endform %}
@@ -124,24 +124,24 @@
 
   {% for address in customer.addresses %}
 
-    <div class="address-wrapper">
+    <div data-address>
 
       {% if address == customer.default_address %}
         <p><strong>{{ 'customer.addresses.default' | t }}</strong></p>
       {% endif %}
       {{ address | format_address }}
 
-      <button type="button" class="address-toggle">
+      <button type="button" data-address-toggle>
         {{ 'customer.addresses.edit' | t }}
       </button>
-      <form class="address-delete-form" method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+      <form data-address-delete-form method="post" action="/account/addresses/{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
         <input type="hidden" name="_method" value="delete"/>
         <button type="submit">
           {{ 'customer.addresses.delete' | t }}
         </button>
       </form>
 
-      <div class="address-form hide">
+      <div data-address-form class="hide">
         {% form 'customer_address', address %}
 
         <h4>{{ 'customer.addresses.edit_address' | t }}</h4>
@@ -211,7 +211,7 @@
           data-default="{{ form.country }}">
         </select>
 
-        <div id="AddressProvinceContainer_{{ form.id }}" class="address-province-wrapper hide">
+        <div id="AddressProvinceContainer_{{ form.id }}" data-address-province-wrapper class="hide">
           <label for="AddressProvince_{{ form.id }}">
             {{ 'customer.addresses.province' | t }}
           </label>
@@ -246,7 +246,7 @@
         </label>
 
         <button type="submit">{{ 'customer.addresses.update' | t }}</button>
-        <button type="button" class="address-toggle" data-form-id="{{ form.id }}">
+        <button type="button" data-address-toggle data-form-id="{{ form.id }}">
           {{ 'customer.addresses.cancel' | t }}
         </button>
 

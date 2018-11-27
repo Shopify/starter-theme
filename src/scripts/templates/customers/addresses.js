@@ -10,13 +10,13 @@
 import {CountryProvinceSelector} from '@shopify/theme-addresses';
 
 const selectors = {
-  addressContainer: '.address-wrapper',
-  addressToggle: '.address-toggle',
+  addressContainer: '[data-address]',
+  addressToggle: '[data-address-toggle]',
   addressCountry: '[data-address-country]',
   addressProvince: '[data-address-province]',
-  addressProvinceWrapper: '.address-province-wrapper',
-  addressForm: '.address-form',
-  addressDeleteForm: '.address-delete-form',
+  addressProvinceWrapper: '[data-address-province-wrapper]',
+  addressForm: '[data-address-form]',
+  addressDeleteForm: '[data-address-delete-form]',
 };
 const hideClass = 'hide';
 
