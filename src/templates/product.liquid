@@ -12,15 +12,20 @@
       "https:{{ product.featured_image.src | img_url: image_size }}"
     ],
   {% endif %}
-  "description": "{{ product.description | strip_html | escape }}",
+  {% if product.metafields.global.description_tag != blank %}
+    "description": "{{ product.metafields.global.description_tag }}",
+  {% else %}
+    "description": "{{ product.description | strip_html | strip_newlines | escape }}",
+  {% endif %}
   {% if current_variant.sku != blank %}
     "sku": "{{ current_variant.sku }}",
   {% endif %}
   "brand": {
     "@type": "Thing",
     "name": "{{ product.vendor | escape }}"
-  },
-  {% if product.variants %}
+  }
+  {% if product.variants.size > 1 %}
+    ,
     "offers": [
       {% for variant in product.variants %}
         {
