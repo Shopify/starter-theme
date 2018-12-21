@@ -6,11 +6,12 @@
  * @namespace password
  */
 
-import $ from 'jquery';
-
 const selectors = {
-  recoverPasswordForm: '#RecoverPassword',
-  hideRecoverPasswordLink: '#HideRecoverPasswordLink',
+  recoverPasswordFormTriggers: document.querySelectorAll('[data-recover-toggle]'),
+  recoverPasswordForm: document.querySelector('[data-recover-form]'),
+  loginForm: document.querySelector('[data-login-form]'),
+  formState: document.querySelector('[data-form-state]'),
+  resetSuccess: document.querySelector('[data-reset-success]'),
 };
 
 function onShowHidePasswordForm(evt) {
@@ -31,29 +32,27 @@ function checkUrlHash() {
  *  Show/Hide recover password form
  */
 function toggleRecoverPasswordForm() {
-  $('#RecoverPasswordForm').toggleClass('hide');
-  $('#CustomerLoginForm').toggleClass('hide');
+  selectors.recoverPasswordForm.classList.toggle('hide');
+  selectors.loginForm.classList.toggle('hide');
 }
 
 /**
  *  Show reset password success message
  */
 function resetPasswordSuccess() {
-  const $formState = $('.reset-password-success');
+  // check if reset password form was
+  // successfully submited and show success message.
 
-  // check if reset password form was successfully submited.
-  if (!$formState.length) {
-    return;
+  if (selectors.formState) {
+    selectors.resetSuccess.classList.remove('hide');
   }
-
-  // show success message
-  $('#ResetSuccess').removeClass('hide');
 }
 
-if ($(selectors.recoverPasswordForm).length) {
+if (selectors.recoverPasswordForm) {
   checkUrlHash();
   resetPasswordSuccess();
 
-  $(selectors.recoverPasswordForm).on('click', onShowHidePasswordForm);
-  $(selectors.hideRecoverPasswordLink).on('click', onShowHidePasswordForm);
+  selectors.recoverPasswordFormTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', onShowHidePasswordForm);
+  });
 }
