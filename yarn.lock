@@ -422,6 +422,11 @@
     htmllint "^0.6.0"
     lodash "^4.15.0"
 
+"@shopify/theme-product@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-product/-/theme-product-1.0.0.tgz#505e6a0bf78359d384618d5317fbba857d53c455"
+  integrity sha512-l6jZlkPt2Juy0JXnnkTh+trBJD1zMFYp4RLHSD11hk6xwMtkUGRzLc6HQNhoAt//5Ft+vR2h92nZFFntX03oGQ==
+
 "@shopify/theme-rte@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/@shopify/theme-rte/-/theme-rte-1.0.0-alpha.7.tgz#dfb99ac10c1b9a20bbdfde32929d6dbaf2404deb"
@@ -10457,6 +10462,7 @@ schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
   integrity sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==
   dependencies:
     ajv "^6.1.0"
+    ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
 schema-utils@^1.0.0:
