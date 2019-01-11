@@ -4,12 +4,10 @@
  * A file that contains scripts highly couple code to the Gift Card template.
  */
 
-import $ from 'jquery';
-
 const config = {
   qrCode: '#QrCode',
-  printButton: '#PrintGiftCard',
-  giftCardCode: '.giftcard__code',
+  printButton: 'PrintGiftCard',
+  giftCardCode: 'GiftCardDigits',
 };
 
 // new QRCode($qrCode[0], {
@@ -18,15 +16,17 @@ const config = {
 //   height: 120,
 // });
 
-$(config.printButton).on('click', () => {
+document.getElementById(config.printButton).addEventListener('click', () => {
   window.print();
 });
 
 // Auto-select gift card code on click, based on ID passed to the function
-$(config.giftCardCode).on('click', {element: 'GiftCardDigits'}, selectText);
+document
+  .getElementById(config.giftCardCode)
+  .addEventListener('click', selectText);
 
 function selectText(evt) {
-  const text = document.getElementById(evt.data.element);
+  const text = document.getElementById(config.giftCardCode);
   let range = '';
 
   if (document.body.createTextRange) {
