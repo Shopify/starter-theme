@@ -1,32 +1,34 @@
+import QRCode from 'qrcode';
+
 /**
  * Gift Card Template Script
  * ------------------------------------------------------------------------------
  * A file that contains scripts highly couple code to the Gift Card template.
  */
 
-const config = {
-  qrCode: '#QrCode',
-  printButton: 'PrintGiftCard',
-  giftCardCode: 'GiftCardDigits',
+const selectors = {
+  qrCodeCanvas: '[data-gift-card-qr]',
+  printButton: '[data-gift-card-print]',
+  giftCardCode: '[data-gift-card-digits]',
 };
 
-// new QRCode($qrCode[0], {
-//   text: $qrCode.attr('data-identifier'),
-//   width: 120,
-//   height: 120,
-// });
+const qrCodeCanvas = document.querySelector(selectors.qrCodeCanvas);
 
-document.getElementById(config.printButton).addEventListener('click', () => {
-  window.print();
+QRCode.toCanvas(qrCodeCanvas, qrCodeCanvas.getAttribute('data-identifier'));
+
+document.querySelectorAll(selectors.printButton).forEach((printButton) => {
+  printButton.addEventListener('click', () => {
+    window.print();
+  });
 });
 
 // Auto-select gift card code on click, based on ID passed to the function
-document
-  .getElementById(config.giftCardCode)
-  .addEventListener('click', selectText);
+document.querySelectorAll(selectors.giftCardCode).forEach((giftCardCode) => {
+  giftCardCode.addEventListener('click', selectText);
+});
 
 function selectText(evt) {
-  const text = document.getElementById(config.giftCardCode);
+  const text = evt.target;
   let range = '';
 
   if (document.body.createTextRange) {
