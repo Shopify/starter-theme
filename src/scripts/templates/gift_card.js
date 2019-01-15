@@ -12,9 +12,10 @@ const selectors = {
   giftCardCode: '[data-gift-card-digits]',
 };
 
-const qrCodeCanvas = document.querySelector(selectors.qrCodeCanvas);
-
-QRCode.toCanvas(qrCodeCanvas, qrCodeCanvas.getAttribute('data-identifier'));
+// This is the QR code that allows customers to use at a POS
+document.querySelectorAll(selectors.qrCodeCanvas).forEach((qrCodeCanvas) => {
+  QRCode.toCanvas(qrCodeCanvas, qrCodeCanvas.getAttribute('data-identifier'));
+});
 
 document.querySelectorAll(selectors.printButton).forEach((printButton) => {
   printButton.addEventListener('click', () => {
