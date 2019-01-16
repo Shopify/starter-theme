@@ -13,34 +13,22 @@ const selectors = {
 };
 
 // This is the QR code that allows customers to use at a POS
-document.querySelectorAll(selectors.qrCodeCanvas).forEach((qrCodeCanvas) => {
-  QRCode.toCanvas(qrCodeCanvas, qrCodeCanvas.getAttribute('data-identifier'));
+document.querySelectorAll(selectors.qrCodeCanvas).forEach((element) => {
+  QRCode.toCanvas(element, element.dataset.identifier);
 });
 
-document.querySelectorAll(selectors.printButton).forEach((printButton) => {
-  printButton.addEventListener('click', () => {
-    window.print();
-  });
+document.querySelectorAll(selectors.printButton).forEach((element) => {
+  element.addEventListener('click', window.print);
 });
 
 // Auto-select gift card code on click, based on ID passed to the function
-document.querySelectorAll(selectors.giftCardCode).forEach((giftCardCode) => {
-  giftCardCode.addEventListener('click', selectText);
-});
-
-function selectText(evt) {
-  const text = evt.target;
-  let range = '';
-
-  if (document.body.createTextRange) {
-    range = document.body.createTextRange();
-    range.moveToElementText(text);
-    range.select();
-  } else if (window.getSelection) {
+document.querySelectorAll(selectors.giftCardCode).forEach((element) => {
+  element.addEventListener('click', (evt) => {
+    let range = '';
     const selection = window.getSelection();
     range = document.createRange();
-    range.selectNodeContents(text);
+    range.selectNodeContents(evt.target);
     selection.removeAllRanges();
     selection.addRange(range);
-  }
-}
+  });
+});
