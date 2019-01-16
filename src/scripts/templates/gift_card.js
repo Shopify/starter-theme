@@ -18,7 +18,9 @@ document.querySelectorAll(selectors.qrCodeCanvas).forEach((element) => {
 });
 
 document.querySelectorAll(selectors.printButton).forEach((element) => {
-  element.addEventListener('click', window.print);
+  element.addEventListener('click', () => {
+    window.print();
+  });
 });
 
 // Auto-select gift card code on click, based on ID passed to the function
