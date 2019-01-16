@@ -27,7 +27,7 @@ const selectors = {
   imageWrapper: '[data-product-image-wrapper]',
   visibleImageWrapper: `[data-product-image-wrapper]:not(.${classes.hide})`,
   imageWrapperById: (id) => `${selectors.imageWrapper}[data-image-id='${id}']`,
-  productForm: '.shopify-product-form',
+  productForm: '[data-product-form]',
   productPrice: '[data-product-price]',
   thumbnail: '[data-product-single-thumbnail]',
   thumbnailById: (id) => `[data-thumbnail-id='${id}']`,
@@ -38,7 +38,9 @@ register('product', {
   async onLoad() {
     const productFormElement = document.querySelector(selectors.productForm);
 
-    this.product = await this.getProductJson(this.container.dataset.productUrl);
+    this.product = await this.getProductJson(
+      productFormElement.dataset.productHandle,
+    );
     this.productForm = new ProductForm(productFormElement, this.product, {
       onOptionChange: this.onFormOptionChange.bind(this),
     });
@@ -56,8 +58,8 @@ register('product', {
     this.removeEventListener('keyup', this.onThumbKeyup);
   },
 
-  getProductJson(url) {
-    return fetch(`${String(url)}.js`).then((response) => {
+  getProductJson(handle) {
+    return fetch(`/products/${handle}.js`).then((response) => {
       return response.json();
     });
   },
@@ -120,7 +122,7 @@ register('product', {
   },
 
   renderImages(variant) {
-    if (!variant || typeof variant.featured_image === 'undefined') {
+    if (!variant || variant.featured_image === null) {
       return;
     }
 
@@ -192,7 +194,7 @@ register('product', {
   },
 
   updateBrowserHistory(variant) {
-    const enableHistoryState = this.productFrom.element.dataset
+    const enableHistoryState = this.productForm.element.dataset
       .enableHistoryState;
 
     if (!variant || enableHistoryState !== 'true') {
