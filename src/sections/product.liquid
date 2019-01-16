@@ -39,23 +39,34 @@
   {% form "product", product %}
     {% unless product.has_only_default_variant %}
       {% for option in product.options_with_values %}
-        <div class="selector-wrapper js">
-          <label for="SingleOptionSelector-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
+        <div class="js">
 
-          <select
-            name="options[{{ option.name | escape }}]"
-            data-product-form-option
-            data-index="option{{ option.position }}">
+          {% if forloop.index0 > 0 %}
+
             {% for value in option.values %}
-              <option
-                value="{{ value | escape }}"
-                {% if option.selected_value == value %}selected="selected"{% endif %}>
-                  {{ value }}
-              </option>
+              <input type="radio" id="Option{{option.position}}-{{ value }}" name="{{ option.name }}" value="{{ value }}" {% if option.selected_value == value %}checked{% endif %}>
+              <label for="Option{{option.position}}-{{ value }}">{{ value }}</label>
             {% endfor %}
-          </select>
+
+          {% else %}
+
+            <label for="Option{{ option.position }}">
+              {{ option.name }}
+            </label>
+
+            <select
+              id="Option{{ option.position }}"
+              name="options[{{ option.name | escape }}]">
+              {% for value in option.values %}
+                <option
+                  value="{{ value | escape }}"
+                  {% if option.selected_value == value %}selected="selected"{% endif %}>
+                    {{ value }}
+                </option>
+              {% endfor %}
+            </select>
+
+          {% endif %}
         </div>
       {% endfor %}
     {% endunless %}

@@ -6,7 +6,7 @@
  * @namespace product
  */
 
-import ProductForm from '@shopify/theme-product-form';
+import {getUrlWithVariant, ProductForm} from '@shopify/theme-product-form';
 import {formatMoney} from '@shopify/theme-currency';
 import {register} from '@shopify/theme-sections';
 
@@ -69,6 +69,8 @@ register('product', {
     this.renderPrice(variant);
     this.renderComparePrice(variant);
     this.renderSubmitButton(variant);
+
+    this.updateBrowserHistory(variant);
   },
 
   onThumbClick(event) {
@@ -187,5 +189,17 @@ register('product', {
 
     imageToSetDeactive.classList.add(classes.hide);
     imageToSetActive.classList.remove(classes.hide);
+  },
+
+  updateBrowserHistory(variant) {
+    const enableHistoryState = this.productFrom.element.dataset
+      .enableHistoryState;
+
+    if (!variant || enableHistoryState !== 'true') {
+      return;
+    }
+
+    const url = getUrlWithVariant(window.location.href, variant.id);
+    window.history.replaceState({path: url}, '', url);
   },
 });
