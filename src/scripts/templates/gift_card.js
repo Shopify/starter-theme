@@ -26,9 +26,8 @@ document.querySelectorAll(selectors.printButton).forEach((element) => {
 // Auto-select gift card code on click, based on ID passed to the function
 document.querySelectorAll(selectors.giftCardCode).forEach((element) => {
   element.addEventListener('click', (evt) => {
-    let range = '';
     const selection = window.getSelection();
-    range = document.createRange();
+    const range = document.createRange();
     range.selectNodeContents(evt.target);
     selection.removeAllRanges();
     selection.addRange(range);
