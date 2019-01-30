@@ -1,0 +1,38 @@
+.responsive-image__wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+
+  .no-js & {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    position: relative;
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.responsive-image__wrapper--full-height {
+  height: 100%;
+}
+
+.responsive-image__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &:focus {
+    outline-offset: -4px;
+  }
+}

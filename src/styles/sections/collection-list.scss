@@ -1,0 +1,19 @@
+.collection-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $grid-max-width;
+}
+
+.collection-list-item {
+  flex: 1 1 percentage(1 / 3);
+  height: 100%;
+  text-align: center;
+}
+
+.collection-list__image {
+  min-width: 320px;
+}
+
+.collection-list__title {
+  flex-basis: 100%;
+}
