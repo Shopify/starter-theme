@@ -1,0 +1,28 @@
+.btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 21px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $color_link-hover;
+    color: $color_link-hover;
+  }
+
+  &-primary {
+    border: 1px solid $blue;
+    color: $blue;
+  }
+
+  &-secondary {
+    padding-right: 0;
+    padding-left: 0;
+    color: $white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}

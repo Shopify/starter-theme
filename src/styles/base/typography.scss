@@ -1,0 +1,99 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: $font-body-weight;
+  font-style: $font-body-style;
+  font-size: 1.6rem;
+}
+
+body,
+input,
+textarea,
+button,
+select {
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+h1,
+.h1 {
+  margin: 2rem 0 1rem;
+  color: $color-body-text;
+  font-family: $font-heading;
+  font-size: $font-size-h1;
+  letter-spacing: $point04;
+}
+
+h2,
+.h2 {
+  margin: 1.5rem 0 1rem;
+  color: $color-body-text;
+  font-family: $font-heading;
+  font-size: $font-size-h2;
+  font-style: italic;
+  letter-spacing: $point04;
+}
+
+h3,
+.h3 {
+  margin: 1rem 0;
+  color: $color-body-text;
+  font-family: $font-heading;
+  font-size: $font-size-h3;
+  letter-spacing: $point1;
+  text-transform: uppercase;
+}
+
+h4,
+.h4 {
+  margin: 1rem 0;
+  font-family: $font-heading;
+  font-size: $font-size-h4;
+  letter-spacing: $point1;
+  text-transform: uppercase;
+}
+
+h5,
+.h5 {
+  margin: 1rem 0;
+  font-family: $font-heading;
+  font-size: $font-size-h5;
+  font-style: italic;
+  letter-spacing: $point1;
+}
+
+p,
+.p {
+  margin: 1rem 0;
+  font-family: $sans-serif;
+  font-size: $font-size-p;
+  font-weight: $regular;
+  letter-spacing: $point04;
+  line-height: 1.625;
+}
+
+article p {
+  text-align: justify;
+}
+
+i,
+.italic {
+  font-style: italic;
+}
+
+.normal {
+  font-style: normal;
+}
+
+b,
+strong,
+.bold {
+  font-weight: 700;
+}
+
+hr {
+  border-top: 1px solid #d1d1d2;
+}

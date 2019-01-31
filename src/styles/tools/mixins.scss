@@ -1,3 +1,26 @@
+// Placeholders
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
 /**
  * Sets a media query for the specified breakpoint
  *
@@ -29,26 +52,6 @@
 }
 
 /**
- * Outputs list of transition properties
- *
- * Accepts:
- * - $transitions: {String} List of transition properties to set
- *
- * Usage:
- * .selector {
- *   @include transition(width, height 0.5s ease-in);
- * }
- */
-@mixin transition($transitions...) {
-  $output: ();
-
-  @each $transition in $transitions {
-    $output: append($output, get-transition-properties($transition), comma);
-  }
-  transition: $output;
-}
-
-/**
  * Forces an element to self-clear its children
  *
  * Usage:
@@ -58,7 +61,7 @@
  */
 @mixin clearfix() {
   &::after {
-    content: '';
+    content: "";
     display: table;
     clear: both;
   }
@@ -106,4 +109,65 @@
   height: auto;
   margin: 0;
   clip: auto;
+}
+
+// Default psuedo element rules
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  position: $pos;
+  display: $display;
+}
+
+// Responsive ratio
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+  $padding: unquote(($y / $x) * 100 + "%");
+
+  @if $pseudo {
+    &::before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+// CSS triangles
+@mixin css-triangle(
+  $color,
+  $direction,
+  $size: 6px,
+  $position: absolute,
+  $round: false
+) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+
+  @if $round {
+    border-radius: 3px;
+  }
+
+  @if $direction == down {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    margin-top: 0 - round($size / 2.5);
+  } @else if $direction == up {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+    margin-bottom: 0 - round($size / 2.5);
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+    margin-left: -$size;
+  }
 }

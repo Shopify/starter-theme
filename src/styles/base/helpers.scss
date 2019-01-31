@@ -1,3 +1,33 @@
+.wrapper {
+  width: 80%;
+  max-width: 1366px;
+  margin: 0 auto;
+
+  &--small {
+    width: 75%;
+    max-width: 1080px;
+  }
+
+  &--xl {
+    width: 90%;
+    max-width: 1707px;
+    margin: 0 auto;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sans {
+  font-family: $sans-serif;
+}
+
+hr {
+  border-top: 1px solid #d1d1d2;
+}
+
 .clearfix {
   @include clearfix;
 }
@@ -70,10 +100,3 @@
   /* stylelint-disable declaration-no-important */
   display: none !important;
 }
-<<<<<<< HEAD
-
-.test {
-  display: block;
-}
-=======
->>>>>>> d7220c5e8a4b56788e4339f28ead9b6a343dbc56

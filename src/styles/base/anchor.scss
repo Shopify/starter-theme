@@ -1,0 +1,39 @@
+a,
+.a {
+  color: $color-anchor;
+  cursor: pointer;
+  font-family: $sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $color-anchor--hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:link {
+    -webkit-tap-highlight-color: $white;
+  }
+}
+
+.a {
+  &--block {
+    display: block;
+  }
+
+  &--subtle {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &--no-hover {
+    cursor: default;
+
+    &:hover {
+      color: $color-body-text;
+    }
+  }
+}

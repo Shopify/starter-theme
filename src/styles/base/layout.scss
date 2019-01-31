@@ -1,0 +1,28 @@
+html {
+  background-color: $color-body;
+  box-sizing: border-box;
+  min-height: 100%;
+  background: $white;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $white;
+  color: $color-body-text;
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+body,
+html {
+  height: 100%;
+}

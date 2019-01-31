@@ -1,5 +1,7 @@
 // Text colors
 $color-body-text: var(--color-body-text);
+$color-anchor: var(--color-anchor);
+$color-anchor--hover: var(--color-anchor--hover);
 
 // Background colors
 $color-body: var(--color-main-background);
@@ -11,6 +13,7 @@ $placeholder-color-background: #f9fafb;
 // Other colors
 $color-accent: var(--color-accent);
 $color-border: var(--color-border);
+$white: #ffffff;
 
 // Helper colors for form error states
 $color-disabled: #000000;
@@ -27,6 +30,32 @@ $font-body-weight: var(--font-body-weight);
 $font-body-style: var(--font-body-style);
 $font-body-bold-weight: var(--font-body-bold-weight);
 
+$serif: serif;
+$sans-serif: sans-serif;
+
+$font-size-h1: 3.875rem;
+$font-size-h2: 3rem;
+$font-size-h3: 2.5rem;
+$font-size-h4: 2rem;
+$font-size-h5: 1.6rem;
+$font-size-p: 1.6rem;
+
+$light: 300;
+$regular: 500;
+$medium: 600;
+$bold: 700;
+
+$point01: 0.01em;
+$point02: 0.02em;
+$point03: 0.03em;
+$point04: 0.04em;
+$point05: 0.05em;
+$point06: 0.06em;
+$point07: 0.07em;
+$point08: 0.08em;
+$point09: 0.09em;
+$point1: 0.1em;
+
 // Transitions
 $transition-duration: 250ms;
 $transition-timing: ease-in-out;
@@ -39,22 +68,22 @@ $grid-max-width: 73.75em;
 $grid-gutter: 30px;
 
 // Breakpoints used with the media-query mixin
-$small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
+$small: "small";
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen: "widescreen";
 
 $breakpoints: (
-  $small '(max-width: #{$grid-medium - 1})',
-  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
-  $medium-down '(max-width: #{$grid-large - 1})',
-  $medium-up '(min-width: #{$grid-medium})',
-  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
-  $large-down '(max-width: #{$grid-widescreen - 1})',
-  $large-up '(min-width: #{$grid-large})',
-  $widescreen '(min-width: #{$grid-widescreen})'
+  $small "(max-width: #{$grid-medium - 1})",
+  $medium "(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})",
+  $medium-down "(max-width: #{$grid-large - 1})",
+  $medium-up "(min-width: #{$grid-medium})",
+  $large "(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})",
+  $large-down "(max-width: #{$grid-widescreen - 1})",
+  $large-up "(min-width: #{$grid-large})",
+  $widescreen "(min-width: #{$grid-widescreen})"
 );
