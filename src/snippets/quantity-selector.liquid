@@ -1,0 +1,15 @@
+<div class="quantity-container">
+
+  <label class="callout" for="quantity">{{ 'products.product.quantity' | t }}</label>
+
+  <span class="callout product-minus js-change-quantity" data-func="minus">
+    <span class="icon-minus">-</span>
+  </span>
+  
+  <input type="number" min="1" size="2" class="quantity callout" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
+  
+  <span class="callout product-plus js-change-quantity" data-func="plus">
+    <span class="icon-plus">+</span>
+  </span>
+  
+</div>

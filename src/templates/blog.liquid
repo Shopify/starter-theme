@@ -11,6 +11,15 @@
   {% if blog.all_tags.size > 0 %}
     <h2>{{ 'blogs.general.categories' | t }}</h2>
 
+    {% if blog.tags.size > 0 %}
+      <select id="BlogTagFilter">
+        <option value="/blogs/{{ blog.handle }}">{{ 'blogs.article.all_topics' | t }}</option>
+        {% for tag in blog.all_tags %}
+          <option value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
+        {% endfor %}
+      </select>
+    {% endif %}
+
     <ul>
       {% for tag in blog.all_tags %}
 
