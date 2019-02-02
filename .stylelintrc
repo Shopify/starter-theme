@@ -1,12 +1,15 @@
 {
   "extends": [
     "stylelint-config-shopify",
-    "stylelint-config-prettier"
+    "stylelint-config-prettier",
+    "stylelint-config-idiomatic-order",
   ],
   "rules": {
-    "color-no-hex": null,
+    "indentation": 2,
+    "string-quotes": "single",
     "selector-class-pattern": null,
+    "selector-max-type": null,
     "selector-no-qualifying-type": null,
-    "selector-max-type": null
+    "color-no-hex": null
   }
 }

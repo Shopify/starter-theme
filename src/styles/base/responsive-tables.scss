@@ -13,23 +13,23 @@
     // IE9 table layout fixes
     tr,
     td {
-      float: left;
-      clear: both;
       width: 100%;
+      clear: both;
+      float: left;
     }
 
     th,
     td {
       display: block;
-      margin: 0;
       padding: $grid-gutter / 2;
+      margin: 0;
       text-align: right;
     }
 
     td::before {
+      padding-right: 10px;
       content: attr(data-label);
       float: left;
-      padding-right: 10px;
       text-align: center;
     }
   }
@@ -38,17 +38,17 @@
   .responsive-table-row + .responsive-table-row,
   tfoot > .responsive-table-row:first-child {
     position: relative;
-    margin-top: 10px;
     padding-top: $grid-gutter / 2;
+    margin-top: 10px;
 
     &::after {
-      content: '';
       position: absolute;
       top: 0;
       right: $grid-gutter / 2;
       left: $grid-gutter / 2;
       display: block;
       border-bottom: 1px solid $color-border;
+      content: '';
     }
   }
 }

@@ -4,9 +4,9 @@ html {
 
 body {
   font-family: $font-body;
-  font-weight: $font-body-weight;
-  font-style: $font-body-style;
   font-size: 1.6rem;
+  font-style: $font-body-style;
+  font-weight: $font-body-weight;
 }
 
 body,
@@ -73,10 +73,6 @@ p,
   font-weight: $regular;
   letter-spacing: $point04;
   line-height: 1.625;
-}
-
-article p {
-  text-align: justify;
 }
 
 i,

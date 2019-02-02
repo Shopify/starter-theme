@@ -1,8 +1,8 @@
 html {
-  background-color: $color-body;
-  box-sizing: border-box;
   min-height: 100%;
+  box-sizing: border-box;
   background: $white;
+  background-color: $color-body;
   overflow-y: scroll;
   -webkit-text-size-adjust: none;
 }

@@ -1,9 +1,9 @@
 .icon {
   display: inline-block;
-  vertical-align: middle;
   width: 20px;
   height: 20px;
   fill: currentColor;
+  vertical-align: middle;
 
   .no-svg & {
     display: none;
@@ -47,6 +47,6 @@ symbol {
 
 // Payment icons
 .payment-icons {
-  user-select: none;
   cursor: default;
+  user-select: none;
 }

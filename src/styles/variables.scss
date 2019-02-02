@@ -7,13 +7,13 @@ $placeholder-color-foreground: #161d25;
 $placeholder-color-background: #f9fafb;
 $color-accent: var(--color-accent);
 $color-border: var(--color-border);
-$color-disabled: #000000;
-$color-disabled-border: #000000;
+$color-disabled: #000;
+$color-disabled-border: #000;
 $color-error: #ff6d6d;
-$color-error-bg: #ffffff;
-$color-success: #000000;
-$color-success-bg: #000000;
-$white: #ffffff;
+$color-error-bg: #fff;
+$color-success: #000;
+$color-success-bg: #000;
+$white: #fff;
 
 // Typography
 $font-heading: var(--font-heading);
@@ -59,26 +59,26 @@ $grid-max-width: 73.75em;
 $grid-gutter: 30px;
 
 // Breakpoints used with the media-query mixin
-$small: "small";
-$medium: "medium";
-$medium-down: "medium-down";
-$medium-up: "medium-up";
-$large: "large";
-$large-down: "large-down";
-$large-up: "large-up";
-$widescreen: "widescreen";
-$laptop-lg: "laptop-lg";
-$laptop-sm: "laptop-sm";
-$tablet-lg: "tablet-lg";
-$tablet-sm: "tablet-sm";
-$mobile-lg: "mobile-lg";
-$mobile-sm: "mobile-sm";
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+$laptop-lg: 'laptop-lg';
+$laptop-sm: 'laptop-sm';
+$tablet-lg: 'tablet-lg';
+$tablet-sm: 'tablet-sm';
+$mobile-lg: 'mobile-lg';
+$mobile-sm: 'mobile-sm';
 
 $breakpoints: (
-  $laptop-lg: "(max-width: 1180px)",
-  $laptop-sm: "(max-width: 1050px)",
-  $tablet-lg: "(max-width: 976px)",
-  $tablet-sm: "(max-width: 768px)",
-  $mobile-lg: "(max-width: 550px)",
-  $mobile-sm: "(max-width: 420px)"
+  $laptop-lg: '(max-width: 1180px)',
+  $laptop-sm: '(max-width: 1050px)',
+  $tablet-lg: '(max-width: 976px)',
+  $tablet-sm: '(max-width: 768px)',
+  $mobile-lg: '(max-width: 550px)',
+  $mobile-sm: '(max-width: 420px)'
 );

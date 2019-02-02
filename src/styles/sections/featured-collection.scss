@@ -1,12 +1,12 @@
 .featured-collection {
   display: flex;
-  flex-wrap: wrap;
   max-width: $grid-max-width;
+  flex-wrap: wrap;
 }
 
 .featured-collection-item {
-  flex: 1 1 percentage(1 / 3);
   height: 100%;
+  flex: 1 1 percentage(1 / 3);
   text-align: center;
 }
 

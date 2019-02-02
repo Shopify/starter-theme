@@ -89,6 +89,7 @@ hr {
 // Overrides .visually-hidden when focused
 .skip-link:focus {
   @include visually-shown(absolute);
+
   z-index: 10000;
   padding: 1rem;
   background-color: $color-body;

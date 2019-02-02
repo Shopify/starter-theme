@@ -17,14 +17,14 @@ textarea {
 input,
 textarea,
 select {
-  font-size: 1.6rem;
   max-width: 100%;
   border: 1px solid $color-border;
   border-radius: 0;
+  font-size: 1.6rem;
 
   &[disabled] {
-    border-color: $color-disabled-border;
     background-color: $color-disabled;
+    border-color: $color-disabled-border;
     cursor: default;
   }
 }
@@ -50,7 +50,7 @@ option {
 }
 
 .input-error {
-  border-color: $color-error;
   background-color: $color-error-bg;
+  border-color: $color-error;
   color: $color-body-text;
 }
