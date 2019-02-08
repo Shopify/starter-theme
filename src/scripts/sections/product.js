@@ -9,6 +9,7 @@
 import {getUrlWithVariant, ProductForm} from '@shopify/theme-product-form';
 import {formatMoney} from '@shopify/theme-currency';
 import {register} from '@shopify/theme-sections';
+import {forceFocus} from '@shopify/theme-a11y';
 
 const classes = {
   hide: 'hide',
@@ -19,8 +20,8 @@ const keyboardKeys = {
 };
 
 const selectors = {
-  submitButton: '[data-add-to-cart]',
-  submitButtonText: '[data-add-to-cart-text]',
+  submitButton: '[data-submit-button]',
+  submitButtonText: '[data-submit-button-text]',
   comparePrice: '[data-compare-price]',
   comparePriceText: '[data-compare-text]',
   priceWrapper: '[data-price-wrapper]',
@@ -45,17 +46,17 @@ register('product', {
       onOptionChange: this.onFormOptionChange.bind(this),
     });
 
-    this.onThumbClick = this.onThumbClick.bind(this);
-    this.onThumbKeyup = this.onThumbKeyup.bind(this);
+    this.onThumbnailClick = this.onThumbnailClick.bind(this);
+    this.onThumbnailKeyup = this.onThumbnailKeyup.bind(this);
 
-    this.container.addEventListener('click', this.onThumbClick);
-    this.container.addEventListener('keyup', this.onThumbKeyup);
+    this.container.addEventListener('click', this.onThumbnailClick);
+    this.container.addEventListener('keyup', this.onThumbnailKeyup);
   },
 
   onUnload() {
     this.productForm.destroy();
-    this.removeEventListener('click', this.onThumbClick);
-    this.removeEventListener('keyup', this.onThumbKeyup);
+    this.removeEventListener('click', this.onThumbnailClick);
+    this.removeEventListener('keyup', this.onThumbnailKeyup);
   },
 
   getProductJson(handle) {
@@ -75,7 +76,7 @@ register('product', {
     this.updateBrowserHistory(variant);
   },
 
-  onThumbClick(event) {
+  onThumbnailClick(event) {
     const thumbnail = event.target.closest(selectors.thumbnail);
 
     if (!thumbnail) {
@@ -88,7 +89,7 @@ register('product', {
     this.renderActiveThumbnail(thumbnail.dataset.thumbnailId);
   },
 
-  onThumbKeyup(event) {
+  onThumbnailKeyup(event) {
     if (
       event.keyCode !== keyboardKeys.ENTER ||
       !event.target.closest(selectors.thumbnail)
@@ -100,7 +101,7 @@ register('product', {
       selectors.visibleImageWrapper,
     );
 
-    visibleFeaturedImageWrapper.focus();
+    forceFocus(visibleFeaturedImageWrapper);
   },
 
   renderSubmitButton(variant) {
@@ -155,6 +156,10 @@ register('product', {
       selectors.comparePriceText,
     );
 
+    if (!comparePriceElement || !compareTextElement) {
+      return;
+    }
+
     if (variant.compare_at_price > variant.price) {
       comparePriceElement.innerText = formatMoney(
         variant.compare_at_price,
@@ -170,27 +175,31 @@ register('product', {
   },
 
   renderActiveThumbnail(id) {
-    const thumbnailToSetActive = this.container.querySelector(
+    const activeThumbnail = this.container.querySelector(
       selectors.thumbnailById(id),
     );
-    const thumbnailToSetDeactive = this.container.querySelector(
+    const inactiveThumbnail = this.container.querySelector(
       selectors.thumbnailActive,
     );
 
-    thumbnailToSetActive.setAttribute('aria-current', true);
-    thumbnailToSetDeactive.removeAttribute('aria-current');
+    if (activeThumbnail === inactiveThumbnail) {
+      return;
+    }
+
+    inactiveThumbnail.removeAttribute('aria-current');
+    activeThumbnail.setAttribute('aria-current', true);
   },
 
   renderFeaturedImage(id) {
-    const imageToSetDeactive = this.container.querySelector(
+    const activeImage = this.container.querySelector(
       selectors.visibleImageWrapper,
     );
-    const imageToSetActive = this.container.querySelector(
+    const inactiveImage = this.container.querySelector(
       selectors.imageWrapperById(id),
     );
 
-    imageToSetDeactive.classList.add(classes.hide);
-    imageToSetActive.classList.remove(classes.hide);
+    activeImage.classList.add(classes.hide);
+    inactiveImage.classList.remove(classes.hide);
   },
 
   updateBrowserHistory(variant) {

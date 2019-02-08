@@ -22,7 +22,7 @@
     "stylelint-config-shopify": "^5.0.0"
   },
   "dependencies": {
-    "@shopify/theme-a11y": "^1.0.1",
+    "@shopify/theme-a11y": "^2.0.1",
     "@shopify/theme-addresses": "^1.0.0",
     "@shopify/theme-cart": "^1.0.0-alpha.7",
     "@shopify/theme-currency": "^1.0.0-alpha.7",

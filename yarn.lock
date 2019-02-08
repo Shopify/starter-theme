@@ -381,10 +381,10 @@
     yamljs "0.2.10"
     yargs "^11.0.0"
 
-"@shopify/theme-a11y@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-1.0.1.tgz#0081521a779a90d16969ac464c7a4e365bae1886"
-  integrity sha1-AIFSGneakNFpaaxGTHpONluuGIY=
+"@shopify/theme-a11y@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-2.0.1.tgz#baf4beedca63c08c8f7e82de35bba9c9654c3126"
+  integrity sha512-kZxkVCQuNaoancZQZdXIVrPj5WmtxerrXlypyAgc7Q7gFEqOEYIHsey3xWnzKTM80hxk5N0rzrWMsRHWXbgp6g==
 
 "@shopify/theme-addresses@^1.0.0":
   version "1.0.0"
