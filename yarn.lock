@@ -222,12 +222,12 @@
   resolved "https://registry.yarnpkg.com/@shopify/html-webpack-liquid-asset-tags-plugin/-/html-webpack-liquid-asset-tags-plugin-1.0.0-beta.11.tgz#5bfc0b9394fb3b1dc89c539edc2dc1fd8f9f5471"
   integrity sha512-9fh8Qi5OTLqB5WXeH0oTsfYFT8/fgoK5YKyHPZvEfDbl9JW1jMDwfhjsPhW6d221oPd7UiOC3JDhDdYPN85hyQ==
 
-"@shopify/slate-analytics@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-analytics/-/slate-analytics-1.0.0-beta.14.tgz#362b2d3739061d2be74fd5b3a38f04b3a0ffc0b0"
-  integrity sha512-wKgIBvKxqf/txnVjgemQddRaZwJr0nebqSRqM+HzsCvWpB4IVd06Tz8yKabIXlMynKnnXGwd6SoKMCZw8WVs4Q==
+"@shopify/slate-analytics@1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-analytics/-/slate-analytics-1.0.0-beta.15.tgz#5a3a6fd9ff1ef32f0e4f6f5bedf2c3a502292a02"
+  integrity sha512-/jc6R0giD+ggn3vIAQayQKBaJkdle2snN/ZB5xUVMvJGR82a1q3mph71R3Nug/RITjdH7Zm6DPhnt0Drf5FT9A==
   dependencies:
-    "@shopify/slate-env" "1.0.0-beta.14"
+    "@shopify/slate-env" "1.0.0-beta.15"
     "@shopify/slate-error" "1.0.0-beta.14"
     "@shopify/slate-rc" "1.0.0-beta.14"
     axios "^0.18.0"
@@ -242,18 +242,18 @@
   resolved "https://registry.yarnpkg.com/@shopify/slate-config/-/slate-config-1.0.0-beta.14.tgz#06cb79dea564fd3acf4c4b9b219e587c4b8b299d"
   integrity sha512-4Z+O36MhI16Obg0ecBVihenIsx5HAfYfTtflARRWLR5a5QSLazbpmaiHFg23PB2ELTxBdXvP2iOtoHqmT7uaKA==
 
-"@shopify/slate-cssvar-loader@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-cssvar-loader/-/slate-cssvar-loader-1.0.0-beta.14.tgz#ebf75e3eff2504bb06d605ff90ed9504c8ad26b1"
-  integrity sha512-zTmAXkTYdk4dPnyWJf6Ol0NCUopKa1pWQpb/r9HbcllCcl5wKsYoK/9TmFy6pVxk8eRGHJPWO7rhOMFxiRO/sg==
+"@shopify/slate-cssvar-loader@1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-cssvar-loader/-/slate-cssvar-loader-1.0.0-beta.15.tgz#ab7734e9c8997e898c7166b9cd6b19a729ae7de6"
+  integrity sha512-CWNs0AVSTkLTU1E2kosQJ/fAPW4MfA2h0LQf3LmeBcuEx0PxxYu7+rjqox6wGEDCselUWxto11n28hQfKp7pcw==
   dependencies:
     "@shopify/slate-config" "1.0.0-beta.14"
     loader-utils "^1.1.0"
 
-"@shopify/slate-env@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-env/-/slate-env-1.0.0-beta.14.tgz#8dc0717f835918ed612147b94f25e6c2da6c48ae"
-  integrity sha512-vkPP26NqLf+PIzwasCaiiWwk6PrCzoOHCwLZqNEk7vp44holJg+9KhwChaXZGyrOdw/W/VJY3UNauMW1cTeHHQ==
+"@shopify/slate-env@1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-env/-/slate-env-1.0.0-beta.15.tgz#dd3717be633176aede663eff9d4392fb9d28f084"
+  integrity sha512-ii/VVKUjtQqEnbJm7zIilxaFRK0AJvR2E8yzyeJT0HrRTJsKKrDFW/sJtxMXe7qLHBWCCx2IWS95ltlXn2bhzQ==
   dependencies:
     "@shopify/slate-config" "1.0.0-beta.14"
     dotenv "^4.0.0"
@@ -283,14 +283,14 @@
     semver "^5.5.0"
     uuid "^3.2.1"
 
-"@shopify/slate-sync@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-sync/-/slate-sync-1.0.0-beta.14.tgz#a789b776a4d90a9bd1c2d3fad38ab223d22a4c3f"
-  integrity sha512-1uSsPAquhDLEArC52qi4cpu169+jiHDHTyie/zjMIp8uXqB6fmw4le25wfBVrPvzP4olovl+YXX/Xb+F+8ECfA==
+"@shopify/slate-sync@1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-sync/-/slate-sync-1.0.0-beta.15.tgz#038fe0f6f6ff9c6a170aacb9532020d7e25d9899"
+  integrity sha512-bNojZEHqMOkTCLRAvgPktzTwNRFo5picDPJ7gIO4HawKPU+DJRtwtmDM3CL6Vajy+jwr7kBoecAGh/bhLOjirA==
   dependencies:
-    "@shopify/slate-analytics" "1.0.0-beta.14"
+    "@shopify/slate-analytics" "1.0.0-beta.15"
     "@shopify/slate-config" "1.0.0-beta.14"
-    "@shopify/slate-env" "1.0.0-beta.14"
+    "@shopify/slate-env" "1.0.0-beta.15"
     "@shopify/themekit" "0.6.12"
     array-flatten "^2.1.1"
     chalk "2.3.2"
@@ -304,18 +304,18 @@
   resolved "https://registry.yarnpkg.com/@shopify/slate-tag-webpack-plugin/-/slate-tag-webpack-plugin-1.0.0-beta.14.tgz#e26d0423af43c080b65e24b66bd76dc606a06b23"
   integrity sha512-suY+8eaxI++0w6WE0j/6LN30+LmwXIlQtBiVpk99sTeZ/f8CCc0N8zRNDcp7p9Dq9kMOTdhBpAQ1pQemIoNwIw==
 
-"@shopify/slate-tools@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@shopify/slate-tools/-/slate-tools-1.0.0-beta.14.tgz#7e4a1328edf3a2ee938ba558ab7710570294bf34"
-  integrity sha512-wld6o5ehUh4nN6uyaVzR4sPM0zFxwTJuPiTK8z2QouE52bN/kohVFtuX0nnFZUMNlYoyzoeoouTN6w9bizwf2w==
+"@shopify/slate-tools@1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@shopify/slate-tools/-/slate-tools-1.0.0-beta.15.tgz#49c1252d3099a4a3e2fe33f6b9b3c6a24c145b35"
+  integrity sha512-Dsq5wl0vftsbngAyf7A/tKO9Iw35FyzfSj8tqjCIgNzTfuDVZtnefIMt5y3kzpNYI/Y3d7LH+sklBKJcaQYASA==
   dependencies:
     "@shopify/html-webpack-liquid-asset-tags-plugin" "1.0.0-beta.11"
-    "@shopify/slate-analytics" "1.0.0-beta.14"
+    "@shopify/slate-analytics" "1.0.0-beta.15"
     "@shopify/slate-config" "1.0.0-beta.14"
-    "@shopify/slate-cssvar-loader" "1.0.0-beta.14"
-    "@shopify/slate-env" "1.0.0-beta.14"
+    "@shopify/slate-cssvar-loader" "1.0.0-beta.15"
+    "@shopify/slate-env" "1.0.0-beta.15"
     "@shopify/slate-liquid-asset-loader" "1.0.0-beta.11"
-    "@shopify/slate-sync" "1.0.0-beta.14"
+    "@shopify/slate-sync" "1.0.0-beta.15"
     "@shopify/slate-tag-webpack-plugin" "1.0.0-beta.14"
     "@shopify/theme-lint" "^2.0.0"
     "@shopify/themekit" "0.6.12"
