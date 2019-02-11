@@ -65,7 +65,7 @@
     {%- assign width_num = width | plus: 0 | round -%}
     {%- if image.width >= width_num -%}{{ width_num }},{%- endif -%}
   {%- endfor -%}
-  {{ image.width }}
+  {{- image.width -}}
 {%- endcapture -%}
 {%- assign image_widths = image_widths | strip_newlines -%}
 
