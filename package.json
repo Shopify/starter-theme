@@ -15,7 +15,7 @@
     "url": "https://github.com/Shopify/starter-theme.git"
   },
   "devDependencies": {
-    "@shopify/slate-tools": "1.0.0-beta.14",
+    "@shopify/slate-tools": "1.0.0-beta.15",
     "babel-preset-shopify": "^16.2.0",
     "eslint-plugin-shopify": "^19.0.0",
     "stylelint-config-prettier": "^3.0.4",
@@ -33,7 +33,8 @@
     "jquery": "^3.2.1",
     "lazysizes": "^4.1.1",
     "lodash-es": "^4.17.4",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "qrcode": "^1.3.2"
   },
   "scripts": {
     "start": "slate-tools start",
