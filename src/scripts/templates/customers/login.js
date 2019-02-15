@@ -41,7 +41,7 @@ function toggleRecoverPasswordForm() {
  */
 function resetPasswordSuccess() {
   // check if reset password form was
-  // successfully submited and show success message.
+  // successfully submitted and show success message.
 
   if (document.querySelector(selectors.formState)) {
     document.querySelector(selectors.resetSuccess).classList.remove('hide');
