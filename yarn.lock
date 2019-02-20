@@ -381,10 +381,10 @@
     yamljs "0.2.10"
     yargs "^11.0.0"
 
-"@shopify/theme-a11y@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-1.0.1.tgz#0081521a779a90d16969ac464c7a4e365bae1886"
-  integrity sha1-AIFSGneakNFpaaxGTHpONluuGIY=
+"@shopify/theme-a11y@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-2.0.1.tgz#baf4beedca63c08c8f7e82de35bba9c9654c3126"
+  integrity sha512-kZxkVCQuNaoancZQZdXIVrPj5WmtxerrXlypyAgc7Q7gFEqOEYIHsey3xWnzKTM80hxk5N0rzrWMsRHWXbgp6g==
 
 "@shopify/theme-addresses@^1.0.0":
   version "1.0.0"
@@ -421,6 +421,11 @@
     glob "^7.0.6"
     htmllint "^0.6.0"
     lodash "^4.15.0"
+
+"@shopify/theme-product@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-product/-/theme-product-1.0.0.tgz#505e6a0bf78359d384618d5317fbba857d53c455"
+  integrity sha512-l6jZlkPt2Juy0JXnnkTh+trBJD1zMFYp4RLHSD11hk6xwMtkUGRzLc6HQNhoAt//5Ft+vR2h92nZFFntX03oGQ==
 
 "@shopify/theme-rte@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
@@ -10457,6 +10462,7 @@ schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
   integrity sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==
   dependencies:
     ajv "^6.1.0"
+    ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
 schema-utils@^1.0.0:
