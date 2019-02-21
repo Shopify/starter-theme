@@ -1,0 +1,20 @@
+.address-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  [data-aria-hidden="true"] {
+    display: none;
+  }
+
+  [data-line-count="1"] {
+    flex-basis: 100%;
+  }
+  [data-line-count="2"] {
+    flex-basis: 49%;
+  }
+  [data-line-count="3"] {
+    flex-basis: 32%;
+  }
+}

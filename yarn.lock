@@ -246,11 +246,9 @@
   version "1.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@shopify/slate-cssvar-loader/-/slate-cssvar-loader-1.0.0-beta.15.tgz#ab7734e9c8997e898c7166b9cd6b19a729ae7de6"
   integrity sha512-CWNs0AVSTkLTU1E2kosQJ/fAPW4MfA2h0LQf3LmeBcuEx0PxxYu7+rjqox6wGEDCselUWxto11n28hQfKp7pcw==
-
   dependencies:
     "@shopify/slate-config" "1.0.0-beta.14"
     loader-utils "^1.1.0"
-
 
 "@shopify/slate-env@1.0.0-beta.15":
   version "1.0.0-beta.15"
@@ -305,7 +303,6 @@
   version "1.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@shopify/slate-tag-webpack-plugin/-/slate-tag-webpack-plugin-1.0.0-beta.14.tgz#e26d0423af43c080b65e24b66bd76dc606a06b23"
   integrity sha512-suY+8eaxI++0w6WE0j/6LN30+LmwXIlQtBiVpk99sTeZ/f8CCc0N8zRNDcp7p9Dq9kMOTdhBpAQ1pQemIoNwIw==
-
 
 "@shopify/slate-tools@1.0.0-beta.15":
   version "1.0.0-beta.15"
@@ -386,15 +383,10 @@
   resolved "https://registry.yarnpkg.com/@shopify/theme-a11y/-/theme-a11y-2.0.1.tgz#baf4beedca63c08c8f7e82de35bba9c9654c3126"
   integrity sha512-kZxkVCQuNaoancZQZdXIVrPj5WmtxerrXlypyAgc7Q7gFEqOEYIHsey3xWnzKTM80hxk5N0rzrWMsRHWXbgp6g==
 
-"@shopify/theme-addresses@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-addresses/-/theme-addresses-1.0.0.tgz#204327c8fbf2e2382c5af5532d3f8176a5111b42"
-  integrity sha512-RF7b4K1By/41aYoh6lBJIIFh3tmB1MGaw9zUvRre/b6qf07/oEEpEMFOMbLKyMuX4nY36cCVhY1xVnrgvcWvQw==
-
-"@shopify/theme-addresses@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shopify/theme-addresses/-/theme-addresses-1.0.0.tgz#204327c8fbf2e2382c5af5532d3f8176a5111b42"
-  integrity sha512-RF7b4K1By/41aYoh6lBJIIFh3tmB1MGaw9zUvRre/b6qf07/oEEpEMFOMbLKyMuX4nY36cCVhY1xVnrgvcWvQw==
+"@shopify/theme-addresses@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-addresses/-/theme-addresses-3.0.0.tgz#21a1db60e0414e351205d9d5e36f2f625f7a5445"
+  integrity sha512-3MyMnfw1VtPq3cLCr2GX71NgbJEsNO8Sm43Vfh76K7Jyqv2nQqHQAcJ87tgJhDzTcfvXwiYXdb14IusoUXsBDg==
 
 "@shopify/theme-cart@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
@@ -421,6 +413,11 @@
     glob "^7.0.6"
     htmllint "^0.6.0"
     lodash "^4.15.0"
+
+"@shopify/theme-product-form@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-product-form/-/theme-product-form-3.0.0.tgz#ad4b74f7f2bf98fd0e67095b1b4d0c54cbdca49f"
+  integrity sha512-9PWMY/hmWNd724GIEZvzAsRtTVP4J5RC3DAbOO83dS7CwnDcn7EQKceHuTqZAYEPAfom6xKnYViuLd17fTz4lQ==
 
 "@shopify/theme-product@^1.0.0":
   version "1.0.0"
@@ -672,11 +669,6 @@ ajv-errors@^1.0.0:
   resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
   integrity sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
 
-ajv-errors@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
-  integrity sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
-
 ajv-keywords@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
@@ -716,11 +708,6 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
-
-ansi-colors@^3.0.0:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.3.tgz#57d35b8686e851e2cc04c403f1c00203976a1813"
-  integrity sha512-LEHHyuhlPY3TmuUYMh2oz89lTShfvgbmzaBcxve9t/9Wuy7Dwf4yoAKcND7KFT1HAQfqZ12qtc+DUrBMeKF9nw==
 
 ansi-colors@^3.0.0:
   version "3.2.3"
@@ -2618,7 +2605,7 @@ chalk@2.3.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.4.0, chalk@^2.4.1:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   integrity sha512-ObN6h1v2fTJSmUXoS3nMQ92LbDK9be4TV+6G+omQlGJFdcUX5heKi1LZ1YnRMIgwTLEj3E24bT6tYni50rlCfQ==
@@ -10462,16 +10449,6 @@ schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
   integrity sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==
   dependencies:
     ajv "^6.1.0"
-    ajv-errors "^1.0.0"
-    ajv-keywords "^3.1.0"
-
-schema-utils@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-1.0.0.tgz#0b79a93204d7b600d4b2850d1f66c2a34951c770"
-  integrity sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==
-  dependencies:
-    ajv "^6.1.0"
-    ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
 schema-utils@^1.0.0:
