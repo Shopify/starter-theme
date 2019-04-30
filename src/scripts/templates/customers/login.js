@@ -52,7 +52,7 @@ if (document.querySelector(selectors.recoverPasswordForm)) {
   checkUrlHash();
   resetPasswordSuccess();
 
-  document.querySelector(selectors.recoverPasswordFormTriggers).forEach((trigger) => {
+  document.querySelectorAll(selectors.recoverPasswordFormTriggers).forEach((trigger) => {
     trigger.addEventListener('click', onShowHidePasswordForm);
   });
 }
