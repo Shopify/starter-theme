@@ -66,7 +66,7 @@
   <tfoot>
     <tr class="responsive-table-row">
       <td colspan="4" class="small--hide">{{ 'customer.order.subtotal' | t }}</td>
-      <td data-label="{{ 'customer.order.subtotal' | t }}">{{ order.subtotal_price | money }}</td>
+      <td data-label="{{ 'customer.order.subtotal' | t }}">{{ order.line_items_subtotal_price | money }}</td>
     </tr>
 
     {% for discount in order.discounts %}
