@@ -45,10 +45,6 @@
       },
       moneyFormat: {{ shop.money_format | json }}
     };
-
-    {% if template.directory == 'customers' %}
-      theme.allCountryOptionTags = {{ all_country_option_tags | json }};
-    {% endif %}
   </script>
 
   {% include 'script-tags', layout: 'theme' %}

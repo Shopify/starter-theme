@@ -7,35 +7,29 @@
  * @namespace customerAddresses
  */
 
-import {CountryProvinceSelector} from '@shopify/theme-addresses';
+import {AddressForm} from '@shopify/theme-addresses';
 
 const selectors = {
   addressContainer: '[data-address]',
+  addressFields: '[data-address-fields]',
   addressToggle: '[data-address-toggle]',
-  addressCountry: '[data-address-country]',
-  addressProvince: '[data-address-province]',
-  addressProvinceWrapper: '[data-address-province-wrapper]',
   addressForm: '[data-address-form]',
   addressDeleteForm: '[data-address-delete-form]',
 };
 const hideClass = 'hide';
 
-function initializeAddressForm(countryProvinceSelector, container) {
-  const countrySelector = container.querySelector(selectors.addressCountry);
-  const provinceSelector = container.querySelector(selectors.addressProvince);
-  const provinceWrapper = container.querySelector(selectors.addressProvinceWrapper);
+function initializeAddressForm(container) {
+  const addressFields = container.querySelector(selectors.addressFields);
   const addressForm = container.querySelector(selectors.addressForm);
   const deleteForm = container.querySelector(selectors.addressDeleteForm);
-
-  countryProvinceSelector.build(countrySelector, provinceSelector, {
-    onCountryChange: (provinces) => provinceWrapper.classList.toggle(hideClass, !provinces.length),
-  });
 
   container.querySelectorAll(selectors.addressToggle).forEach((button) => {
     button.addEventListener('click', () => {
       addressForm.classList.toggle(hideClass);
     });
   });
+
+  AddressForm(addressFields, 'en');
 
   if (deleteForm) {
     deleteForm.addEventListener('submit', (event) => {
@@ -48,13 +42,10 @@ function initializeAddressForm(countryProvinceSelector, container) {
   }
 }
 
-const addresses = document.querySelectorAll(selectors.addressContainer);
+const addressForms = document.querySelectorAll(selectors.addressContainer);
 
-if (addresses.length) {
-
-  const countryProvinceSelector = new CountryProvinceSelector(window.theme.allCountryOptionTags);
-
-  addresses.forEach((addressContainer) => {
-    initializeAddressForm(countryProvinceSelector, addressContainer);
+if (addressForms.length) {
+  addressForms.forEach((addressContainer) => {
+    initializeAddressForm(addressContainer);
   });
 }
