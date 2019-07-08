@@ -173,7 +173,7 @@
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "articleBody": "{{ article.content | strip_html }}",
+  "articleBody": "{{ article.content | strip_html | escape }}",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ shop.url }}{{ page.url }}"
