@@ -14,9 +14,6 @@
     "type": "git",
     "url": "https://github.com/Shopify/starter-theme.git"
   },
-  "engines": {
-    "node": "12.16.x"
-  },
   "devDependencies": {
     "@shopify/slate-tools": "1.0.0-beta.15",
     "babel-preset-shopify": "^16.2.0",
