@@ -36,7 +36,12 @@
     "lazysizes": "^4.1.1",
     "lodash-es": "^4.17.4",
     "normalize.css": "^7.0.0",
-    "qrcode": "^1.3.2"
+    "qrcode": "^1.3.2",
+    "ajv": "^6.0.0",
+    "react": "^16.0.0-beta",
+    "react-dom": "^16.0.0-beta",
+    "stylelint": "^8.0.0",
+    "typescript": "*"
   },
   "scripts": {
     "start": "slate-tools start",
