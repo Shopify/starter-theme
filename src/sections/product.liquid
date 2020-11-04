@@ -40,28 +40,20 @@
     {% unless product.has_only_default_variant %}
       {% for option in product.options_with_values %}
         <div class="js">
-
           {% if forloop.index0 > 0 %}
-
             {% for value in option.values %}
               <input type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
               <label for="Option{{ option.position }}-{{ value }}">{{ value }}</label>
             {% endfor %}
 
           {% else %}
-
             <label for="Option{{ option.position }}">
               {{ option.name }}
             </label>
-
-            <select
-              id="Option{{ option.position }}"
-              name="options[{{ option.name | escape }}]">
+            <select id="Option{{ option.position }}" name="options[{{ option.name | escape }}]">
               {% for value in option.values %}
-                <option
-                  value="{{ value | escape }}"
-                  {% if option.selected_value == value %}selected="selected"{% endif %}>
-                    {{ value }}
+                <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                  {{ value }}
                 </option>
               {% endfor %}
             </select>
@@ -69,20 +61,29 @@
           {% endif %}
         </div>
       {% endfor %}
+    {% else %}
+      {% for option in product.options_with_values %}
+        <div class="visually-hidden">
+          <label for="Option{{ option.position }}">{{ option.name }}</label>
+          <select id="Option{{ option.position }}" name="options[{{ option.name | escape }}]">
+            {% for value in option.values %}
+            <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected" {% endif %}>
+              {{ value }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      {% endfor %}
     {% endunless %}
 
-    <noscript>
-      <select name="id">
-        {% for variant in product.variants %}
-          <option
-            {% if variant == current_variant %}selected="selected"{% endif %}
-            {% unless variant.available %}disabled="disabled"{% endunless %}
-            value="{{ variant.id }}">
-              {{ variant.title }}
-          </option>
-        {% endfor %}
-      </select>
-    </noscript>
+    <select class="visually-hidden" name="id">
+      {% for variant in product.variants %}
+      <option {% if variant == current_variant %}selected="selected" {% endif %}
+        {% unless variant.available %}disabled="disabled" {% endunless %} value="{{ variant.id }}">
+        {{ variant.title }}
+      </option>
+      {% endfor%}
+    </select>
 
     <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
     <input type="number" id="Quantity" name="quantity" value="1" min="1">
