@@ -97,7 +97,45 @@
   </tfoot>
 </table>
 
-<h3>{{ 'customer.order.billing_address' | t }}</h3>
+<h3>{{ 'customer.order.transactions' | t }}</h3>
+
+{% for transaction in order.transactions %}
+  <h4>{{ 'customer.order.transaction_number' | t }}: {{ transaction.id}}</h4>
+  <table class="responsive-table">
+    <thead>
+      <tr>
+        <th>{{ 'customer.order.transaction_amount' | t }}</th>
+        <th>{{ 'customer.order.transaction_name' | t }}</th>
+        <th>{{ 'customer.order.transaction_status' | t }}</th>
+        <th>{{ 'customer.order.transaction_kind' | t }}</th>
+        <th>{{ 'customer.order.transaction_gateway' | t }}</th>
+        <th>{{ 'customer.order.transaction_credit_card' | t }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="{{ 'customer.order.transaction_amount' | t }}">
+          {{ transaction.amount | money }}
+        </td>
+        <td data-label="{{ 'customer.order.transaction_name' | t }}">
+          {{ transaction.name }}
+        </td>
+        <td data-label="{{ 'customer.order.transaction_status' | t }}">
+          {{ transaction.status_label }}
+        </td>
+        <td data-label="{{ 'customer.order.transaction_kind' | t }}">
+          {{ transaction.kind }}
+        </td>
+        <td data-label="{{ 'customer.order.transaction_gateway' | t }}">
+          {{ transaction.gateway }}
+        </td>
+        <td data-label="{{ 'customer.order.transaction_credit_card' | t }}">
+          {{ transaction.payment_details.credit_card_number }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+{% endfor %}
 
 <p>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</p>
 
