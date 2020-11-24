@@ -29,6 +29,7 @@ const selectors = {
   visibleImageWrapper: `[data-product-image-wrapper]:not(.${classes.hide})`,
   imageWrapperById: (id) => `${selectors.imageWrapper}[data-image-id='${id}']`,
   productForm: '[data-product-form]',
+  productFormId: 'input[name="id"]',
   productPrice: '[data-product-price]',
   thumbnail: '[data-product-single-thumbnail]',
   thumbnailById: (id) => `[data-thumbnail-id='${id}']`,
@@ -68,6 +69,7 @@ register('product', {
   onFormOptionChange(event) {
     const variant = event.dataset.variant;
 
+    this.renderProductFormId(variant.id);
     this.renderImages(variant);
     this.renderPrice(variant);
     this.renderComparePrice(variant);
@@ -102,6 +104,10 @@ register('product', {
     );
 
     forceFocus(visibleFeaturedImageWrapper);
+  },
+
+  renderProductFormId(id) {
+    this.productForm.element.querySelector(selectors.productFormId).value = id;
   },
 
   renderSubmitButton(variant) {
