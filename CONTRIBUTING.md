@@ -4,6 +4,8 @@ We ❤️ pull requests. If you'd like to fix a bug, contribute a feature or jus
 
 If you're thinking of adding a big new feature, consider opening an issue first to discuss it to ensure it aligns to the direction of the project (and potentially save yourself some time!).
 
+In order to have your PR looked at, all contributors must sign [Shopify’s CLA](https://cla.shopify.com/).
+
 ## Getting Started
 
 To start working on the codebase, first fork the repo, then clone it:
