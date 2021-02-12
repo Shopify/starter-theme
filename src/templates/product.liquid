@@ -12,7 +12,7 @@
       "https:{{ product.featured_image.src | img_url: image_size }}"
     ],
   {% endif %}
-  "description": "{{ product.description | strip_html | escape }}",
+  "description": "{{ product.description | strip_html | strip_newlines | escape }}",
   {% if current_variant.sku != blank %}
     "sku": "{{ current_variant.sku }}",
   {% endif %}
