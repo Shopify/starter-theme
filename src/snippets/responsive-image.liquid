@@ -72,7 +72,10 @@
 <div id="ImageWrapper-{{ image.id }}-{{ responsive_image_counter }}" data-image-id="{{ image.id }}" class="responsive-image__wrapper {{ wrapper_class }}" {{ wrapper_attributes }}>
   <img id="Image-{{ image.id }}-{{ responsive_image_counter }}"
     class="responsive-image__image lazyload {{ image_class }}"
-    src="{{ image | img_url: '300x' }}"
+    src="{{ image | image_url: '300x' }}"
+    loading="lazy"
+    width="{{ image.width }}"
+    height="{{ image.height }}"
     data-src="{{ img_url }}"
     data-widths="[{{ image_widths }}]"
     data-aspectratio="{{ image.aspect_ratio }}"
@@ -84,5 +87,13 @@
 </div>
 
 <noscript>
-  <img class="{{ image_class }}" src="{{ image | img_url: '2048x2048' }}" alt="{{ image.alt | escape }}">
+  <img 
+    class="{{ image_class }}" 
+    src="{{ image | image_url: '2048x2048' }}" 
+    alt="{{ image.alt | escape }}" 
+    loading="lazy"
+    width="{{ image.width }}"
+    height="{{ image.height }}"
+    {{ image_attributes }}
+  >
 </noscript>
