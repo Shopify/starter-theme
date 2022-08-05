@@ -37,7 +37,14 @@
 
 
   {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
-    {% unless product.has_only_default_variant %}
+
+    <input type="hidden" name="id" value="{{ current_variant.id }}">
+
+    {% if product.has_only_default_variant %}
+      {% assign option = product.options_with_values[0] %}
+      {% assign value = option.values[0] %}
+      <input type="hidden" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}">
+    {% else %}
       {% for option in product.options_with_values %}
         <div class="js">
 
@@ -69,7 +76,7 @@
           {% endif %}
         </div>
       {% endfor %}
-    {% endunless %}
+    {% endif %}
 
     <noscript>
       <select name="id">
