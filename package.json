@@ -32,7 +32,7 @@
     "@shopify/theme-rte": "^1.0.0-alpha.7",
     "@shopify/theme-sections": "^1.1.0",
     "@shopify/theme-variants": "^1.0.0-alpha.8",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "lazysizes": "^4.1.1",
     "lodash-es": "^4.17.4",
     "normalize.css": "^7.0.0",
