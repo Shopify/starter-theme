@@ -1,6 +1,5 @@
 <!doctype html>
-<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
+<html class="no-js" lang="{{ shop.locale }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +16,11 @@
   <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value_stripped, shop: shop.name }}</title>
 
   <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+
+  {% include 'style-tags', layout: 'gift_card' %}
+  {% include 'css-variables' %}
+
+  {% include 'script-tags', layout: 'gift_card' %}
 
   {{ content_for_header }}
 </head>

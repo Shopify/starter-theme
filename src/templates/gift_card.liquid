@@ -43,13 +43,13 @@
   {% endif %}
 
   {%- assign code_size = gift_card.code | format_code | size -%}
-  <span id="GiftCardDigits" class="giftcard__code">{{ gift_card.code | format_code }}</span>
+  <span id="GiftCardDigits" class="giftcard__code" data-gift-card-digits>{{ gift_card.code | format_code }}</span>
 
   <p>{{ 'gift_cards.issued.redeem' | t }}</p>
 
   <a href="{{ shop.url }}" class="button" target="_blank">{{ 'gift_cards.issued.shop_link' | t }}</a>
 
-  <div id="QrCode" class="giftcard-qr" data-identifier="{{ gift_card.qr_identifier }}"></div>
+  <canvas id="QrCode" class="giftcard-qr" data-identifier="{{ gift_card.qr_identifier }}" data-gift-card-qr></canvas>
 
   {% if gift_card.pass_url %}
     <a href="{{ gift_card.pass_url }}" class="apple-wallet">
@@ -57,8 +57,8 @@
     </a>
   {% endif %}
 
-  <a href="#" id="PrintGiftCard" class="print-giftcard">
+  <button id="PrintGiftCard" class="print-giftcard" data-gift-card-print>
     {{ 'gift_cards.issued.print' | t }}
-  </a>
+  </button>
 
 </main>
