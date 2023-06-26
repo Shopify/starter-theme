@@ -207,9 +207,17 @@
       "total": "Total",
       "fulfilled_at": "Date fulfilled",
       "track_shipment": "Track shipment",
+      "transactions": "Transactions",
+      "transaction_number": "Transaction #",
       "tracking_url": "Tracking link",
       "tracking_company": "Carrier",
       "tracking_number": "Tracking number",
+      "transaction_amount": "Amount",
+      "transaction_name": "Name",
+      "transaction_status": "Status",
+      "transaction_kind": "Type",
+      "transaction_gateway": "Payment provider",
+      "transaction_credit_card": "Credit card",
       "subtotal": "Subtotal"
     },
     "recover_password": {
